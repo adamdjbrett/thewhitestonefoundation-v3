@@ -1,0 +1,17 @@
+{% macro icon(name, className="") %}
+  {% if name == "book" %}
+    <svg class="{{ className }}" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" stroke="currentColor" stroke-width="2"/><path d="M4 4.5A2.5 2.5 0 0 1 6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15Z" stroke="currentColor" stroke-width="2"/></svg>
+  {% elif name == "users" %}
+    <svg class="{{ className }}" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" stroke="currentColor" stroke-width="2"/><circle cx="9" cy="7" r="4" stroke="currentColor" stroke-width="2"/><path d="M22 21v-2a4 4 0 0 0-3-3.87" stroke="currentColor" stroke-width="2"/><path d="M16 3.13a4 4 0 0 1 0 7.75" stroke="currentColor" stroke-width="2"/></svg>
+  {% elif name == "globe" %}
+    <svg class="{{ className }}" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 0 20M12 2a15.3 15.3 0 0 0 0 20" stroke="currentColor" stroke-width="2"/></svg>
+  {% elif name == "message" %}
+    <svg class="{{ className }}" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M21 15a4 4 0 0 1-4 4H7l-4 4V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4v8Z" stroke="currentColor" stroke-width="2"/></svg>
+  {% elif name == "graduation" %}
+    <svg class="{{ className }}" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m22 10-10-5-10 5 10 5 10-5Z" stroke="currentColor" stroke-width="2"/><path d="M6 12v5c3 2 9 2 12 0v-5" stroke="currentColor" stroke-width="2"/></svg>
+  {% elif name == "heart" %}
+    <svg class="{{ className }}" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8Z" stroke="currentColor" stroke-width="2"/></svg>
+  {% else %}
+    <svg class="{{ className }}" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10" stroke="currentColor" stroke-width="2"/></svg>
+  {% endif %}
+{% endmacro %}

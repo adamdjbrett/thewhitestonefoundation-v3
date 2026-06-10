@@ -1,0 +1,103 @@
+title: "The Whitestone Foundation"
+description: "Whitestone Publications and programs in critical theory, public scholarship, and higher education."
+url: "https://thewhitestonefoundation.org"
+#url: "http://localhost:8080"
+contact: "whitestone.pubs@gmail.com"
+image: "/images/whitestone-logo.png"
+language: "en"
+locale: en_US
+favicon: "/images/whitestone-logo.png"
+
+formspree_id: "your-form-id"
+author:
+  name: "The Whitestone Foundation"
+
+metasocial:
+  twitter: "https://x.com/jourculreltheor"
+  twitteruser: "@jourculreltheor"
+  facebook: "https://www.facebook.com/religioustheory"
+  mastodon: "@jcrt@mastodon.social"
+
+
+sidebar:
+  title: "The Whitestone Foundation"
+  logo: "/images/whitestone-logo.png"
+  list:
+    - label: "Home"
+      url: "/"
+      is_dropdown: false
+    - label: "Mission"
+      url: "/mission/"
+      is_dropdown: false
+    - label: "Events"
+      url: "/events/"
+      is_dropdown: true
+      info:
+        - label: "Higher Ed"
+          url: "/higher-ed/"
+        - label: "Videos"
+          url: "/videos/"
+        - label: "Panelists"
+          url: "/panelists/"
+    - label: "Search"
+      url: "/search/"
+      is_dropdown: true
+      info:
+        - label: "Site Search"
+          url: "/search/"
+        - label: "Metadata Search"
+          url: "/metadata/search/"
+    - label: "People"
+      url: "/people/"
+      is_dropdown: false
+    - label: "Contact"
+      url: "/contact/"
+      is_dropdown: false
+
+social: 
+  - label: "Twitter"
+    url: "https://twitter.com/jourculreltheor"
+    icon: "fa-brands fa-twitter"
+  - label: "Facebook"
+    url: "hhttps://www.facebook.com/religioustheory"
+    icon: "fa-brands fa-facebook"
+  - label: "Instagram"
+    url: "https://www.instagram.com/JCRT_DU1"
+    icon: "fa-brands fa-instagram"
+  - label: "Bluesky"
+    url: "https://bsky.app/profile/jcrt.org"
+    icon: "fa-brands fa-bluesky"
+  - label: "Mastodon"
+    url: "https://mastodon.social/@jcrt"
+    icon: "fa-brands fa-mastodon"  
+
+widget: 
+  tableofcontent: "Table of Contents"
+  blog: 
+    show: true
+    title: Recent Posts
+    description: "Latest insights and articles from our foundation."
+    button: 
+      text: View All Posts →
+      url: /news/
+
+footer:
+  year_start: 2018
+  text: "Copyright The Whitestone Foundation dba Whitestone Publications. All Rights Reserved."
+  info: "A WHITESTONE FOUNDATION PUBLICATION"
+  url: "https://thewhitestonefoundation.org/"
+  publications:
+    - title: "JCRT"
+      url: "https://jcrt.org"
+    - title: "The New Polis Journal"
+      url: "https://journal.thenewpolis.com"
+    - title: "The New Polis"
+      url: "https://thenewpolis.com"
+    - title: "Esthesis"
+      url: "https://esthesis.org"
+  manager:
+    name: "Adam DJ Brett"
+    url: "https://adamdjbrett.com"
+  built_with:
+    label: "built with"
+    url: "https://11ty.dev"

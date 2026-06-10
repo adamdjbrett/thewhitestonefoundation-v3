@@ -1,0 +1,29 @@
+{% import "partials/icon.njk" as icons %}
+<section id="programs" class="py-32 md:py-44">
+  <div class="max-w-7xl mx-auto px-6 md:px-12 lg:px-16">
+    <div class="grid md:grid-cols-12 gap-8 mb-16 md:mb-24">
+      <div class="md:col-span-6 reveal">
+        <p class="text-earth font-body font-semibold text-sm tracking-[0.3em] uppercase mb-4">Programs & Initiatives</p>
+        <h2 class="font-heading text-4xl md:text-5xl lg:text-6xl font-bold text-ink leading-[1.05] tracking-tight">
+          Building <span class="block italic font-light text-olive">Knowledge</span>
+        </h2>
+      </div>
+      <div class="md:col-span-6 md:pt-12 flex items-end reveal">
+        <p class="text-ink/70 font-body text-lg leading-[1.8] max-w-lg">From scholarly journals to global symposia, our programs create spaces where critical thought flourishes and intellectual boundaries expand.</p>
+      </div>
+    </div>
+    <div class="grid md:grid-cols-2 gap-6 md:gap-8">
+      {% for program in home.programs %}
+        <div class="group relative p-8 md:p-10 border border-olive/20 hover:border-earth/40 transition-all duration-500 reveal">
+          <div class="corner corner-tl"></div>
+          <div class="corner corner-br"></div>
+          <div class="w-12 h-12 flex items-center justify-center bg-olive/10 group-hover:bg-earth/10 transition-colors mb-6">
+            {{ icons.icon(program.icon, "text-olive group-hover:text-earth transition-colors") }}
+          </div>
+          <h3 class="font-heading text-xl md:text-2xl font-semibold text-ink mb-4 leading-tight">{{ program.title }}</h3>
+          <p class="text-ink/60 font-body text-base leading-[1.7]">{{ program.description }}</p>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,12 @@
+<div class="grid-list">
+  {% for p in postslist %}
+    <article class="content-card">
+      <a href="{{ p.url }}">
+        <img src="{{ p.data.image or metadata.image }}" alt="{{ p.data.title }}" loading="lazy">
+        <p class="eyebrow">{% if p.data.categories and p.data.categories.length %}{{ p.data.categories[0] }}{% else %}News{% endif %}{% if p.date %} · {{ p.date | readableDate }}{% endif %}</p>
+        <h2>{{ p.data.title }}</h2>
+        <p>{{ p.data.description or p.content | stripHtml | truncate(150) }}</p>
+      </a>
+    </article>
+  {% endfor %}
+</div>

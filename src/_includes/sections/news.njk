@@ -1,0 +1,35 @@
+<section id="news" class="py-32 md:py-44 border-t border-olive/10">
+  <div class="max-w-7xl mx-auto px-6 md:px-12 lg:px-16">
+    <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-16 md:mb-24 reveal">
+      <div>
+        <p class="text-earth font-body font-semibold text-sm tracking-[0.3em] uppercase mb-4">Latest News</p>
+        <h2 class="font-heading text-4xl md:text-5xl lg:text-6xl font-bold text-ink leading-[1.05] tracking-tight">
+          Recent <span class="block italic font-light text-olive">Insights</span>
+        </h2>
+      </div>
+      <a href="/news/" class="inline-flex items-center gap-2 text-earth font-body text-sm font-semibold tracking-wide uppercase hover:gap-3 transition-all">View All Posts <span aria-hidden="true">→</span></a>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-12 md:gap-16">
+      {% set latestPosts = collections.posts | reverse %}
+      {% for item in latestPosts %}
+        {% if loop.index <= 2 %}
+        <article class="group reveal">
+          <a href="{{ item.url }}">
+            <div class="aspect-[16/9] overflow-hidden mb-6">
+              <img src="{% if loop.index0 == 0 %}{{ home.symposiumImage }}{% else %}{{ home.campusImage }}{% endif %}" alt="{{ item.data.title }}" class="w-full h-full object-cover transition-all duration-700 group-hover:scale-105 group-hover:saturate-0 group-hover:contrast-125" loading="lazy">
+            </div>
+            <div class="flex items-center gap-3 mb-3">
+              <span class="px-3 py-1 text-xs font-body font-semibold tracking-wide uppercase bg-olive/10 text-olive">{% if item.data.categories and item.data.categories.length %}{{ item.data.categories[0] }}{% else %}News{% endif %}</span>
+              <span class="text-ink/40 text-sm font-body">{{ item.date | readableDate }}</span>
+            </div>
+            <h3 class="font-heading text-2xl md:text-3xl font-semibold text-ink leading-tight group-hover:text-earth transition-colors mb-3">{{ item.data.title }}</h3>
+            <p class="text-ink/60 font-body text-base leading-[1.7] mb-4">{{ item.data.description or item.content | stripHtml | truncate(170) }}</p>
+            <span class="inline-flex items-center gap-2 text-earth font-body text-sm font-semibold tracking-wide uppercase group-hover:gap-3 transition-all">Read More <span aria-hidden="true">→</span></span>
+          </a>
+        </article>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
