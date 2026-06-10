@@ -5,14 +5,14 @@
   "type": "module",
   "scripts": {
     "clean": "rimraf dist",
-    "dev": "NODE_OPTIONS=--preserve-symlinks eleventy --serve",
-    "build": "NODE_OPTIONS=--preserve-symlinks ELEVENTY_ENV=production eleventy"
+    "dev": "eleventy --serve",
+    "build": "ELEVENTY_ENV=production eleventy"
   },
   "dependencies": {
     "@11ty/eleventy": "3.1.6",
     "@11ty/eleventy-img": "^6.0.4",
     "@11ty/eleventy-utils": "^2.0.7",
-    "@apleasantview/eleventy-plugin-baseline": "file:../eleventy-plugin-baseline/_baseline",
+    "@apleasantview/eleventy-plugin-baseline": "file:vendor/apleasantview-eleventy-plugin-baseline-0.1.0-next.42.tgz",
     "@jdevalk/seo-graph-core": "^0.6.2",
     "@rviscomi/capo.js": "^2.1.0",
     "autoprefixer": "^10.4.20",
