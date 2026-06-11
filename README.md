@@ -1,6 +1,6 @@
 # The Whitestone Foundation v3
 
-Eleventy 3 site built with the published `@apleasantview/eleventy-plugin-baseline` package. It ports the green Whitestone design to static Eleventy templates and imports content from `thewhitestonefoundation.org`.
+Eleventy 3 site for The Whitestone Foundation. The build uses plain Eleventy, local Nunjucks templates, and authored static CSS/JS assets.
 
 ## Commands
 

@@ -1,21 +1,21 @@
-<nav class="site-nav fixed top-0 left-0 right-0 z-50 transition-all duration-500 bg-transparent" data-site-nav>
-  <div class="max-w-7xl mx-auto px-6 md:px-12 lg:px-16">
-    <div class="flex items-center justify-between h-20">
-      <a href="/" class="flex items-center gap-3">
-        <span class="w-8 h-8 bg-earth rotate-45 flex items-center justify-center">
-          <span class="text-canvas font-heading font-bold text-xs -rotate-45">W</span>
+<nav class="site-nav" data-site-nav>
+  <div class="site-container">
+    <div class="nav-row">
+      <a href="/" class="brand-mark">
+        <span class="brand-diamond">
+          <span>W</span>
         </span>
-        <span class="font-heading font-semibold text-lg text-ink tracking-tight">Whitestone</span>
+        <span class="brand-name">Whitestone</span>
       </a>
 
-      <div class="hidden md:flex items-center gap-10">
+      <div class="desktop-nav">
         {% for link in home.nav %}
-          <a href="{{ link.href }}" class="text-sm font-body font-medium text-ink/70 hover:text-earth transition-colors tracking-wide uppercase">{{ link.label }}</a>
+          <a href="{{ link.href }}">{{ link.label }}</a>
         {% endfor %}
-        <a href="#support" class="px-6 py-2.5 bg-earth text-canvas text-sm font-semibold tracking-wide uppercase hover:bg-earth/90 transition-all">Support</a>
+        <a href="#support" class="button button--small">Support</a>
       </div>
 
-      <button class="md:hidden text-ink nav-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav" data-nav-toggle>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav" data-nav-toggle>
         <span class="nav-toggle__open">Menu</span>
         <span class="nav-toggle__close" hidden>Close</span>
       </button>
@@ -23,11 +23,11 @@
   </div>
 </nav>
 
-<div id="mobile-nav" class="mobile-nav fixed inset-0 z-40 bg-canvas pt-24 px-8 hidden" data-mobile-nav>
-  <div class="flex flex-col gap-6">
+<div id="mobile-nav" class="mobile-nav" data-mobile-nav>
+  <div class="mobile-nav__inner">
     {% for link in home.nav %}
-      <a href="{{ link.href }}" class="text-left font-heading text-3xl text-ink hover:text-earth transition-colors">{{ link.label }}</a>
+      <a href="{{ link.href }}">{{ link.label }}</a>
     {% endfor %}
-    <a href="#support" class="mt-4 px-8 py-4 bg-earth text-canvas font-heading text-xl text-center">Support Our Mission</a>
+    <a href="#support" class="button">Support Our Mission</a>
   </div>
 </div>

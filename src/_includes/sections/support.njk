@@ -1,45 +1,45 @@
 {% import "partials/icon.njk" as icons %}
-<section id="support" class="py-32 md:py-44">
-  <div class="max-w-7xl mx-auto px-6 md:px-12 lg:px-16">
-    <div class="text-center mb-16 md:mb-24 reveal">
-      <p class="text-earth font-body font-semibold text-sm tracking-[0.3em] uppercase mb-4">Support Our Work</p>
-      <h2 class="font-heading text-4xl md:text-5xl lg:text-6xl font-bold text-ink leading-[1.05] tracking-tight max-w-3xl mx-auto">
-        Invest in the <span class="italic font-light text-olive"> Future of Ideas</span>
+<section id="support" class="section section--light">
+  <div class="site-container">
+    <div class="section-heading section-heading--center reveal">
+      <p class="eyebrow">Support Our Work</p>
+      <h2>
+        Invest in the <span> Future of Ideas</span>
       </h2>
-      <p class="mt-6 text-ink/60 font-body text-lg max-w-2xl mx-auto leading-[1.7]">Your contribution sustains open access scholarship and public intellectual discourse for a global community of thinkers.</p>
+      <p>Your contribution sustains open access scholarship and public intellectual discourse for a global community of thinkers.</p>
     </div>
 
-    <div class="max-w-3xl mx-auto">
+    <div class="support-panel">
       <div class="reveal">
-        <p class="font-body text-sm text-ink/50 tracking-[0.2em] uppercase mb-6">Step 1 - Choose your impact</p>
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-3" data-choice-group>
+        <p class="choice-label">Step 1 - Choose your impact</p>
+        <div class="choice-grid choice-grid--areas" data-choice-group>
           {% for area in home.impactAreas %}
-            <button type="button" class="choice-button p-4 md:p-5 border text-center transition-all duration-300 {% if loop.last %}is-active{% endif %}" data-choice>
-              {{ icons.icon(area.icon, "mx-auto mb-3") }}
-              <span class="font-body text-xs font-semibold tracking-wide uppercase">{{ area.label }}</span>
+            <button type="button" class="choice-button {% if loop.last %}is-active{% endif %}" data-choice>
+              {{ icons.icon(area.icon) }}
+              <span>{{ area.label }}</span>
             </button>
           {% endfor %}
         </div>
       </div>
 
-      <div class="mt-12 reveal">
-        <p class="font-body text-sm text-ink/50 tracking-[0.2em] uppercase mb-6">Step 2 - Select your contribution</p>
-        <div class="grid grid-cols-2 md:grid-cols-5 gap-3" data-choice-group>
+      <div class="choice-step reveal">
+        <p class="choice-label">Step 2 - Select your contribution</p>
+        <div class="choice-grid choice-grid--tiers" data-choice-group>
           {% for tier in home.tiers %}
-            <button type="button" class="choice-button tier-button relative p-5 border text-center transition-all duration-500 overflow-hidden" data-choice>
-              <span class="block font-heading text-2xl font-bold">${{ tier.amount }}</span>
-              <span class="block mt-1 text-xs font-body leading-snug">{{ tier.impact }}</span>
+            <button type="button" class="choice-button tier-button" data-choice>
+              <strong>${{ tier.amount }}</strong>
+              <span>{{ tier.impact }}</span>
             </button>
           {% endfor %}
         </div>
       </div>
 
-      <div class="mt-12 text-center reveal">
-        <a href="mailto:whitestone.pubs@gmail.com?subject=Whitestone%20Foundation%20Contribution" class="px-12 py-4 bg-earth text-canvas font-heading text-lg font-semibold tracking-wide hover:bg-earth/90 transition-all inline-flex items-center gap-3">
-          {{ icons.icon("heart", "w-5 h-5") }}
+      <div class="support-action reveal">
+        <a href="mailto:whitestone.pubs@gmail.com?subject=Whitestone%20Foundation%20Contribution" class="button">
+          {{ icons.icon("heart") }}
           Make Your Contribution
         </a>
-        <p class="mt-4 text-ink/40 font-body text-sm">The Whitestone Foundation is a 501(c)(3). Your donation may be tax-deductible.</p>
+        <p>The Whitestone Foundation is a 501(c)(3). Your donation may be tax-deductible.</p>
       </div>
     </div>
   </div>

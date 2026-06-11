@@ -1,27 +1,27 @@
-<section id="publications" class="relative py-32 md:py-44 bg-ink">
-  <div class="absolute top-0 left-0 right-0 h-24 bg-canvas diagonal-top"></div>
-  <div class="max-w-7xl mx-auto px-6 md:px-12 lg:px-16">
-    <div class="mb-16 md:mb-24 reveal">
-      <p class="text-tiger font-body font-semibold text-sm tracking-[0.3em] uppercase mb-4">Publications</p>
-      <h2 class="font-heading text-4xl md:text-5xl lg:text-6xl font-bold text-canvas leading-[1.05] tracking-tight max-w-2xl">
-        Open Access <span class="block italic font-light text-tiger/80">Scholarship</span>
+<section id="publications" class="section section--dark section--angled">
+  <div class="diagonal-top"></div>
+  <div class="site-container">
+    <div class="section-heading reveal">
+      <p class="eyebrow eyebrow--light">Publications</p>
+      <h2>
+        Open Access <span>Scholarship</span>
       </h2>
     </div>
-    <div class="grid md:grid-cols-3 gap-6 md:gap-8">
+    <div class="publication-grid">
       {% for pub in home.publications %}
-        <a href="{{ pub.url }}" class="group block relative overflow-hidden reveal">
-          <div class="aspect-[4/3] overflow-hidden">
-            <img src="{{ pub.image }}" alt="{{ pub.title }}" class="w-full h-full object-cover transition-all duration-700 group-hover:scale-105 group-hover:saturate-0 group-hover:contrast-125">
-            <div class="absolute inset-0 bg-gradient-to-t from-ink/80 via-ink/20 to-transparent"></div>
+        <a href="{{ pub.url }}" class="publication-card reveal">
+          <div class="publication-card__image">
+            <img src="{{ pub.image }}" alt="{{ pub.title }}">
+            <div></div>
           </div>
-          <div class="absolute bottom-0 left-0 right-0 p-6 md:p-8">
-            <p class="text-tiger font-body font-semibold text-xs tracking-[0.2em] uppercase mb-2">{{ pub.abbr }}</p>
-            <h3 class="font-heading text-xl md:text-2xl font-semibold text-canvas leading-tight">{{ pub.title }}</h3>
-            <p class="mt-3 text-canvas/60 font-body text-sm leading-relaxed line-clamp-2">{{ pub.description }}</p>
+          <div class="publication-card__body">
+            <p>{{ pub.abbr }}</p>
+            <h3>{{ pub.title }}</h3>
+            <span>{{ pub.description }}</span>
           </div>
         </a>
       {% endfor %}
     </div>
   </div>
-  <div class="absolute bottom-0 left-0 right-0 h-24 bg-canvas diagonal-bottom"></div>
+  <div class="diagonal-bottom"></div>
 </section>

@@ -1,4 +1,3 @@
-import baseline, { config as baselineConfig } from '@apleasantview/eleventy-plugin-baseline';
 import markdownIt from 'markdown-it';
 import settings from './src/_data/settings.js';
 
@@ -19,22 +18,12 @@ const stripHtml = (value) =>
     .trim();
 
 export default async function (eleventyConfig) {
-  eleventyConfig.ignores.add('src/static/**');
+  eleventyConfig.setLibrary('md', md);
+  eleventyConfig.addPassthroughCopy({ 'src/static': '/' });
 
-  await eleventyConfig.addPlugin(
-    baseline(settings, {
-      verbose: true,
-      sitemap: true,
-      navigator: false,
-      head: {
-        titleSeparator: ' | ',
-        showGenerator: true
-      },
-      assets: {
-        esbuild: {}
-      }
-    })
-  );
+  eleventyConfig.addPreprocessor('drafts', '*', (data) => {
+    if (data.draft && process.env.ELEVENTY_RUN_MODE === 'build') return false;
+  });
 
   eleventyConfig.addCollection('posts', (collectionApi) =>
     collectionApi
@@ -91,6 +80,21 @@ export default async function (eleventyConfig) {
     posts.forEach((post) => (post.data?.categories || []).forEach((category) => categories.add(category)));
     return [...categories].sort();
   });
+  eleventyConfig.addFilter('headTitle', (data = {}) => {
+    const siteTitle = data.metadata?.title || data.settings?.title || settings.title;
+    const pageTitle = data.title || data.settings?.tagline || settings.tagline;
+    return pageTitle === siteTitle ? siteTitle : `${pageTitle} | ${siteTitle}`;
+  });
+  eleventyConfig.addFilter('headDescription', (data = {}) =>
+    data.description || data.metadata?.description || data.settings?.tagline || settings.tagline || ''
+  );
+  eleventyConfig.addFilter('headImage', (data = {}) =>
+    data.image || data.metadata?.image || data.settings?.seo?.ogImage?.url || '/images/whitestone-logo.png'
+  );
+  eleventyConfig.addFilter('canonicalUrl', (data = {}) => {
+    const base = data.metadata?.url || data.settings?.url || settings.url;
+    return new URL(data.page?.url || '/', base).toString();
+  });
 
   eleventyConfig.addShortcode('year', () => new Date().getFullYear());
   eleventyConfig.addPairedShortcode('logoContainer', (content) => `<div class="logo-container">${content}</div>`);
@@ -98,6 +102,16 @@ export default async function (eleventyConfig) {
     'logoItem',
     (url, image, alt) => `<a class="logo-item" href="${url}"><img src="${image}" alt="${alt}" loading="lazy"></a>`
   );
-}
 
-export const config = baselineConfig;
+  return {
+    dir: {
+      input: 'src',
+      output: 'dist',
+      data: '_data',
+      includes: '_includes'
+    },
+    htmlTemplateEngine: 'njk',
+    markdownTemplateEngine: 'njk',
+    templateFormats: ['html', 'njk', 'md', 'txt', 'xml', 'xsl']
+  };
+}

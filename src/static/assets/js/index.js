@@ -16,7 +16,7 @@ if (toggle && mobileNav) {
 
   const setOpen = (isOpen) => {
     toggle.setAttribute('aria-expanded', String(isOpen));
-    mobileNav.classList.toggle('hidden', !isOpen);
+    mobileNav.classList.toggle('is-open', isOpen);
     if (openLabel && closeLabel) {
       openLabel.hidden = isOpen;
       closeLabel.hidden = !isOpen;

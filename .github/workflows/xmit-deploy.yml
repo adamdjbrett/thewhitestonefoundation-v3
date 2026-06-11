@@ -44,10 +44,11 @@ jobs:
 
       - name: Verify build output
         run: |
-          if [ ! -d dist ]; then
-            echo "dist directory missing after build" >&2
-            exit 1
-          fi
+          test -f dist/index.html
+          test -f dist/sitemap.xml
+          test -f dist/assets/css/index.css
+          test -f dist/assets/js/index.js
+          test -f dist/_redirects
           ls -1 dist | head -n 20
 
       - name: Upload build artifact
