@@ -4,9 +4,9 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "clean": "node -e \"require('node:fs').rmSync('dist',{recursive:true,force:true})\"",
     "dev": "eleventy --serve",
-    "build": "ELEVENTY_ENV=production eleventy"
+    "build": "ELEVENTY_ENV=production eleventy",
+    "start": "eleventy --serve"
   },
   "dependencies": {
     "@11ty/eleventy": "3.1.6",
