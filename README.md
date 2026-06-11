@@ -1,6 +1,6 @@
 # The Whitestone Foundation v3
 
-Eleventy 3 site built with the local `eleventy-plugin-baseline` package. It ports the green Whitestone design to static Eleventy templates and imports content from `thewhitestonefoundation.org`.
+Eleventy 3 site built with the published `@apleasantview/eleventy-plugin-baseline` package. It ports the green Whitestone design to static Eleventy templates and imports content from `thewhitestonefoundation.org`.
 
 ## Commands
 
@@ -8,4 +8,10 @@ Eleventy 3 site built with the local `eleventy-plugin-baseline` package. It port
 npm install
 npm run dev
 npm run build
+```
+
+You can also run Eleventy directly:
+
+```bash
+npx @11ty/eleventy --serve
 ```
