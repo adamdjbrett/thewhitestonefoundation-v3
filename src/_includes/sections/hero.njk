@@ -1,24 +1,27 @@
 <section class="hero-section">
   <div class="hero-media">
-    <div class="hero-image hero-clip" style="background-image: url('{{ home.heroImage }}')"></div>
+    <div
+      class="hero-image hero-clip"
+      style="background-image: url('{{ hero.image }}')"
+    ></div>
     <div class="hero-clip hero-overlay"></div>
   </div>
 
   <div class="site-container hero-content reveal is-visible">
     <div class="hero-grid">
       <div>
-        <p class="eyebrow eyebrow--light">The Whitestone Foundation</p>
-        <h1>Solid<br>Ground</h1>
+        <p class="eyebrow eyebrow--light">{{ hero.info }}</p>
+        <h1>{{ hero.title | md | safe }}</h1>
       </div>
       <div class="hero-copy">
-        <h2>For Fluid<br>Change</h2>
-        <p>
-          Fostering critical thought for the public interest through independent research, peer-reviewed journals, and a global network of scholars.
-        </p>
+        <h2>{{ hero.sub_title }}</h2>
+        <div>
+          {{ hero.text | md | safe }}
+        </div>
       </div>
     </div>
-    <a href="#mission" class="scroll-link">
-      <span>Explore</span>
+    <a href="{{ hero.button.url }}" class="scroll-link">
+      <span>{{ hero.button.text }}</span>
       <span class="scroll-arrow" aria-hidden="true">↓</span>
     </a>
   </div>

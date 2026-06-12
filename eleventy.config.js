@@ -1,6 +1,6 @@
 import markdownIt from 'markdown-it';
 import settings from './src/_data/settings.js';
-
+import yaml from 'js-yaml';
 const md = markdownIt({ html: true, breaks: true, linkify: true, typographer: true });
 
 const slugify = (value) =>
@@ -37,7 +37,7 @@ export default async function (eleventyConfig) {
       .filter((post) => (post.data?.categories || []).includes('higher-ed'))
       .sort((a, b) => (a.date || 0) - (b.date || 0))
   );
-
+  eleventyConfig.addDataExtension('yml,yaml', (contents) => yaml.load(contents));
   eleventyConfig.addFilter('slugify', slugify);
   eleventyConfig.addFilter('md', (value) => md.render(String(value || '')));
   eleventyConfig.addFilter('markdownify', (value) => md.render(String(value || '')));
