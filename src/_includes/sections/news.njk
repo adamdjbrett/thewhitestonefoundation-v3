@@ -2,12 +2,12 @@
   <div class="site-container">
     <div class="section-heading-row reveal">
       <div>
-        <p class="eyebrow">Latest News</p>
+        <p class="eyebrow">{{ newsSection.eyebrow }}</p>
         <h2>
-          Recent <span>Insights</span>
+          {{ newsSection.title }} <span>{{ newsSection.titleSpan }}</span>
         </h2>
       </div>
-      <a href="/news/" class="text-link">View All Posts <span aria-hidden="true">→</span></a>
+      <a href="/news/" class="text-link">{{ newsSection.buttonText }} <span aria-hidden="true">→</span></a>
     </div>
 
     <div class="news-grid">
@@ -17,7 +17,7 @@
         <article class="news-card reveal">
           <a href="{{ item.url }}">
             <div class="news-card__image">
-              <img src="{% if loop.index0 == 0 %}{{ home.symposiumImage }}{% else %}{{ home.campusImage }}{% endif %}" alt="{{ item.data.title }}" loading="lazy">
+              <img src="{% if loop.index0 == 0 %}{{ images.symposium }}{% else %}{{ images.campus }}{% endif %}" alt="{{ item.data.title }}" loading="lazy">
             </div>
             <div class="post-meta">
               <span>{% if item.data.categories and item.data.categories.length %}{{ item.data.categories[0] }}{% else %}News{% endif %}</span>

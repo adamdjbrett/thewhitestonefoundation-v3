@@ -5,24 +5,24 @@
       <div class="reveal">
         <div class="about-frame">
           <div class="about-image-clip">
-            <img src="{{ home.scholarsImage }}" alt="Foundation scholars in discussion">
+            <img src="{{ images.scholars }}" alt="Foundation scholars in discussion">
           </div>
           <div class="about-frame__border"></div>
         </div>
       </div>
       <div class="about-copy reveal">
-        <p class="eyebrow eyebrow--light">About the Foundation</p>
+        <p class="eyebrow eyebrow--light">{{ aboutSection.eyebrow }}</p>
         <h2>
-          A Cornerstone for <span>Critical Thought</span>
+          {{ aboutSection.title }} <span>{{ aboutSection.titleSpan }}</span>
         </h2>
         <div class="section-copy section-copy--light">
-          <p>The Whitestone Foundation stands as a cornerstone for intellectual engagement, bridging the gap between academic rigor and public discourse. Our work spans continents and disciplines, uniting scholars in the shared pursuit of understanding.</p>
-          <p>We are engaged collaboratively with colleges, universities, collaborative research centers, and organizations around the world. Our commitment to open access ensures that knowledge remains a public good: free, accessible, and transformative.</p>
+          <p>{{ aboutSection.paragraph1 }}</p>
+          <p>{{ aboutSection.paragraph2 }}</p>
         </div>
         <div class="about-badges">
-          <div><p>501(c)(3)</p><span>Non-Profit</span></div>
-          <div><p>Colorado</p><span>Registered</span></div>
-          <div><p>Open</p><span>Copyright Policy</span></div>
+          {% for badge in aboutSection.badges %}
+          <div><p>{{ badge.number }}</p><span>{{ badge.label }}</span></div>
+          {% endfor %}
         </div>
       </div>
     </div>

@@ -65,6 +65,174 @@ collections:
               { label: "Footer Text", name: "text", widget: "string" }
             ]}
 
+  - name: "homes"
+    label: "Home Page"
+    files:
+      - file: "src/index.md"
+        label: "Home Page Article"
+        name: "home"
+        fields:
+          - { label: "Layout", name: "layout", widget: "hidden", default: "home.njk" }
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Description", name: "description", widget: "text" }
+          - { label: "Permalink", name: "permalink", widget: "hidden", default: "/" }
+
+          - label: "Hero Section"
+            name: "hero"
+            widget: "object"
+            fields:
+              - { label: "Image", name: "image", widget: "image" }
+              - { label: "Info", name: "info", widget: "string" }
+              - { label: "Title", name: "title", widget: "text", default: "Solid\nGround" }
+              - { label: "Sub Title", name: "sub_title", widget: "string" }
+              - { label: "Text", name: "text", widget: "text" }
+              - label: "Button"
+                name: "button"
+                widget: "object"
+                fields:
+                  - { label: "Text", name: "text", widget: "string", default: "Explore" }
+                  - { label: "URL", name: "url", widget: "string", default: "#mission" }
+
+          - label: "Mission Section"
+            name: "mission"
+            widget: "object"
+            fields:
+              - { label: "Image", name: "image", widget: "image" }
+              - { label: "Info", name: "info", widget: "string" }
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Sub Title", name: "sub_title", widget: "string" }
+              - { label: "Intro", name: "intro", widget: "text" }
+              - { label: "Text", name: "text", widget: "markdown" }
+              - label: "Stats"
+                name: "stats"
+                widget: "list"
+                summary: "{{fields.title}} - {{fields.info}}"
+                fields:
+                  - { label: "Title", name: "title", widget: "string" }
+                  - { label: "Info", name: "info", widget: "string" }
+
+          - label: "Global Images"
+            name: "images"
+            widget: "object"
+            fields:
+              - { label: "Hero Image", name: "hero", widget: "image" }
+              - { label: "Stone Image", name: "stone", widget: "image" }
+              - { label: "Journal Image", name: "journal", widget: "image" }
+              - { label: "Scholars Image", name: "scholars", widget: "image" }
+              - { label: "Campus Image", name: "campus", widget: "image" }
+              - { label: "Symposium Image", name: "symposium", widget: "image" }
+
+          - label: "Navigation"
+            name: "nav"
+            widget: "list"
+            summary: "{{fields.label}}"
+            fields:
+              - { label: "Label", name: "label", widget: "string" }
+              - { label: "Href", name: "href", widget: "string" }
+
+          - label: "Publications Section"
+            name: "publicationsSection"
+            widget: "object"
+            fields:
+              - { label: "Eyebrow", name: "eyebrow", widget: "string", default: "Publications" }
+              - { label: "Title", name: "title", widget: "string", default: "Open Access" }
+              - { label: "Title Span", name: "titleSpan", widget: "string", default: "Scholarship" }
+              - { label: "Description", name: "description", widget: "text", required: false }
+
+          - label: "Publications List"
+            name: "publications"
+            widget: "list"
+            summary: "{{fields.title}}"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Abbreviation", name: "abbr", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
+              - { label: "URL", name: "url", widget: "string" }
+              - { label: "Image", name: "image", widget: "image" }
+
+          - label: "Programs Section"
+            name: "programsSection"
+            widget: "object"
+            fields:
+              - { label: "Eyebrow", name: "eyebrow", widget: "string" }
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Title Span", name: "titleSpan", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
+
+          - label: "Programs List"
+            name: "programs"
+            widget: "list"
+            summary: "{{fields.title}}"
+            fields:
+              - { label: "Icon", name: "icon", widget: "string" }
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
+
+          - label: "Team Section"
+            name: "teamSection"
+            widget: "object"
+            fields:
+              - { label: "Eyebrow", name: "eyebrow", widget: "string" }
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Title Span", name: "titleSpan", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
+
+          - label: "News Section"
+            name: "newsSection"
+            widget: "object"
+            fields:
+              - { label: "Eyebrow", name: "eyebrow", widget: "string" }
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Title Span", name: "titleSpan", widget: "string" }
+              - { label: "Button Text", name: "buttonText", widget: "string" }
+
+          - label: "About Section"
+            name: "aboutSection"
+            widget: "object"
+            fields:
+              - { label: "Eyebrow", name: "eyebrow", widget: "string" }
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Title Span", name: "titleSpan", widget: "string" }
+              - { label: "Paragraph 1", name: "paragraph1", widget: "text" }
+              - { label: "Paragraph 2", name: "paragraph2", widget: "text" }
+              - label: "Badges"
+                name: "badges"
+                widget: "list"
+                summary: "{{fields.number}} - {{fields.label}}"
+                fields:
+                  - { label: "Number", name: "number", widget: "string" }
+                  - { label: "Label", name: "label", widget: "string" }
+
+          - label: "Support Section"
+            name: "supportSection"
+            widget: "object"
+            fields:
+              - { label: "Eyebrow", name: "eyebrow", widget: "string" }
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Title Span", name: "titleSpan", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
+              - { label: "Step 1", name: "step1", widget: "string" }
+              - { label: "Step 2", name: "step2", widget: "string" }
+              - { label: "Button Text", name: "buttonText", widget: "string" }
+              - { label: "Footnote", name: "footnote", widget: "text" }
+
+          - label: "Impact Areas"
+            name: "impactAreas"
+            widget: "list"
+            summary: "{{fields.label}}"
+            fields:
+              - { label: "Icon", name: "icon", widget: "string" }
+              - { label: "Label", name: "label", widget: "string" }
+              - { label: "Description", name: "description", widget: "string" }
+
+          - label: "Donation Tiers"
+            name: "tiers"
+            widget: "list"
+            summary: "${{fields.amount}} - {{fields.impact}}"
+            fields:
+              - { label: "Amount", name: "amount", widget: "number" }
+              - { label: "Impact", name: "impact", widget: "string" }
+
   - name: "panelists_data"
     label: "Panelists Data"
     files:

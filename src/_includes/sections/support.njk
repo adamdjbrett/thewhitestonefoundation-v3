@@ -2,18 +2,18 @@
 <section id="support" class="section section--light">
   <div class="site-container">
     <div class="section-heading section-heading--center reveal">
-      <p class="eyebrow">Support Our Work</p>
+      <p class="eyebrow">{{ supportSection.eyebrow }}</p>
       <h2>
-        Invest in the <span> Future of Ideas</span>
+        {{ supportSection.title }} <span>{{ supportSection.titleSpan }}</span>
       </h2>
-      <p>Your contribution sustains open access scholarship and public intellectual discourse for a global community of thinkers.</p>
+      <p>{{ supportSection.description }}</p>
     </div>
 
     <div class="support-panel">
       <div class="reveal">
-        <p class="choice-label">Step 1 - Choose your impact</p>
+        <p class="choice-label">{{ supportSection.step1 }}</p>
         <div class="choice-grid choice-grid--areas" data-choice-group>
-          {% for area in home.impactAreas %}
+          {% for area in impactAreas %}
             <button type="button" class="choice-button {% if loop.last %}is-active{% endif %}" data-choice>
               {{ icons.icon(area.icon) }}
               <span>{{ area.label }}</span>
@@ -23,9 +23,9 @@
       </div>
 
       <div class="choice-step reveal">
-        <p class="choice-label">Step 2 - Select your contribution</p>
+        <p class="choice-label">{{ supportSection.step2 }}</p>
         <div class="choice-grid choice-grid--tiers" data-choice-group>
-          {% for tier in home.tiers %}
+          {% for tier in tiers %}
             <button type="button" class="choice-button tier-button" data-choice>
               <strong>${{ tier.amount }}</strong>
               <span>{{ tier.impact }}</span>
@@ -37,9 +37,9 @@
       <div class="support-action reveal">
         <a href="mailto:whitestone.pubs@gmail.com?subject=Whitestone%20Foundation%20Contribution" class="button">
           {{ icons.icon("heart") }}
-          Make Your Contribution
+          {{ supportSection.buttonText }}
         </a>
-        <p>The Whitestone Foundation is a 501(c)(3). Your donation may be tax-deductible.</p>
+        <p>{{ supportSection.footnote }}</p>
       </div>
     </div>
   </div>

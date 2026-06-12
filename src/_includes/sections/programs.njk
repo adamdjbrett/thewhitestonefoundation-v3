@@ -3,17 +3,17 @@
   <div class="site-container">
     <div class="split-heading split-heading--compact">
       <div class="reveal">
-        <p class="eyebrow">Programs & Initiatives</p>
+        <p class="eyebrow">{{ programsSection.eyebrow }}</p>
         <h2>
-          Building <span>Knowledge</span>
+          {{ programsSection.title }} <span>{{ programsSection.titleSpan }}</span>
         </h2>
       </div>
       <div class="section-copy reveal">
-        <p>From scholarly journals to global symposia, our programs create spaces where critical thought flourishes and intellectual boundaries expand.</p>
+        <p>{{ programsSection.description }}</p>
       </div>
     </div>
     <div class="program-grid">
-      {% for program in home.programs %}
+      {% for program in programs %}
         <div class="program-card reveal">
           <div class="corner corner-tl"></div>
           <div class="corner corner-br"></div>

@@ -8,6 +8,7 @@
         </h2>
       </div>
       <div class="section-copy">
+        
         <p>Our team of scholars, editors, and board members bring decades of expertise in philosophy, cultural theory, and public scholarship to everything we publish.</p>
       </div>
     </div>
@@ -22,7 +23,7 @@
           <div class="corner corner-tl"></div>
           <div class="corner corner-br"></div>
           <div class="team-card__image">
-            <img src="{{ member.photo or metadata.image }}" alt="{{ member.name }}" loading="lazy">
+            <img src="{{ member.photo | default('/images/default-avatar.png') }}" alt="{{ member.name }}" loading="lazy">
             <span class="role-badge">{{ role }}</span>
           </div>
           <div class="team-card__body">
@@ -40,12 +41,11 @@
         <div><span aria-hidden="true">●</span><span>Alumni</span></div>
         <p>We are grateful to the talented individuals who contributed to Whitestone Publications and continue their scholarly journeys.</p>
       </div>
-
       <div class="people-grid">
         {% for member in team.alumni %}
           <article class="team-card reveal">
             <div class="team-card__image">
-              <img src="{{ member.photo or metadata.image }}" alt="{{ member.name }}" loading="lazy">
+              <img src="{{ member.photo | default('/images/default-avatar.png') }}" alt="{{ member.name }}" loading="lazy">
               <span class="role-badge role-badge--alumni">Alumni</span>
             </div>
             <div class="team-card__body">

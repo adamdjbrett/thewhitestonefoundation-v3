@@ -2,13 +2,13 @@
   <div class="diagonal-top"></div>
   <div class="site-container">
     <div class="section-heading reveal">
-      <p class="eyebrow eyebrow--light">Publications</p>
+      <p class="eyebrow eyebrow--light">{{ publicationsSection.eyebrow }}</p>
       <h2>
-        Open Access <span>Scholarship</span>
+        {{ publicationsSection.title }} <span>{{ publicationsSection.titleSpan }}</span>
       </h2>
     </div>
     <div class="publication-grid">
-      {% for pub in home.publications %}
+      {% for pub in publications %}
         <a href="{{ pub.url }}" class="publication-card reveal">
           <div class="publication-card__image">
             <img src="{{ pub.image }}" alt="{{ pub.title }}">

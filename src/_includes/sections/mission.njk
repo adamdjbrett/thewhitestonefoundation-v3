@@ -1,35 +1,35 @@
 <section id="mission" class="section section--light section--decorated">
   <div class="section-orb">
-    <img src="{{ home.stoneImage }}" alt="">
+    <img src="{{ mission.image }}" alt="{{mission.title}}">
   </div>
   <div class="site-container">
     <div class="split-heading">
       <div class="reveal">
-        <p class="eyebrow">Our Mission</p>
+        <p class="eyebrow">{{mission.info}}</p>
         <h2>
-          The Evolution <span>of Culture</span>
+          {{mission.title}} <span>{{mission.sub_title}}</span>
         </h2>
         <div class="rule"></div>
       </div>
       <div class="section-copy reveal">
         <p class="lead">
-          The Whitestone Foundation, dba Whitestone Publications, is a Colorado-registered 501(c)(3) non-profit corporation dedicated to fostering critical thought for the public interest.
+          {{mission.title}}
         </p>
         <p>
-          We publish peer-reviewed journals, sponsor academic webinars, and collaborate with colleges, universities, research centers, and organizations worldwide to advance the frontiers of cultural and religious scholarship.
-        </p>
-        <p>
-          Whitestone Publications does not retain copyright to its publications. It automatically grants copyright and rights to republication to all authors, so long as the original entry is cited.
+          {{mission.intro }}
+          </p>
+          <p>
+            {{mission.text | md | safe}}
         </p>
       </div>
     </div>
     <div class="stat-grid reveal">
-      {% for stat in [{number:"2", label:"Peer-Reviewed Journals"}, {number:"20+", label:"Years of Scholarship"}, {number:"Global", label:"Scholar Network"}, {number:"Open", label:"Access Publishing"}] %}
-        <div class="stat">
-          <p>{{ stat.number }}</p>
-          <span>{{ stat.label }}</span>
-        </div>
-      {% endfor %}
+{% for stat in mission.stats %}
+  <div class="stat">
+    <p>{{ stat.title }}</p>
+    <span>{{ stat.info }}</span>
+  </div>
+{% endfor %}
     </div>
   </div>
 </section>
