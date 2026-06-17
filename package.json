@@ -3,18 +3,24 @@
   "version": "1.0.0",
   "private": true,
   "type": "module",
+  "packageManager": "npm@11.9.0",
   "scripts": {
-    "clean": "rm -rf dist",
-    "dev": "eleventy --serve",
-    "build:site": "ELEVENTY_ENV=production eleventy",
-    "build:search": "npx -y pagefind --site dist --output-subdir pagefind",
+    "clean": "shx rm -rf dist",
+    "dev": "eleventy --serve --port=8080",
+    "build:site": "cross-env ELEVENTY_ENV=production eleventy",
+    "build:search": "pagefind --site dist --output-subdir pagefind",
     "build": "npm run build:site && npm run build:search",
-    "start": "eleventy --serve"
+    "deploy:xmit": "xmit",
+    "start": "npm run dev"
   },
-  "dependencies": {
+  "devDependencies": {
     "@11ty/eleventy": "3.1.6",
+    "@xmit.co/xmit": "0.5.2-0",
+    "cross-env": "^10.1.0",
     "js-yaml": "4.2.0",
-    "markdown-it": "^14.1.1"
+    "markdown-it": "14.2.0",
+    "pagefind": "^1.4.0",
+    "shx": "^0.4.0"
   },
   "engines": {
     "node": ">=20"

@@ -21,6 +21,10 @@ concurrency:
 permissions:
   contents: read
 
+env:
+  NODE_VERSION: 20
+  BUILD_DIR: dist
+
 jobs:
   build:
     name: Build site
@@ -33,7 +37,7 @@ jobs:
       - name: Set up Node
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: ${{ env.NODE_VERSION }}
           cache: npm
 
       - name: Install dependencies
@@ -44,23 +48,24 @@ jobs:
 
       - name: Verify build output
         run: |
-          test -f dist/index.html
-          test -f dist/sitemap.xml
-          test -f dist/assets/css/index.css
-          test -f dist/assets/js/index.js
-          test -f dist/pagefind/pagefind-ui.css
-          test -f dist/pagefind/pagefind-ui.js
-          test -f dist/people/index.html
-          test -f dist/team/victor-taylor/index.html
-          test -f dist/search/index.html
-          test -f dist/_redirects
-          ls -1 dist | head -n 20
+          test -f "$BUILD_DIR/index.html"
+          test -f "$BUILD_DIR/sitemap.xml"
+          test -f "$BUILD_DIR/assets/css/index.css"
+          test -f "$BUILD_DIR/assets/js/index.js"
+          test -f "$BUILD_DIR/pagefind/pagefind-ui.css"
+          test -f "$BUILD_DIR/pagefind/pagefind-ui.js"
+          test -f "$BUILD_DIR/people/index.html"
+          test -f "$BUILD_DIR/team/victor-taylor/index.html"
+          test -f "$BUILD_DIR/search/index.html"
+          test -f "$BUILD_DIR/_redirects"
+          find "$BUILD_DIR" -maxdepth 1 -mindepth 1 -print | sort | head -n 20
 
       - name: Upload build artifact
         uses: actions/upload-artifact@v4
         with:
           name: eleventy-dist
-          path: dist
+          path: ${{ env.BUILD_DIR }}
+          if-no-files-found: error
 
   deploy:
     name: Deploy to XMIT
@@ -71,11 +76,23 @@ jobs:
       XMIT_SITE: ${{ inputs.site || vars.XMIT_SITE || 'thewhitestonefoundation.xmit.dev' }}
 
     steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: npm
+
+      - name: Install deployment dependencies
+        run: npm ci
+
       - name: Download build artifact
         uses: actions/download-artifact@v4
         with:
           name: eleventy-dist
-          path: dist
+          path: ${{ env.BUILD_DIR }}
 
       - name: Deploy to XMIT (CLI)
         env:
@@ -89,8 +106,8 @@ jobs:
             echo "XMIT site/domain not provided. Set repo variable XMIT_SITE or pass the workflow_dispatch site input." >&2
             exit 1
           fi
-          echo "Deploying dist to $XMIT_SITE via XMIT CLI"
-          npx -y @xmit.co/xmit "$XMIT_SITE" dist
+          echo "Deploying $BUILD_DIR to $XMIT_SITE via XMIT CLI"
+          npm run deploy:xmit -- "$XMIT_SITE" "$BUILD_DIR"
 
       - name: Post-deploy summary
         run: |
