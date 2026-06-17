@@ -5,7 +5,7 @@ author: admin
 categories:
   - academia
 tags:
-image: /images/wp-content/uploads/2021/08/Whitestone-logo.png
+image: /images/wp-content/uploads/2021/08/whitestone-logo.png
 permalink: /academia/announcing-whitestone-thought-leader-symposia/
 ---
 
@@ -31,4 +31,4 @@ Educators and Administrators, Political and Civic Leaders,
 
 Professionals, Policy-Makers
 
-### [Read more](/events/)
+### [Read more](/news/)

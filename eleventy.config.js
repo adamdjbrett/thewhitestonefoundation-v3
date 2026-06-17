@@ -1,7 +1,13 @@
 import markdownIt from 'markdown-it';
-import settings from './src/_data/settings.js';
 import yaml from 'js-yaml';
+import { readFileSync } from 'node:fs';
+
 const md = markdownIt({ html: true, breaks: true, linkify: true, typographer: true });
+const settingsData = yaml.load(readFileSync('./src/_data/settings.yaml', 'utf8'));
+const settings = {
+  ...settingsData,
+  url: process.env.URL || settingsData.url || 'http://localhost:8080/'
+};
 
 const slugify = (value) =>
   String(value || '')
@@ -17,6 +23,17 @@ const stripHtml = (value) =>
     .replace(/\s+/g, ' ')
     .trim();
 
+const activeTeamOrder = ['Victor Taylor', 'Carl Raschke', 'Gary Bedford', 'Adam DJ Brett', 'Kev Grane'];
+const alumniOrder = ['Dianna Able', 'Alyssa Putzer', 'Olesia Stockhold'];
+const byConfiguredOrder = (order) => (a, b) => {
+  const aIndex = order.indexOf(a.data.name);
+  const bIndex = order.indexOf(b.data.name);
+  if (aIndex !== -1 || bIndex !== -1) {
+    return (aIndex === -1 ? Number.MAX_SAFE_INTEGER : aIndex) - (bIndex === -1 ? Number.MAX_SAFE_INTEGER : bIndex);
+  }
+  return String(a.data.name || '').localeCompare(String(b.data.name || ''));
+};
+
 export default async function (eleventyConfig) {
   eleventyConfig.setLibrary('md', md);
   eleventyConfig.addPassthroughCopy({ 'src/static': '/' });
@@ -30,21 +47,27 @@ export default async function (eleventyConfig) {
       .getFilteredByGlob('src/content/posts/**/*.md')
       .sort((a, b) => (a.date || 0) - (b.date || 0))
   );
-
-  eleventyConfig.addCollection('higherEd', (collectionApi) =>
-    collectionApi
-      .getFilteredByGlob('src/content/posts/**/*.md')
-      .filter((post) => (post.data?.categories || []).includes('higher-ed'))
-      .sort((a, b) => (a.date || 0) - (b.date || 0))
+  eleventyConfig.addCollection('teamActive', (collectionApi) =>
+    collectionApi.getFilteredByGlob('src/content/team/*.md').sort(byConfiguredOrder(activeTeamOrder))
   );
+  eleventyConfig.addCollection('teamAlumni', (collectionApi) =>
+    collectionApi.getFilteredByGlob('src/content/team/alumni/*.md').sort(byConfiguredOrder(alumniOrder))
+  );
+  eleventyConfig.addCollection('teamProfiles', (collectionApi) => [
+    ...collectionApi.getFilteredByGlob('src/content/team/*.md').sort(byConfiguredOrder(activeTeamOrder)),
+    ...collectionApi.getFilteredByGlob('src/content/team/alumni/*.md').sort(byConfiguredOrder(alumniOrder))
+  ]);
+
   eleventyConfig.addDataExtension('yml,yaml', (contents) => yaml.load(contents));
   eleventyConfig.addFilter('slugify', slugify);
   eleventyConfig.addFilter('md', (value) => md.render(String(value || '')));
   eleventyConfig.addFilter('markdownify', (value) => md.render(String(value || '')));
-  eleventyConfig.addFilter('stripHtml', stripHtml);
-  eleventyConfig.addFilter('firstWords', (value, count = 25) =>
-    stripHtml(value).split(/\s+/).filter(Boolean).slice(0, count).join(' ')
+  eleventyConfig.addFilter('lineBreaks', (value) =>
+    String(value || '')
+      .trim()
+      .replace(/\s*\r?\n\s*/g, '<br>')
   );
+  eleventyConfig.addFilter('stripHtml', stripHtml);
   eleventyConfig.addFilter('truncate', (value, count = 150) => {
     const text = stripHtml(value);
     return text.length > count ? `${text.slice(0, count).trim()}...` : text;
@@ -70,15 +93,6 @@ export default async function (eleventyConfig) {
     } catch {
       return path;
     }
-  });
-  eleventyConfig.addFilter('getKeys', (value) => Object.keys(value || {}));
-  eleventyConfig.addFilter('filterTagList', (tags) =>
-    (tags || []).filter((tag) => !['all', 'posts', 'higherEd', 'authors'].includes(tag))
-  );
-  eleventyConfig.addFilter('getAllCategories', (posts = []) => {
-    const categories = new Set();
-    posts.forEach((post) => (post.data?.categories || []).forEach((category) => categories.add(category)));
-    return [...categories].sort();
   });
   eleventyConfig.addFilter('headTitle', (data = {}) => {
     const siteTitle = data.metadata?.title || data.settings?.title || settings.title;

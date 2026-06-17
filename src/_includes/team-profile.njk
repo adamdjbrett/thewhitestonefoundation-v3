@@ -1,0 +1,20 @@
+{% extends "base.njk" %}
+
+{% block content %}
+<article class="page-shell team-profile">
+  <header class="team-profile__header">
+    <div class="team-profile__image">
+      <img src="{{ photo or metadata.image }}" alt="{{ name }}" loading="lazy">
+    </div>
+    <div>
+      <p class="eyebrow">{{ role }}</p>
+      <h1>{{ name }}</h1>
+      <a href="/people/" class="text-link">Back to People <span aria-hidden="true">→</span></a>
+    </div>
+  </header>
+
+  <div class="prose-green">
+    {{ description | md | safe }}
+  </div>
+</article>
+{% endblock %}

@@ -4,6 +4,7 @@ title: "People"
 description: "Meet the dedicated team and scholars behind The Whitestone Foundation and our publications."
 permalink: /people/
 ---
+{% import "partials/card.njk" as cards %}
 <section class="page-shell">
   <header class="page-header">
     <p class="eyebrow">Directory</p>
@@ -12,30 +13,22 @@ permalink: /people/
   </header>
 
   <div class="people-grid">
-    {% for member in team.active %}
-      <article class="team-card">
-        <div class="team-card__image team-card__image--square">
-          <img src="{{ member.photo or metadata.image }}" alt="{{ member.name }}" loading="lazy">
-        </div>
-        <div class="team-card__body">
-          <p class="card-meta">{{ member.role }}</p>
-          <h2>{{ member.name }}</h2>
-          <p>{{ member.description | stripHtml | truncate(200) }}</p>
-        </div>
-      </article>
+    {% for member in collections.teamActive %}
+      {{ cards.person(member, metadata, { square: true, heading: "h2" }) }}
     {% endfor %}
   </div>
 
-  {% if team.alumni %}
+  {% if collections.teamAlumni.length %}
     <div class="alumni-list">
       <h2>Alumni</h2>
       <div class="listing-grid">
-      {% for member in team.alumni %}
+      {% for member in collections.teamAlumni %}
         <article class="alumni-card">
-          <img src="{{ member.photo or metadata.image }}" alt="{{ member.name }}" loading="lazy">
+          <img src="{{ member.data.photo or metadata.image }}" alt="{{ member.data.name }}" loading="lazy">
           <div>
-            <h3>{{ member.name }}</h3>
-            <p>{{ member.description | stripHtml | truncate(120) }}</p>
+            <h3>{{ member.data.name }}</h3>
+            <p>{{ member.data.description | md | stripHtml | truncate(120) }}</p>
+            <a href="{{ member.url }}" class="text-link">View Full Profile <span aria-hidden="true">↗</span></a>
           </div>
         </article>
       {% endfor %}

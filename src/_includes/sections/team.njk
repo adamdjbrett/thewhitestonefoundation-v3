@@ -1,59 +1,39 @@
-<section id="team" class="section section--light section--border">
+{% import "partials/card.njk" as cards %}
+<section id="team" class="section section--team section--border">
   <div class="site-container">
     <div class="split-heading split-heading--compact reveal">
       <div>
-        <p class="eyebrow">Our People</p>
+        <p class="eyebrow">{{ teamSection.eyebrow }}</p>
         <h2>
-          The Minds <span>Behind the Mission</span>
+          {{ teamSection.title }} <span>{{ teamSection.titleSpan }}</span>
         </h2>
       </div>
       <div class="section-copy">
-        
-        <p>Our team of scholars, editors, and board members bring decades of expertise in philosophy, cultural theory, and public scholarship to everything we publish.</p>
+        <p>{{ teamSection.description }}</p>
       </div>
     </div>
 
     <div class="people-grid">
-      {% for member in team.active %}
+      {% for member in collections.teamActive %}
         {% set role = "Editorial" %}
-        {% if "President" in member.role or "Secretary" in member.role or "Board" in member.role %}
+        {% if "President" in member.data.role or "Secretary" in member.data.role or "Board" in member.data.role %}
           {% set role = "Leadership" %}
         {% endif %}
-        <article class="team-card reveal">
-          <div class="corner corner-tl"></div>
-          <div class="corner corner-br"></div>
-          <div class="team-card__image">
-            <img src="{{ member.photo | default('/images/default-avatar.png') }}" alt="{{ member.name }}" loading="lazy">
-            <span class="role-badge">{{ role }}</span>
-          </div>
-          <div class="team-card__body">
-            <p class="card-meta">{{ member.role }}</p>
-            <h3>{{ member.name }}</h3>
-            <p>{{ member.description | stripHtml | truncate(220) }}</p>
-            <a href="/people/" class="text-link">View Full Profile <span aria-hidden="true">↗</span></a>
-          </div>
-        </article>
+        {{ cards.person(member, metadata, { reveal: true, corners: true, badge: role, clickable: true }) }}
       {% endfor %}
     </div>
 
-    {% if team.alumni %}
-      <div class="alumni-intro reveal">
-        <div><span aria-hidden="true">●</span><span>Alumni</span></div>
-        <p>We are grateful to the talented individuals who contributed to Whitestone Publications and continue their scholarly journeys.</p>
-      </div>
-      <div class="people-grid">
-        {% for member in team.alumni %}
-          <article class="team-card reveal">
-            <div class="team-card__image">
-              <img src="{{ member.photo | default('/images/default-avatar.png') }}" alt="{{ member.name }}" loading="lazy">
-              <span class="role-badge role-badge--alumni">Alumni</span>
-            </div>
-            <div class="team-card__body">
-              <h3>{{ member.name }}</h3>
-              <p>{{ member.description | stripHtml | truncate(220) }}</p>
-            </div>
-          </article>
-        {% endfor %}
+    {% if collections.teamAlumni.length %}
+      <div class="alumni-band">
+        <div class="alumni-intro reveal">
+          <h3>Alumni</h3>
+          <p>We are grateful to the talented individuals who contributed to Whitestone Publications and continue their scholarly journeys.</p>
+        </div>
+        <div class="people-grid">
+          {% for member in collections.teamAlumni %}
+            {{ cards.person(member, metadata, { reveal: true, badge: "Alumni", alumni: true, clickable: true }) }}
+          {% endfor %}
+        </div>
       </div>
     {% endif %}
 

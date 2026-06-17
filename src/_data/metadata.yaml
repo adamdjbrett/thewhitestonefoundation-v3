@@ -29,24 +29,9 @@ sidebar:
     - label: "Mission"
       url: "/mission/"
       is_dropdown: false
-    - label: "Events"
-      url: "/events/"
-      is_dropdown: true
-      info:
-        - label: "Higher Ed"
-          url: "/higher-ed/"
-        - label: "Videos"
-          url: "/videos/"
-        - label: "Panelists"
-          url: "/panelists/"
     - label: "Search"
       url: "/search/"
-      is_dropdown: true
-      info:
-        - label: "Site Search"
-          url: "/search/"
-        - label: "Metadata Search"
-          url: "/metadata/search/"
+      is_dropdown: false
     - label: "People"
       url: "/people/"
       is_dropdown: false

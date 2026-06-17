@@ -2,6 +2,8 @@
   <div class="hero-media">
     <div
       class="hero-image hero-clip"
+      role="img"
+      aria-label="{{ hero.alt }}"
       style="background-image: url('{{ hero.image }}')"
     ></div>
     <div class="hero-clip hero-overlay"></div>
@@ -11,7 +13,7 @@
     <div class="hero-grid">
       <div>
         <p class="eyebrow eyebrow--light">{{ hero.info }}</p>
-        <h1>{{ hero.title | md | safe }}</h1>
+        <h1>{{ hero.title | lineBreaks | safe }}</h1>
       </div>
       <div class="hero-copy">
         <h2>{{ hero.sub_title }}</h2>

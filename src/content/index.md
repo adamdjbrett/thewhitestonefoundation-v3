@@ -6,7 +6,8 @@ permalink: /
 
 # Hero section
 hero:
-  image: /images/green/hero.png
+  image: /images/mehdi-benkaci-BQ2b3LmEogA-unsplash.jpg
+  alt: Photo by Mehdi Benkaci Unsplash
   info: The Whitestone Foundation
   title: |
     Solid      
@@ -41,7 +42,7 @@ mission:
 
 # Global images
 images:
-  hero: /images/green/hero.png
+  hero: /images/mehdi-benkaci-BQ2b3LmEogA-unsplash.jpg
   stone: /images/green/stone.png
   journal: /images/green/journal.png
   scholars: /images/green/scholars.png

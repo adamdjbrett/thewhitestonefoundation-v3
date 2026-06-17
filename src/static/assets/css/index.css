@@ -1,15 +1,13 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600&family=Inter:wght@300;400;500;600;700&display=swap');
-
 :root {
-  --canvas: #fefae0;
-  --ink: #283618;
-  --olive: #606c38;
-  --earth: #bc6c25;
-  --tiger: #dda15e;
-  --muted: #f6efcf;
-  --line: rgb(96 108 56 / 0.18);
-  --font-heading: 'Playfair Display', Georgia, serif;
-  --font-body: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --canvas: #caf0f8;
+  --ink: #03045e;
+  --olive: #023e8a;
+  --earth: #0077b6;
+  --tiger: #48cae4;
+  --muted: #ade8f4;
+  --line: rgb(2 62 138 / 0.18);
+  --font-heading: Charter, 'Bitstream Charter', 'Sitka Text', Cambria, serif;
+  --font-body: system-ui, sans-serif;
 }
 
 *,
@@ -27,12 +25,15 @@ body {
   background: var(--canvas);
   color: var(--ink);
   font-family: var(--font-body);
+  font-size: 18px;
+  line-height: 1.65;
   letter-spacing: 0;
 }
 
-body,
 button,
-input {
+input,
+select,
+textarea {
   font: inherit;
 }
 
@@ -95,9 +96,9 @@ button {
 }
 
 .site-nav.is-scrolled {
-  background: rgb(254 250 224 / 0.95);
+  background: rgb(202 240 248 / 0.95);
   backdrop-filter: blur(12px);
-  box-shadow: 0 1px 8px rgb(40 54 24 / 0.08);
+  box-shadow: 0 1px 8px rgb(3 4 94 / 0.08);
 }
 
 .nav-row {
@@ -147,8 +148,8 @@ button {
 }
 
 .desktop-nav a:not(.button) {
-  color: rgb(40 54 24 / 0.7);
-  font-size: 0.875rem;
+  color: rgb(3 4 94 / 0.82);
+  font-size: 0.9rem;
   font-weight: 600;
   letter-spacing: 0.05em;
   text-transform: uppercase;
@@ -208,9 +209,13 @@ button {
 .button--small {
   padding: 0.65rem 1.25rem;
   font-family: var(--font-body);
-  font-size: 0.875rem;
+  font-size: 0.9rem;
   text-transform: uppercase;
   letter-spacing: 0.06em;
+}
+
+.button--pill {
+  border-radius: 999px;
 }
 
 .button--outline {
@@ -220,8 +225,8 @@ button {
 
 .button:hover,
 .button--outline:hover {
-  background: #9f561b;
-  border-color: #9f561b;
+  background: #005f92;
+  border-color: #005f92;
   color: var(--canvas);
 }
 
@@ -255,7 +260,7 @@ button {
 }
 
 .hero-overlay {
-  background: linear-gradient(135deg, rgb(40 54 24 / 0.75), rgb(40 54 24 / 0.3) 40%, rgb(188 108 37 / 0.2));
+  background: linear-gradient(135deg, rgb(3 4 94 / 0.75), rgb(3 4 94 / 0.3) 40%, rgb(0 119 182 / 0.2));
 }
 
 .hero-content {
@@ -286,7 +291,7 @@ button {
 }
 
 .hero-section h2 {
-  color: rgb(254 250 224 / 0.82);
+  color: rgb(202 240 248 / 0.82);
   font-size: clamp(3rem, 9vw, 7rem);
   font-style: italic;
   font-weight: 400;
@@ -294,7 +299,7 @@ button {
 }
 
 .hero-copy {
-  color: rgb(254 250 224 / 0.72);
+  color: rgb(202 240 248 / 0.72);
 }
 
 .hero-copy p {
@@ -309,7 +314,7 @@ button {
   align-items: center;
   gap: 0.75rem;
   margin-block-start: 4rem;
-  color: rgb(254 250 224 / 0.65);
+  color: rgb(202 240 248 / 0.65);
   font-size: 0.875rem;
   letter-spacing: 0.18em;
   text-transform: uppercase;
@@ -334,13 +339,30 @@ button {
   padding-block: clamp(6rem, 10vw, 11rem);
 }
 
+.section--canvas,
+.section--light {
+  background: var(--canvas);
+}
+
+.section--soft {
+  background: rgb(173 232 244 / 0.42);
+}
+
+.section--team {
+  background: rgb(144 224 239 / 0.52);
+}
+
+.section--news {
+  background: rgb(232 251 255 / 0.96);
+}
+
 .section--dark {
   background: var(--ink);
   color: var(--canvas);
 }
 
 .section--border {
-  border-top: 1px solid rgb(96 108 56 / 0.1);
+  border-top: 1px solid rgb(2 62 138 / 0.1);
 }
 
 .section--angled {
@@ -450,7 +472,7 @@ button {
 }
 
 .section--dark h2 span {
-  color: rgb(221 161 94 / 0.82);
+  color: rgb(72 202 228 / 0.82);
 }
 
 .rule {
@@ -462,18 +484,18 @@ button {
 
 .section-copy {
   max-width: 46rem;
-  color: rgb(40 54 24 / 0.68);
-  font-size: 1.05rem;
+  color: rgb(3 4 94 / 0.82);
+  font-size: 1.12rem;
   line-height: 1.8;
 }
 
 .section-copy .lead {
-  color: rgb(40 54 24 / 0.82);
-  font-size: clamp(1.1rem, 2vw, 1.25rem);
+  color: rgb(3 4 94 / 0.9);
+  font-size: clamp(1.18rem, 2vw, 1.35rem);
 }
 
 .section-copy--light {
-  color: rgb(254 250 224 / 0.65);
+  color: rgb(202 240 248 / 0.84);
 }
 
 .section-copy p {
@@ -499,8 +521,8 @@ button {
 .stat span {
   display: block;
   margin-block-start: 0.5rem;
-  color: rgb(40 54 24 / 0.6);
-  font-size: 0.875rem;
+  color: rgb(3 4 94 / 0.78);
+  font-size: 0.95rem;
   text-transform: uppercase;
 }
 
@@ -508,10 +530,7 @@ button {
 .program-grid,
 .people-grid,
 .news-grid,
-.listing-grid,
-.panelist-grid,
-.video-grid,
-.author-grid {
+.listing-grid {
   display: grid;
   gap: 1.5rem;
 }
@@ -544,7 +563,7 @@ button {
 }
 
 .publication-card__image div {
-  background: linear-gradient(to top, rgb(40 54 24 / 0.82), rgb(40 54 24 / 0.2), transparent);
+  background: linear-gradient(to top, rgb(3 4 94 / 0.82), rgb(3 4 94 / 0.2), transparent);
 }
 
 .publication-card__body {
@@ -568,10 +587,6 @@ button {
 .team-card h2,
 .news-card h3,
 .article-card h2,
-.category-card h2,
-.panelist-card h2,
-.video-card h2,
-.author-card h2,
 .alumni-list h2 {
   margin: 0;
   font-family: var(--font-heading);
@@ -582,19 +597,16 @@ button {
 .publication-card__body span {
   display: block;
   margin-block-start: 0.75rem;
-  color: rgb(254 250 224 / 0.65);
+  color: rgb(202 240 248 / 0.82);
   line-height: 1.6;
 }
 
 .program-card,
 .team-card,
-.article-card,
-.category-card,
-.panelist-card,
-.video-card {
+.article-card {
   position: relative;
   border: 1px solid var(--line);
-  background: rgb(254 250 224 / 0.55);
+  background: rgb(239 251 253 / 0.82);
   transition: border-color 0.35s ease, transform 0.35s ease;
 }
 
@@ -604,11 +616,8 @@ button {
 
 .program-card:hover,
 .team-card:hover,
-.article-card:hover,
-.category-card:hover,
-.panelist-card:hover,
-.video-card:hover {
-  border-color: rgb(188 108 37 / 0.45);
+.article-card:hover {
+  border-color: rgb(0 119 182 / 0.45);
   transform: translateY(-3px);
 }
 
@@ -646,18 +655,15 @@ button {
   display: grid;
   place-items: center;
   margin-block-end: 1.5rem;
-  background: rgb(96 108 56 / 0.1);
+  background: rgb(2 62 138 / 0.1);
   color: var(--olive);
 }
 
 .program-card p,
 .team-card p,
 .article-card p,
-.news-card p,
-.panelist-card p,
-.video-card p,
-.category-card p {
-  color: rgb(40 54 24 / 0.62);
+.news-card p {
+  color: rgb(3 4 94 / 0.78);
   line-height: 1.7;
 }
 
@@ -667,10 +673,18 @@ button {
   overflow: hidden;
 }
 
+.team-card--clickable {
+  color: inherit;
+}
+
+.team-card--clickable:focus-visible {
+  outline: 3px solid var(--earth);
+  outline-offset: 4px;
+}
+
 .team-card__image,
 .article-card__image,
-.news-card__image,
-.panelist-card__image {
+.news-card__image {
   position: relative;
   overflow: hidden;
   background: var(--muted);
@@ -686,8 +700,7 @@ button {
 
 .team-card__image img,
 .article-card__image img,
-.news-card__image img,
-.panelist-card__image img {
+.news-card__image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -697,8 +710,7 @@ button {
 
 .team-card:hover img,
 .article-card:hover img,
-.news-card:hover img,
-.panelist-card:hover img {
+.news-card:hover img {
   filter: saturate(0) contrast(1.1);
   transform: scale(1.05);
 }
@@ -707,32 +719,46 @@ button {
   position: absolute;
   top: 1rem;
   left: 1rem;
-  background: rgb(188 108 37 / 0.12);
+  background: rgb(0 119 182 / 0.12);
   color: var(--earth);
   padding: 0.35rem 0.65rem;
-  font-size: 0.72rem;
+  font-size: 0.76rem;
   font-weight: 800;
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
 
 .role-badge--alumni {
-  background: rgb(221 161 94 / 0.16);
-  color: rgb(40 54 24 / 0.6);
+  background: rgb(72 202 228 / 0.16);
+  color: rgb(3 4 94 / 0.76);
 }
 
 .team-card__body,
 .article-card a,
-.panelist-card__body,
-.video-card {
+.alumni-card {
   display: flex;
   flex-direction: column;
 }
 
 .team-card__body,
-.panelist-card__body,
 .article-card a {
   padding: 1.5rem;
+}
+
+.team-card__body {
+  flex: 1;
+}
+
+.team-card__body .text-link {
+  margin-block-start: auto;
+}
+
+.team-card__excerpt {
+  min-height: 8.5em;
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 5;
 }
 
 .text-link {
@@ -740,7 +766,7 @@ button {
   align-items: center;
   gap: 0.5rem;
   color: var(--earth);
-  font-size: 0.85rem;
+  font-size: 0.9rem;
   font-weight: 800;
   letter-spacing: 0.06em;
   text-transform: uppercase;
@@ -769,21 +795,42 @@ button {
   border-top: 1px solid var(--line);
 }
 
-.alumni-intro div {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.75rem;
-  color: rgb(96 108 56 / 0.6);
-  font-size: 0.875rem;
+.alumni-band {
+  margin-block-start: clamp(4rem, 8vw, 7rem);
+  padding: clamp(2rem, 5vw, 3rem);
+  background: rgb(202 240 248 / 0.78);
+  border-top: 1px solid var(--line);
+}
+
+.alumni-band .people-grid {
+  margin-block-start: 2rem;
+}
+
+.alumni-band .alumni-intro {
+  margin-block-start: 0;
+  padding-block-start: 0;
+  border-top: 0;
+}
+
+.alumni-intro {
+  max-width: 54rem;
+}
+
+.alumni-intro h3 {
+  margin: 0 0 0.85rem;
+  color: var(--ink);
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 4vw, 3rem);
   font-weight: 800;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
+  line-height: 1.05;
 }
 
 .alumni-intro p {
   max-width: 42rem;
-  color: rgb(40 54 24 / 0.52);
+  margin: 0;
+  color: rgb(3 4 94 / 0.78);
+  font-size: 1.1rem;
+  line-height: 1.75;
 }
 
 .alumni-card {
@@ -821,7 +868,7 @@ button {
 }
 
 .post-meta span {
-  background: rgb(96 108 56 / 0.1);
+  background: rgb(2 62 138 / 0.1);
   color: var(--olive);
   padding: 0.35rem 0.65rem;
   font-size: 0.72rem;
@@ -831,7 +878,7 @@ button {
 }
 
 .post-meta time {
-  color: rgb(40 54 24 / 0.42);
+  color: rgb(3 4 94 / 0.42);
   font-size: 0.875rem;
 }
 
@@ -860,7 +907,7 @@ button {
   inset: auto -1rem -1rem auto;
   width: 100%;
   height: 100%;
-  border: 2px solid rgb(188 108 37 / 0.3);
+  border: 2px solid rgb(0 119 182 / 0.3);
   clip-path: polygon(0 5%, 90% 0, 100% 95%, 10% 100%);
   z-index: -1;
 }
@@ -873,7 +920,7 @@ button {
 }
 
 .about-badges div {
-  border: 1px solid rgb(254 250 224 / 0.15);
+  border: 1px solid rgb(202 240 248 / 0.15);
   padding: 1rem 1.5rem;
 }
 
@@ -886,7 +933,7 @@ button {
 }
 
 .about-badges span {
-  color: rgb(254 250 224 / 0.52);
+  color: rgb(202 240 248 / 0.52);
   font-size: 0.875rem;
 }
 
@@ -913,9 +960,9 @@ button {
 }
 
 .choice-button {
-  border: 1px solid rgb(96 108 56 / 0.16);
+  border: 1px solid rgb(2 62 138 / 0.16);
   background: transparent;
-  color: rgb(40 54 24 / 0.7);
+  color: rgb(3 4 94 / 0.7);
   padding: 1rem;
   text-align: center;
   transition: border-color 0.25s ease, background 0.25s ease, color 0.25s ease;
@@ -924,7 +971,7 @@ button {
 .choice-button svg {
   margin-inline: auto;
   margin-block-end: 0.75rem;
-  color: rgb(96 108 56 / 0.62);
+  color: rgb(2 62 138 / 0.62);
 }
 
 .choice-button span {
@@ -944,7 +991,7 @@ button {
 .choice-button:hover,
 .choice-button.is-active {
   border-color: var(--earth);
-  background: rgb(188 108 37 / 0.06);
+  background: rgb(0 119 182 / 0.06);
   color: var(--earth);
 }
 
@@ -954,7 +1001,7 @@ button {
 }
 
 .support-action p {
-  color: rgb(40 54 24 / 0.42);
+  color: rgb(3 4 94 / 0.42);
   font-size: 0.875rem;
 }
 
@@ -972,7 +1019,7 @@ button {
 .footer-about p,
 .footer-links a,
 .footer-bottom {
-  color: rgb(254 250 224 / 0.55);
+  color: rgb(202 240 248 / 0.55);
 }
 
 .footer-about p {
@@ -995,7 +1042,7 @@ button {
   gap: 0.75rem;
   margin-block-start: 4rem;
   padding-block-start: 2rem;
-  border-top: 1px solid rgb(254 250 224 / 0.1);
+  border-top: 1px solid rgb(202 240 248 / 0.1);
   font-size: 0.8rem;
 }
 
@@ -1028,8 +1075,8 @@ button {
 .page-header p:not(.eyebrow) {
   max-width: 58rem;
   margin: 0;
-  color: rgb(40 54 24 / 0.65);
-  font-size: 1.125rem;
+  color: rgb(3 4 94 / 0.82);
+  font-size: 1.18rem;
   line-height: 1.8;
 }
 
@@ -1043,8 +1090,8 @@ button {
 
 .prose-green {
   max-width: 72ch;
-  color: rgb(40 54 24 / 0.82);
-  font-size: 1.05rem;
+  color: rgb(3 4 94 / 0.88);
+  font-size: 1.12rem;
   line-height: 1.85;
 }
 
@@ -1079,6 +1126,39 @@ button {
   text-underline-offset: 0.25em;
 }
 
+.team-profile {
+  max-width: 72rem;
+}
+
+.team-profile .prose-green {
+  max-width: 78ch;
+}
+
+.team-profile__header {
+  display: grid;
+  gap: 2rem;
+  align-items: end;
+  margin-block-end: 3rem;
+}
+
+.team-profile__image {
+  width: min(100%, 22rem);
+  aspect-ratio: 1;
+  overflow: hidden;
+  background: var(--muted);
+}
+
+.team-profile__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+}
+
+.team-profile__header h1 {
+  margin-block: 0.4rem 1rem;
+}
+
 .grid-list {
   display: grid;
   gap: 1.5rem;
@@ -1086,15 +1166,6 @@ button {
 
 .listing-grid--compact {
   grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
-}
-
-.category-card,
-.tag-pill {
-  padding: 1.25rem;
-}
-
-.category-card h2 {
-  text-transform: capitalize;
 }
 
 .tag-cloud {
@@ -1134,138 +1205,10 @@ button {
   font-weight: 800;
 }
 
-.author-grid {
-  grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
-  justify-items: center;
-}
-
-.author-card {
-  text-align: center;
-}
-
-.author-card img {
-  width: 9.5rem;
-  height: 9.5rem;
-  border-radius: 50%;
-  object-fit: cover;
-  margin-inline: auto;
-}
-
-.author-card p {
-  color: rgb(40 54 24 / 0.55);
-  font-size: 0.75rem;
-  font-weight: 800;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-}
-
-.panelist-card__image {
-  aspect-ratio: 1;
-}
-
-.video-thumb {
-  position: relative;
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  overflow: hidden;
-  background: #000;
-  padding: 0;
-}
-
-.video-thumb img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: 0.82;
-  transition: opacity 0.35s ease, transform 0.35s ease;
-}
-
-.video-thumb:hover img {
-  opacity: 1;
-  transform: scale(1.05);
-}
-
-.play-button {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 3.75rem;
-  height: 3.75rem;
-  border-radius: 50%;
-  background: rgb(220 0 0 / 0.9);
-  transform: translate(-50%, -50%);
-}
-
-.play-button::after {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 52%;
-  border-style: solid;
-  border-width: 10px 0 10px 15px;
-  border-color: transparent transparent transparent #fff;
-  transform: translate(-50%, -50%);
-}
-
-.v-modal {
-  position: fixed;
-  inset: 0;
-  z-index: 9999;
-  display: none;
-  align-items: center;
-  justify-content: center;
-}
-
-.v-modal.is-active {
-  display: flex;
-}
-
-.v-modal-overlay {
-  position: absolute;
-  inset: 0;
-  background: rgb(0 0 0 / 0.9);
-  backdrop-filter: blur(5px);
-}
-
-.v-modal-content {
-  position: relative;
-  z-index: 10000;
-  width: min(90%, 1000px);
-  animation: vFadeIn 0.3s ease;
-}
-
-.v-modal-ratio {
-  position: relative;
-  aspect-ratio: 16 / 9;
-  background: #000;
-}
-
-.v-modal-ratio iframe {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  border: 0;
-}
-
-.v-modal-close {
-  position: absolute;
-  top: -45px;
-  right: 0;
-  background: transparent;
-  color: #fff;
-  font-size: 2.2rem;
-}
-
-@keyframes vFadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
 .search input {
   width: min(100%, 48rem);
-  border: 1px solid rgb(96 108 56 / 0.25);
-  background: rgb(254 250 224 / 0.72);
+  border: 1px solid rgb(2 62 138 / 0.25);
+  background: rgb(202 240 248 / 0.72);
   padding: 0.9rem 1rem;
 }
 
@@ -1275,21 +1218,8 @@ button {
   padding: 0.9rem 1.2rem;
 }
 
-.metasearch-form {
-  display: flex;
-  gap: 0.75rem;
-  flex-wrap: wrap;
-}
-
-.search-help,
-.metasearch-progress-meta {
-  color: rgb(40 54 24 / 0.62);
-}
-
-.metasearch-results {
-  display: grid;
-  gap: 1rem;
-  margin-block-start: 2rem;
+.search-help {
+  color: rgb(3 4 94 / 0.62);
 }
 
 .visually-hidden {
@@ -1345,8 +1275,6 @@ button {
 
   .program-grid,
   .listing-grid,
-  .panelist-grid,
-  .video-grid,
   .grid-list {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -1367,14 +1295,16 @@ button {
     flex-direction: row;
     justify-content: space-between;
   }
+
+  .team-profile__header {
+    grid-template-columns: minmax(12rem, 22rem) 1fr;
+  }
 }
 
 @media (min-width: 1024px) {
   .publication-grid,
   .people-grid,
-  .listing-grid,
-  .panelist-grid,
-  .video-grid {
+  .listing-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }

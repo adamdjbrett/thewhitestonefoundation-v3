@@ -10,6 +10,7 @@ pagination:
 eleventyComputed:
   permalink: "news/{% if pagination.pageNumber > 0 %}{{ pagination.pageNumber + 1 }}/{% endif %}index.html"
 ---
+{% import "partials/card.njk" as cards %}
 <section class="page-shell">
   <header class="page-header">
     <p class="eyebrow">News</p>
@@ -19,18 +20,7 @@ eleventyComputed:
 
   <div class="listing-grid">
     {% for p in news %}
-      <article class="article-card">
-        <a href="{{ p.url }}">
-          <div class="article-card__image">
-            <img src="{{ p.data.image or metadata.image }}" alt="{{ p.data.title }}" loading="lazy">
-          </div>
-          <p class="card-meta">
-            {{ p.data.categories[0] if p.data.categories else "General" }} • {{ p.date | readableDate }}
-          </p>
-          <h2>{{ p.data.title }}</h2>
-          <p>{{ p.data.description or p.content | stripHtml | truncate(150) }}</p>
-        </a>
-      </article>
+      {{ cards.article(p, metadata) }}
     {% else %}
       <p>No posts found.</p>
     {% endfor %}

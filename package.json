@@ -4,8 +4,11 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "clean": "rm -rf dist",
     "dev": "eleventy --serve",
-    "build": "ELEVENTY_ENV=production eleventy",
+    "build:site": "ELEVENTY_ENV=production eleventy",
+    "build:search": "npx -y pagefind --site dist --output-subdir pagefind",
+    "build": "npm run build:site && npm run build:search",
     "start": "eleventy --serve"
   },
   "dependencies": {

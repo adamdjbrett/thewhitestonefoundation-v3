@@ -8,7 +8,7 @@ tags:
   - democracy
   - higher-education
   - wokeness
-image: /images/wp-content/uploads/2021/08/Whitestone-logo.png
+image: /images/wp-content/uploads/2021/08/whitestone-logo.png
 permalink: /higher-ed/we-need-a-total-makeover-of-higher-education-and-we-need-it-now/
 ---
 
