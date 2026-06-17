@@ -13,7 +13,7 @@ npm run dev
 npm run build
 ```
 
-Use Node 20 or newer on macOS, Windows 11, or Linux. The npm scripts avoid platform-specific shell syntax so they can run from Terminal, PowerShell, Command Prompt, or a Linux shell.
+Use Node 24 LTS or newer on macOS, Windows 11, or Linux. The npm scripts avoid platform-specific shell syntax so they can run from Terminal, PowerShell, Command Prompt, or a Linux shell.
 
 `npm run build` runs Eleventy first, then generates the Pagefind search assets in `dist/pagefind` with the pinned local Pagefind package.
 
@@ -25,7 +25,7 @@ npx @11ty/eleventy --serve
 
 ## Deployment
 
-GitHub Actions builds on Ubuntu with `npm ci`, verifies the generated `dist/` output, uploads it as an artifact, and deploys that artifact to XMIT with the pinned local XMIT CLI. Set `XMIT_KEY` as a repository secret and optionally set `XMIT_SITE` as a repository variable, or pass a site override when manually running the workflow.
+GitHub Actions builds on Ubuntu with `npm ci`, verifies the generated `dist/` output, and deploys that static directory directly to XMIT with the pinned local XMIT CLI. Set `XMIT_KEY` as a repository secret and optionally set `XMIT_SITE` as a repository variable, or pass a site override when manually running the workflow.
 
 The build output is static and remains centered on `dist/`, which keeps the project portable for XMIT first, GitHub Actions now, and a later Cloudflare Pages deployment using `npm run build` with `dist` as the output directory.
 

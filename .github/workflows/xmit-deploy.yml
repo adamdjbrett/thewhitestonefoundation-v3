@@ -22,13 +22,15 @@ permissions:
   contents: read
 
 env:
-  NODE_VERSION: 20
+  NODE_VERSION: 24
   BUILD_DIR: dist
 
 jobs:
-  build:
-    name: Build site
+  build-and-deploy:
+    name: Build and deploy site
     runs-on: ubuntu-latest
+    env:
+      XMIT_SITE: ${{ inputs.site || vars.XMIT_SITE || 'thewhitestonefoundation.xmit.dev' }}
 
     steps:
       - name: Check out repository
@@ -60,41 +62,8 @@ jobs:
           test -f "$BUILD_DIR/_redirects"
           find "$BUILD_DIR" -maxdepth 1 -mindepth 1 -print | sort | head -n 20
 
-      - name: Upload build artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: eleventy-dist
-          path: ${{ env.BUILD_DIR }}
-          if-no-files-found: error
-
-  deploy:
-    name: Deploy to XMIT
-    runs-on: ubuntu-latest
-    needs: build
-    if: github.event_name == 'workflow_dispatch' || (github.event_name == 'push' && github.ref == 'refs/heads/main')
-    env:
-      XMIT_SITE: ${{ inputs.site || vars.XMIT_SITE || 'thewhitestonefoundation.xmit.dev' }}
-
-    steps:
-      - name: Check out repository
-        uses: actions/checkout@v4
-
-      - name: Set up Node
-        uses: actions/setup-node@v4
-        with:
-          node-version: ${{ env.NODE_VERSION }}
-          cache: npm
-
-      - name: Install deployment dependencies
-        run: npm ci
-
-      - name: Download build artifact
-        uses: actions/download-artifact@v4
-        with:
-          name: eleventy-dist
-          path: ${{ env.BUILD_DIR }}
-
       - name: Deploy to XMIT (CLI)
+        if: github.event_name == 'workflow_dispatch' || (github.event_name == 'push' && github.ref == 'refs/heads/main')
         env:
           XMIT_KEY: ${{ secrets.XMIT_KEY }}
         run: |
@@ -110,6 +79,7 @@ jobs:
           npm run deploy:xmit -- "$XMIT_SITE" "$BUILD_DIR"
 
       - name: Post-deploy summary
+        if: github.event_name == 'workflow_dispatch' || (github.event_name == 'push' && github.ref == 'refs/heads/main')
         run: |
           echo "Deployment attempt finished for $XMIT_SITE"
           echo "Visit: https://$XMIT_SITE"
