@@ -3,10 +3,10 @@ description: "Whitestone Publications and programs in critical theory, public sc
 url: "https://thewhitestonefoundation.org"
 #url: "http://localhost:8080"
 contact: "whitestone.pubs@gmail.com"
-image: "/images/whitestone-logo.png"
+image: "/images/whitestone-logo.webp"
 language: "en"
 locale: en_US
-favicon: "/images/whitestone-logo.png"
+favicon: "/images/whitestone-logo.webp"
 
 formspree_id: "your-form-id"
 author:
@@ -21,7 +21,7 @@ metasocial:
 
 sidebar:
   title: "The Whitestone Foundation"
-  logo: "/images/whitestone-logo.png"
+  logo: "/images/whitestone-logo.webp"
   list:
     - label: "Home"
       url: "/"

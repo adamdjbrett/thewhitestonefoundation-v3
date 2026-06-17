@@ -2,7 +2,7 @@
 title: "Mission"
 categories:
 tags:
-image: /images/wp-content/uploads/2021/08/whitestone-logo.png
+image: /images/wp-content/uploads/2021/08/whitestone-logo.webp
 permalink: /mission/
 ---
 The Whitestone Foundation is an independent, non-profit organization dedicated to fostering critical thought for the public interest.

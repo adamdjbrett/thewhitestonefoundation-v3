@@ -15,7 +15,7 @@ head:
     - rel: "stylesheet"
       href: "/assets/css/index.css"
     - rel: "icon"
-      href: "/images/whitestone-logo.png"
+      href: "/images/whitestone-logo.webp"
   script:
     - src: "/assets/js/index.js"
       defer: true
@@ -27,7 +27,7 @@ head:
 seo:
   preserveQueryParams: false
   ogImage:
-    url: "/images/whitestone-logo.png"
+    url: "/images/whitestone-logo.webp"
     width: 1200
     height: 630
     alt: "The Whitestone Foundation"

@@ -1,7 +1,7 @@
 ---
 name: "Adam DJ Brett"
 role: "Special Projects Editor"
-photo: "/images/adamdjbrett-sm.jpg"
+photo: "/images/adamdjbrett-sm.webp"
 description: |
   Adam DJ Brett is Special Projects Editor for Whitestone Publications.
 

@@ -3,7 +3,7 @@ layout: page.njk
 title: "Contact"
 categories:
 tags:
-image: /images/wp-content/uploads/2021/08/whitestone-logo.png
+image: /images/wp-content/uploads/2021/08/whitestone-logo.webp
 permalink: /contact/
 ---
 For queries or information regarding The Whitestone Foundation as an organization, please email us at [whitestone.pubs@gmail.com](mailto:whitestone.pubs@gmail.com).

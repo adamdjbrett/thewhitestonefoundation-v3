@@ -1,7 +1,7 @@
 ---
 name: "Gary Bedford"
 role: "Board Member"
-photo: "/images/gary-bedford.jpg"
+photo: "/images/gary-bedford.webp"
 description: |
   The Wild Globalization Project ("WG") engages "civilization" as Homo sapien's still ongoing 300,000-year "universal drama" and presence on planet Earth. It researches multiple, interconnected, energetic "factors": Ecology, Demographics and Culture, Technology, Economy, Governance, and Wealth. "Wild" signifies how these energies respond as "quantumly entangled" complexities which resist complete measure, predictability, or control.
 

@@ -6,7 +6,7 @@ permalink: /
 
 # Hero section
 hero:
-  image: /images/mehdi-benkaci-BQ2b3LmEogA-unsplash.jpg
+  image: /images/mehdi-benkaci-BQ2b3LmEogA-unsplash.webp
   alt: Photo by Mehdi Benkaci Unsplash
   info: The Whitestone Foundation
   title: |
@@ -21,7 +21,7 @@ hero:
 
 # Mission section
 mission:
-  image: /images/green/stone.png
+  image: /images/green/stone.webp
   info: Our Mission
   title: The Evolution
   sub_title: of Culture
@@ -42,12 +42,12 @@ mission:
 
 # Global images
 images:
-  hero: /images/mehdi-benkaci-BQ2b3LmEogA-unsplash.jpg
-  stone: /images/green/stone.png
-  journal: /images/green/journal.png
-  scholars: /images/green/scholars.png
-  campus: /images/green/campus.png
-  symposium: /images/green/symposium.png
+  hero: /images/mehdi-benkaci-BQ2b3LmEogA-unsplash.webp
+  stone: /images/green/stone.webp
+  journal: /images/green/journal.webp
+  scholars: /images/green/scholars.webp
+  campus: /images/green/campus.webp
+  symposium: /images/green/symposium.webp
 
 # Navigasi
 nav:
@@ -75,17 +75,17 @@ publications:
     abbr: "JCRT"
     description: "A leading peer-reviewed open access journal exploring the intersections of culture, philosophy, and religious theory."
     url: "https://jcrt.org/"
-    image: "/images/green/journal.png"
+    image: "/images/green/journal.webp"
   - title: "The New Polis"
     abbr: "TNP"
     description: "An interdisciplinary platform for critical analysis of contemporary cultural and political thought."
     url: "https://thenewpolis.com/"
-    image: "/images/green/scholars.png"
+    image: "/images/green/scholars.webp"
   - title: "The New Polis Journal"
     abbr: "TNPJ"
     description: "A scholarly journal featuring rigorous academic articles on emerging trends in social theory and public discourse."
     url: "https://journal.thenewpolis.com/"
-    image: "/images/green/journal.png"
+    image: "/images/green/journal.webp"
 
 # Programs section
 programsSection:
@@ -180,7 +180,7 @@ The Whitestone Foundation is engaged collaboratively with colleges, universities
 Whitestone Publications does not retain copyright to its publications. It automatically grants copyright and rights to republication to all authors in either blog or journal format, so long as the original entry is cited in any instance of republication.  
 
 {% logoContainer %}
-  {% logoItem "https://jcrt.org", "/images/wp-content/uploads/2021/08/JCRT-Logo.jpg", "JCRT" %}
-  {% logoItem "https://thenewpolis.com/", "/images/wp-content/uploads/2021/08/New-Polis-logo.png", "The New Polis" %}
-  {% logoItem "https://journal.thenewpolis.com/", "/images/the-new-polis2.png", "The New Polis Journal" %}
+  {% logoItem "https://jcrt.org", "/images/wp-content/uploads/2021/08/JCRT-Logo.webp", "JCRT" %}
+  {% logoItem "https://thenewpolis.com/", "/images/wp-content/uploads/2021/08/New-Polis-logo.webp", "The New Polis" %}
+  {% logoItem "https://journal.thenewpolis.com/", "/images/the-new-polis2.webp", "The New Polis Journal" %}
 {% endlogoContainer %}

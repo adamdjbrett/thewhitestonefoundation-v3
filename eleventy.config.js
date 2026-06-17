@@ -103,7 +103,7 @@ export default async function (eleventyConfig) {
     data.description || data.metadata?.description || data.settings?.tagline || settings.tagline || ''
   );
   eleventyConfig.addFilter('headImage', (data = {}) =>
-    data.image || data.metadata?.image || data.settings?.seo?.ogImage?.url || '/images/whitestone-logo.png'
+    data.image || data.metadata?.image || data.settings?.seo?.ogImage?.url || '/images/whitestone-logo.webp'
   );
   eleventyConfig.addFilter('canonicalUrl', (data = {}) => {
     const base = data.metadata?.url || data.settings?.url || settings.url;

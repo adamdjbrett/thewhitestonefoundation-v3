@@ -1,7 +1,7 @@
 ---
 name: "Victor Taylor"
 role: "President"
-photo: "/images/wp-content/uploads/2021/08/VTaylor-1.jpg"
+photo: "/images/wp-content/uploads/2021/08/VTaylor-1.webp"
 description: |
   Victor E. Taylor (Ph.D., Syracuse University) is a nationally recognized humanities author and scholar. He has held several senior administrative leadership positions in high education. Currently, he serves as the president of the Whitestone Foundation.
 
