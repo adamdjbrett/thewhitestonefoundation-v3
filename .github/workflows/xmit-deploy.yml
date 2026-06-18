@@ -30,7 +30,7 @@ jobs:
     name: Build and deploy site
     runs-on: ubuntu-latest
     env:
-      XMIT_SITE: ${{ inputs.site || vars.XMIT_SITE || 'thewhitestonefoundation.xmit.dev' }}
+      XMIT_SITE: ${{ inputs.site || vars.XMIT_SITE || 'thewhitestonefoundationv3.xmit.dev' }}
 
     steps:
       - name: Check out repository
