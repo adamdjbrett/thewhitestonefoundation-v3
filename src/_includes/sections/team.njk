@@ -15,9 +15,9 @@
 
     <div class="people-grid">
       {% for member in collections.teamActive %}
-        {% set role = "Editorial" %}
-        {% if "President" in member.data.role or "Secretary" in member.data.role or "Board" in member.data.role %}
-          {% set role = "Leadership" %}
+        {% set role = metadata.teamLabels.editorial %}
+        {% if member.data.role | containsAny(metadata.teamLabels.leadershipKeywords) %}
+          {% set role = metadata.teamLabels.leadership %}
         {% endif %}
         {{ cards.person(member, metadata, { reveal: true, corners: true, badge: role, clickable: true }) }}
       {% endfor %}
@@ -26,19 +26,19 @@
     {% if collections.teamAlumni.length %}
       <div class="alumni-band">
         <div class="alumni-intro reveal">
-          <h3>Alumni</h3>
-          <p>We are grateful to the talented individuals who contributed to Whitestone Publications and continue their scholarly journeys.</p>
+          <h3>{{ metadata.teamLabels.alumni }}</h3>
+          <p>{{ metadata.teamLabels.alumniIntro }}</p>
         </div>
         <div class="people-grid">
           {% for member in collections.teamAlumni %}
-            {{ cards.person(member, metadata, { reveal: true, badge: "Alumni", alumni: true, clickable: true }) }}
+            {{ cards.person(member, metadata, { reveal: true, badge: metadata.teamLabels.alumni, alumni: true, clickable: true }) }}
           {% endfor %}
         </div>
       </div>
     {% endif %}
 
     <div class="section-action reveal">
-      <a href="/people/" class="button button--outline">View Full Team Directory <span aria-hidden="true">↗</span></a>
+      <a href="{{ metadata.routes.people }}" class="button button--outline">{{ metadata.labels.view_team_directory }} <span aria-hidden="true">{{ metadata.symbols.external }}</span></a>
     </div>
   </div>
 </section>

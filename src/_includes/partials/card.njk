@@ -5,7 +5,7 @@
         <img src="{{ item.data.image or metadata.image }}" alt="{{ item.data.title }}" loading="lazy">
       </div>
       <p class="card-meta">
-        {{ item.data.categories[0] if item.data.categories else "General" }} &bull; {{ item.date | readableDate }}
+        {{ item.data.categories[0] if item.data.categories else metadata.labels.general }} &bull; {{ item.date | readableDate }}
       </p>
       <h2>{{ item.data.title }}</h2>
       <p>{{ item.data.description or item.content | stripHtml | truncate(150) }}</p>
@@ -34,7 +34,7 @@
           <h3>{{ member.data.name }}</h3>
         {% endif %}
         <p class="team-card__excerpt">{{ member.data.description | md | stripHtml | truncate(options.truncate or 190) }}</p>
-        <span class="text-link">View Full Profile <span aria-hidden="true">&#8599;</span></span>
+        <span class="text-link">{{ metadata.labels.view_profile }} <span aria-hidden="true">{{ metadata.symbols.external }}</span></span>
       </div>
     </a>
   {% else %}
@@ -57,7 +57,7 @@
           <h3>{{ member.data.name }}</h3>
         {% endif %}
         <p class="team-card__excerpt">{{ member.data.description | md | stripHtml | truncate(options.truncate or 190) }}</p>
-        <a href="{{ member.url }}" class="text-link">View Full Profile <span aria-hidden="true">&#8599;</span></a>
+        <a href="{{ member.url }}" class="text-link">{{ metadata.labels.view_profile }} <span aria-hidden="true">{{ metadata.symbols.external }}</span></a>
       </div>
     </article>
   {% endif %}

@@ -1,26 +1,33 @@
-{% set pageTitle = { title: title, settings: settings, metadata: metadata } | headTitle %}
-{% set pageDescription = { description: description, settings: settings, metadata: metadata } | headDescription %}
-{% set pageImage = { image: image, settings: settings, metadata: metadata } | headImage | absUrl(metadata.url) %}
-{% set canonical = { page: page, settings: settings, metadata: metadata } | canonicalUrl %}
+{% set pageTitle = { title: title, metadata: metadata } | headTitle %}
+{% set pageDescription = { description: description, metadata: metadata } | headDescription %}
+{% set pageImage = { image: image, metadata: metadata } | headImage | absUrl %}
+{% set canonical = { page: page, metadata: metadata } | canonicalUrl %}
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{ pageTitle }}</title>
   <meta name="description" content="{{ pageDescription }}">
-  <meta name="robots" content="{% if noindex or settings.noindex %}noindex, nofollow{% else %}index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1{% endif %}">
+  <meta name="robots" content="{% if noindex or metadata.noindex %}noindex, nofollow{% else %}index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1{% endif %}">
   <link rel="canonical" href="{{ canonical }}">
-  <link rel="icon" href="{{ metadata.favicon or '/images/whitestone-logo.webp' }}">
-  <link rel="stylesheet" href="/assets/css/index.css">
-  <meta name="theme-color" content="#caf0f8">
-  <meta name="color-scheme" content="light">
-  <meta property="og:title" content="{{ title or settings.title }}">
-  <meta property="og:type" content="{{ ogType or 'website' }}">
+  <link rel="icon" href="{{ metadata.favicon or metadata.seo.ogImage.url }}">
+  {% for item in metadata.head.link %}
+  {% if item.rel != "icon" %}
+  <link rel="{{ item.rel }}" href="{{ item.href }}">
+  {% endif %}
+  {% endfor %}
+  {% for item in metadata.head.meta %}
+  <meta name="{{ item.name }}" content="{{ item.content }}">
+  {% endfor %}
+  <meta property="og:title" content="{{ title or metadata.title }}">
+  <meta property="og:type" content="{{ ogType or metadata.seo.openGraph.type }}">
   <meta property="og:description" content="{{ pageDescription }}">
   <meta property="og:url" content="{{ canonical }}">
-  <meta property="og:site_name" content="{{ metadata.title or settings.title }}">
+  <meta property="og:site_name" content="{{ metadata.title }}">
   <meta property="og:locale" content="{{ metadata.locale or 'en_US' }}">
   <meta property="og:image" content="{{ pageImage }}">
-  <meta property="og:image:alt" content="{{ imageAlt or title or settings.title }}">
-  <meta name="twitter:card" content="summary_large_image">
-  <script src="/assets/js/index.js" defer></script>
+  <meta property="og:image:alt" content="{{ imageAlt or title or metadata.seo.ogImage.alt or metadata.title }}">
+  <meta name="twitter:card" content="{{ metadata.seo.twitter.card }}">
+  {% for script in metadata.head.script %}
+  <script src="{{ script.src }}"{% if script.defer %} defer{% endif %}></script>
+  {% endfor %}
 </head>

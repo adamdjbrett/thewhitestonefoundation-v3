@@ -37,8 +37,7 @@ The build output is static and remains centered on `dist/`, which keeps the proj
 - `src/content/team/` contains active team profile pages.
 - `src/content/team/alumni/` contains alumni profile pages.
 - `src/content/page-setup/news.njk`, `people.njk`, and `search.njk` generate listing/search pages.
-- `src/_data/settings.yaml` contains build settings used by Eleventy filters.
-- `src/_data/metadata.yaml` contains public site metadata.
+- `src/_data/metadata.yaml` is the canonical source for public site metadata, build metadata, head defaults, and SEO options.
 
 Generated output goes to `dist/`, which is ignored locally and rebuilt by CI.
 

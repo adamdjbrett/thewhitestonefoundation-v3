@@ -4,8 +4,8 @@
 <article class="page-shell">
   <header class="page-header">
     <p class="eyebrow">
-      {% if categories and categories.length %}{{ categories[0] }}{% else %}News{% endif %}
-      {% if date %} · {{ date | readableDate }}{% endif %}
+      {% if categories and categories.length %}{{ categories[0] }}{% else %}{{ metadata.labels.news }}{% endif %}
+      {% if date %} {{ metadata.symbols.separator }} {{ date | readableDate }}{% endif %}
     </p>
     <h1>{{ title }}</h1>
     {% if description %}<p>{{ description }}</p>{% endif %}

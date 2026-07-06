@@ -3,10 +3,10 @@ import yaml from 'js-yaml';
 import { readFileSync } from 'node:fs';
 
 const md = markdownIt({ html: true, breaks: true, linkify: true, typographer: true });
-const settingsData = yaml.load(readFileSync('./src/_data/settings.yaml', 'utf8'));
-const settings = {
-  ...settingsData,
-  url: process.env.URL || settingsData.url || 'http://localhost:8080/'
+const metadataData = yaml.load(readFileSync('./src/_data/metadata.yaml', 'utf8'));
+const metadata = {
+  ...metadataData,
+  url: process.env.URL || metadataData.url || 'http://localhost:8080/'
 };
 
 const slugify = (value) =>
@@ -22,6 +22,9 @@ const stripHtml = (value) =>
     .replace(/<[^>]*>/g, ' ')
     .replace(/\s+/g, ' ')
     .trim();
+
+const containsAny = (value, needles = []) =>
+  needles.some((needle) => String(value || '').includes(String(needle || '')));
 
 const activeTeamOrder = ['Victor Taylor', 'Carl Raschke', 'Gary Bedford', 'Adam DJ Brett', 'Kev Grane'];
 const alumniOrder = ['Dianna Able', 'Alyssa Putzer', 'Olesia Stockhold'];
@@ -68,6 +71,7 @@ export default async function (eleventyConfig) {
       .replace(/\s*\r?\n\s*/g, '<br>')
   );
   eleventyConfig.addFilter('stripHtml', stripHtml);
+  eleventyConfig.addFilter('containsAny', containsAny);
   eleventyConfig.addFilter('truncate', (value, count = 150) => {
     const text = stripHtml(value);
     return text.length > count ? `${text.slice(0, count).trim()}...` : text;
@@ -82,12 +86,12 @@ export default async function (eleventyConfig) {
   );
   eleventyConfig.addFilter('isoDate', (dateObj) => (dateObj ? dateObj.toISOString() : ''));
   eleventyConfig.addFilter('baseUrl', function (url) {
-    const siteUrl = this?.ctx?.metadata?.url || this?.context?.metadata?.url || settings.url || 'http://localhost:8080/';
+    const siteUrl = process.env.URL || this?.ctx?.metadata?.url || this?.context?.metadata?.url || metadata.url || 'http://localhost:8080/';
     if (!url || url === '/') return siteUrl.replace(/\/$/, '');
     const cleanBase = siteUrl.replace(/\/$/, '');
     return String(url).startsWith('/') ? `${cleanBase}${url}` : url;
   });
-  eleventyConfig.addFilter('absUrl', (path, base = settings.url) => {
+  eleventyConfig.addFilter('absUrl', (path, base = metadata.url) => {
     try {
       return new URL(path, base).toString();
     } catch {
@@ -95,18 +99,18 @@ export default async function (eleventyConfig) {
     }
   });
   eleventyConfig.addFilter('headTitle', (data = {}) => {
-    const siteTitle = data.metadata?.title || data.settings?.title || settings.title;
-    const pageTitle = data.title || data.settings?.tagline || settings.tagline;
+    const siteTitle = data.metadata?.title || metadata.title;
+    const pageTitle = data.title || data.metadata?.tagline || metadata.tagline;
     return pageTitle === siteTitle ? siteTitle : `${pageTitle} | ${siteTitle}`;
   });
   eleventyConfig.addFilter('headDescription', (data = {}) =>
-    data.description || data.metadata?.description || data.settings?.tagline || settings.tagline || ''
+    data.description || data.metadata?.description || data.metadata?.tagline || metadata.description || metadata.tagline || ''
   );
   eleventyConfig.addFilter('headImage', (data = {}) =>
-    data.image || data.metadata?.image || data.settings?.seo?.ogImage?.url || '/images/whitestone-logo.webp'
+    data.image || data.metadata?.image || data.metadata?.seo?.ogImage?.url || metadata.image || metadata.seo?.ogImage?.url || '/images/whitestone-logo.webp'
   );
   eleventyConfig.addFilter('canonicalUrl', (data = {}) => {
-    const base = data.metadata?.url || data.settings?.url || settings.url;
+    const base = process.env.URL || data.metadata?.url || metadata.url;
     return new URL(data.page?.url || '/', base).toString();
   });
 

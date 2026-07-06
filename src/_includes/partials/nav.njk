@@ -2,21 +2,21 @@
 <nav class="site-nav" data-site-nav>
   <div class="site-container">
     <div class="nav-row">
-      <a href="/" class="brand-mark">
+      <a href="{{ metadata.brand.home_url }}" class="brand-mark">
         <span class="brand-diamond">
-          <img src="/images/w.png" alt="" aria-hidden="true">
+          <img src="{{ metadata.brand.mark }}" alt="" aria-hidden="true">
         </span>
-        <span class="brand-name">Whitestone</span>
+        <span class="brand-name">{{ metadata.brand.short_name }}</span>
       </a>
 
       <div class="desktop-nav">
         {% for link in home.nav %}
           <a href="/{{ link.href }}">{{ link.label }}</a>
         {% endfor %}
-        <a href="/#support" class="button button--small button--pill">Support</a>
+        <a href="{{ metadata.routes.support }}" class="button button--small button--pill">{{ metadata.labels.support }}</a>
       </div>
 
-      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav" aria-label="Toggle navigation" data-nav-toggle>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav" aria-label="{{ metadata.labels.nav_toggle }}" data-nav-toggle>
         <span class="nav-toggle__open">{{ icons.icon("menu") }}</span>
         <span class="nav-toggle__close" hidden>{{ icons.icon("x") }}</span>
       </button>
@@ -29,6 +29,6 @@
     {% for link in home.nav %}
       <a href="/{{ link.href }}">{{ link.label }}</a>
     {% endfor %}
-    <a href="/#support" class="button button--pill">Support Our Mission</a>
+    <a href="{{ metadata.routes.support }}" class="button button--pill">{{ metadata.labels.support_mission }}</a>
   </div>
 </div>

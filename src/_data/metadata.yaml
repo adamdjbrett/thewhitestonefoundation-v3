@@ -1,4 +1,5 @@
 title: "The Whitestone Foundation"
+tagline: "Fostering critical thought for the public interest."
 description: "Whitestone Publications and programs in critical theory, public scholarship, and higher education."
 url: "https://thewhitestonefoundation.org"
 #url: "http://localhost:8080"
@@ -6,8 +7,88 @@ contact: "hello@thewhitestonefoundation.org"
 support: "https://givebutter.com/whitestone"
 image: "/images/whitestone-logo.webp"
 language: "en"
+defaultLanguage: "en"
 locale: en_US
 favicon: "/images/whitestone-logo.webp"
+noindex: false
+
+brand:
+  full_name: "The Whitestone Foundation"
+  short_name: "Whitestone"
+  mark: "/images/w.png"
+  home_url: "/"
+
+routes:
+  contact: "/contact/"
+  news: "/news/"
+  people: "/people/"
+  support: "/#support"
+
+labels:
+  skip_link: "Skip to main content"
+  nav_toggle: "Toggle navigation"
+  support: "Support"
+  support_mission: "Support Our Mission"
+  contact: "Contact"
+  news: "News"
+  general: "General"
+  read_more: "Read More"
+  view_profile: "View Full Profile"
+  back_to_people: "Back to People"
+  view_team_directory: "View Full Team Directory"
+
+symbols:
+  external: "↗"
+  forward: "→"
+  separator: "·"
+
+teamLabels:
+  editorial: "Editorial"
+  leadership: "Leadership"
+  leadershipKeywords:
+    - "President"
+    - "Secretary"
+    - "Board"
+  alumni: "Alumni"
+  alumniIntro: "We are grateful to the talented individuals who contributed to Whitestone Publications and continue their scholarly journeys."
+
+images:
+  aboutAlt: "Foundation scholars in discussion"
+
+languages:
+  en:
+    contentDir: "content/"
+    locale: "en-US"
+    languageName: "English"
+    title: "The Whitestone Foundation"
+    tagline: "Fostering critical thought for the public interest."
+
+head:
+  link:
+    - rel: "stylesheet"
+      href: "/assets/css/index.css"
+    - rel: "icon"
+      href: "/images/whitestone-logo.webp"
+  script:
+    - src: "/assets/js/index.js"
+      defer: true
+  meta:
+    - name: "theme-color"
+      content: "#caf0f8"
+    - name: "color-scheme"
+      content: "light"
+
+seo:
+  preserveQueryParams: false
+  ogImage:
+    url: "/images/whitestone-logo.webp"
+    width: 1200
+    height: 630
+    alt: "The Whitestone Foundation"
+  openGraph:
+    type: "website"
+  twitter:
+    card: "summary_large_image"
 
 formspree_id: "your-form-id"
 author:
@@ -69,6 +150,13 @@ widget:
 
 footer:
   year_start: 2018
+  brand: "The Whitestone Foundation"
+  about: "A Colorado-registered 501(c)(3) non-profit corporation fostering critical thought for the public interest through independent research and open access publishing."
+  navigation_heading: "Navigation"
+  journals_heading: "Journals"
+  copyright_name: "The Whitestone Foundation"
+  copyright_rights: "All rights reserved."
+  legal: "dba Whitestone Publications · Colorado 501(c)(3)"
   text: "Copyright The Whitestone Foundation dba Whitestone Publications. All Rights Reserved."
   info: "A WHITESTONE FOUNDATION PUBLICATION"
   url: "https://thewhitestonefoundation.org/"

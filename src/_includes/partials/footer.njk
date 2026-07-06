@@ -4,32 +4,32 @@
       <div class="footer-about">
         <div class="brand-mark brand-mark--light">
           <div class="brand-diamond">
-            <img src="/images/w.png" alt="" aria-hidden="true">
+            <img src="{{ metadata.brand.mark }}" alt="" aria-hidden="true">
           </div>
-          <span class="brand-name">The Whitestone Foundation</span>
+          <span class="brand-name">{{ metadata.footer.brand }}</span>
         </div>
         <p>
-          A Colorado-registered 501(c)(3) non-profit corporation fostering critical thought for the public interest through independent research and open access publishing.
+          {{ metadata.footer.about }}
         </p>
       </div>
 
       <div>
-        <p class="footer-heading">Navigation</p>
+        <p class="footer-heading">{{ metadata.footer.navigation_heading }}</p>
         <div class="footer-links">
           {% for link in home.nav %}
             <a href="/{{ link.href }}">{{ link.label }}</a>
           {% endfor %}
-          <a href="/contact/">Contact</a>
+          <a href="{{ metadata.routes.contact }}">{{ metadata.labels.contact }}</a>
         </div>
       </div>
 
       <div>
-        <p class="footer-heading">Journals</p>
+        <p class="footer-heading">{{ metadata.footer.journals_heading }}</p>
         <div class="footer-links">
           {% for publication in home.publications %}
             <a href="{{ publication.url }}">
               {{ publication.title }}
-              <span aria-hidden="true">↗</span>
+              <span aria-hidden="true">{{ metadata.symbols.external }}</span>
             </a>
           {% endfor %}
         </div>
@@ -37,8 +37,8 @@
     </div>
 
     <div class="footer-bottom">
-      <p>© {% year %} The Whitestone Foundation. All rights reserved.</p>
-      <p>dba Whitestone Publications · Colorado 501(c)(3)</p>
+      <p>© {% year %} {{ metadata.footer.copyright_name }}. {{ metadata.footer.copyright_rights }}</p>
+      <p>{{ metadata.footer.legal }}</p>
     </div>
   </div>
 </footer>
