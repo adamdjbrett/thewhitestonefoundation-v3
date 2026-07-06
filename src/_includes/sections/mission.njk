@@ -7,7 +7,7 @@
       <div class="reveal">
         <p class="eyebrow">{{mission.info}}</p>
         <h2>
-          {{mission.title}} <span>{{mission.sub_title}}</span>
+          {{mission.title}} <span>{{ mission.sub_title | safe }}</span>
         </h2>
         <div class="rule"></div>
       </div>

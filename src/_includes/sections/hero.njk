@@ -16,7 +16,7 @@
         <h1>{{ hero.title | lineBreaks | safe }}</h1>
       </div>
       <div class="hero-copy">
-        <h2>{{ hero.sub_title }}</h2>
+        <h2>{{ hero.sub_title | safe }}</h2>
         <div>
           {{ hero.text | md | safe }}
         </div>

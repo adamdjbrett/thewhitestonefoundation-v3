@@ -9,7 +9,7 @@
         </h2>
       </div>
       <div class="section-copy reveal">
-        <p>{{ programsSection.description }}</p>
+        <p>{{ programsSection.description | safe }}</p>
       </div>
     </div>
     <div class="program-grid">
@@ -21,7 +21,7 @@
             {{ icons.icon(program.icon) }}
           </div>
           <h3>{{ program.title }}</h3>
-          <p>{{ program.description }}</p>
+          <p>{{ program.description | safe }}</p>
         </div>
       {% endfor %}
     </div>

@@ -17,7 +17,7 @@
           <div class="publication-card__body">
             <p>{{ pub.abbr }}</p>
             <h3>{{ pub.title }}</h3>
-            <span>{{ pub.description }}</span>
+            <span>{{ pub.description | safe }}</span>
           </div>
         </a>
       {% endfor %}

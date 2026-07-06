@@ -93,7 +93,7 @@ programsSection:
   eyebrow: Programs & Initiatives
   title: Knowledge
   titleSpan: Futures
-  description: "The global economy in the 21st century is what the celebrated business management theorist Peter Drucker dubbed a “knowledge economy”.  What that means, simply stated, is that the creation, maintenance, and generation of wealth itself depends on the production and shaping of knowledge.  But as we move into the second quarter of the new millennium the knowledge economy itself is experiencing upheavals and disruptions that threaten to destabilize and unmoor it."
+  description: "The global economy in the 21<sup>st</sup> century is what the celebrated business management theorist Peter Drucker dubbed a “knowledge economy”.  What that means, simply stated, is that the creation, maintenance, and generation of wealth itself depends on the production and shaping of knowledge.  But as we move into the second quarter of the new millennium the knowledge economy itself is experiencing upheavals and disruptions that threaten to destabilize and unmoor it."
 programs:
   - icon: globe
     title: "Wild Globalization"
@@ -114,7 +114,6 @@ teamSection:
   title: The Minds
   titleSpan: Behind the Mission
   description: "Our team of scholars, editors, and board members bring decades of expertise in philosophy, cultural theory, and public scholarship to everything we publish."
-# change sort to put Carl Raschke first
 
 # News section
 newsSection:
@@ -184,4 +183,5 @@ Whitestone Publications does not retain copyright to its publications. It automa
   {% logoItem "https://jcrt.org", "/images/wp-content/uploads/2021/08/JCRT-Logo.webp", "JCRT" %}
   {% logoItem "https://thenewpolis.com/", "/images/wp-content/uploads/2021/08/New-Polis-logo.webp", "The New Polis" %}
   {% logoItem "https://journal.thenewpolis.com/", "/images/the-new-polis2.webp", "The New Polis Journal" %}
+  
 {% endlogoContainer %}
