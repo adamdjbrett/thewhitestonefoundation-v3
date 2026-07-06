@@ -6,15 +6,16 @@ permalink: /
 
 # Hero section
 hero:
-  image: /images/mehdi-benkaci-BQ2b3LmEogA-unsplash.webp
-  alt: Photo by Mehdi Benkaci Unsplash
+  image: /images/getty-images-ZBuxbdFzh2c-unsplash.jpg
+  alt: Photo by Licensed under the Unsplash+ License. Image by Getty.
   info: The Whitestone Foundation
   title: |
-    Solid      
-    Ground
-  sub_title: For Fluid Change
+    Knowledge      
+    Futures
+  sub_title: Visionary Thought #enable html in subtitle so <sup>st</sup> works
+  # fix the mobile so the text does not over lap
   text: |
-    Fostering critical thought for the public interest through independent research, peer-reviewed journals, and a global network of scholars.
+    Fostering critical thought for the 21<sup>st</sup> century through AI, independent research, peer-reviewed publications, and a global network of thought leaders and scholars.
   button:
     text: Explore
     url: "#mission"
@@ -23,15 +24,15 @@ hero:
 mission:
   image: /images/green/stone.webp
   info: Our Mission
-  title: The Evolution
-  sub_title: of Culture
-  intro: The Whitestone Foundation, dba Whitestone Publications, is a Colorado-registered 501(c)(3) non-profit corporation dedicated to fostering critical thought for the public interest.
+  title: At the Forefront
+  sub_title: of the Knowledge economy
+  intro: "The knowledge economy is being dismantled and rebuilt in real time. The Whitestone Foundation is where the humanities fight back — not by retreating from AI and globalization, but by insisting that human judgment, critical inquiry, and hard-won wisdom are exactly what this transformation requires."
   text: |
-    We publish peer-reviewed journals, sponsor academic webinars, and collaborate with colleges, universities, research centers, and organizations worldwide to advance the frontiers of cultural and religious scholarship.
+    Whitestone publishes, convenes, teaches, and challenges. Our open-access journals, our global seminar series, and our expanding educational programs exist for one purpose: to make serious intellectual work matter — in universities struggling to reimagine themselves, in communities left behind by the knowledge economy, and in the urgent public debate about what AI means for learning, governance, and human life.
 
-    Whitestone Publications does not retain copyright to its publications. It automatically grants copyright and rights to republication to all authors, so long as the original entry is cited.
+    We are committed to open access because knowledge hoarded is knowledge wasted. We are committed to critical thinking because the alternative is the algorithm. And we are committed to education's transformation because the institution that produced the modern world cannot coast through its most disruptive century unchanged.
   stats:
-    - title: "2"
+    - title: "3"
       info: Peer-Reviewed Journals
     - title: "20+"
       info: Years of Scholarship
@@ -42,7 +43,7 @@ mission:
 
 # Global images
 images:
-  hero: /images/mehdi-benkaci-BQ2b3LmEogA-unsplash.webp
+  hero: /images/getty-images-ZBuxbdFzh2c-unsplash.jpg
   stone: /images/green/stone.webp
   journal: /images/green/journal.webp
   scholars: /images/green/scholars.webp
@@ -90,22 +91,22 @@ publications:
 # Programs section
 programsSection:
   eyebrow: Programs & Initiatives
-  title: Building
-  titleSpan: Knowledge
-  description: "From scholarly journals to global symposia, our programs create spaces where critical thought flourishes and intellectual boundaries expand."
+  title: Knowledge
+  titleSpan: Futures
+  description: "The global economy in the 21st century is what the celebrated business management theorist Peter Drucker dubbed a “knowledge economy”.  What that means, simply stated, is that the creation, maintenance, and generation of wealth itself depends on the production and shaping of knowledge.  But as we move into the second quarter of the new millennium the knowledge economy itself is experiencing upheavals and disruptions that threaten to destabilize and unmoor it."
 programs:
-  - icon: book
-    title: "Peer-Reviewed Publishing"
-    description: "Open access journals that advance cultural, religious, and philosophical scholarship without copyright restrictions."
-  - icon: message
-    title: "Critical Conversations"
-    description: "Webinar series bringing together leading thinkers for structured dialogue on the most pressing questions of our time."
-  - icon: users
-    title: "Difficult Discussions"
-    description: "Seminar programs designed to navigate complex and contested topics with intellectual rigor and mutual respect."
   - icon: globe
+    title: "Wild Globalization"
+    description: "A pan-historical exploration of the six wild forces - Ecology, Culture, Technology, Economy, and Governance - that drive and produce our hyper-globalizing civilization. It's wild." #make hyperlinked to a page w/ the data
+  - icon: brain
+    title: "Critical Thinking in the Age of AI"
+    description: "Webinar series bringing together leading thinkers for structured dialogue on the most pressing questions of our time."
+  - icon: message
     title: "Thought Leader Symposia"
     description: "Global convenings that address existential challenges in education, knowledge economies and cultural evolution."
+  - icon: books
+    title: "Peer Reveiwed Publications"
+    description: "Since 1999 the Whitestone Foundation dba Whitestone Publications has been a trailblazer in the development of online open access academic publishing."
 
 # Team section
 teamSection:
@@ -113,7 +114,7 @@ teamSection:
   title: The Minds
   titleSpan: Behind the Mission
   description: "Our team of scholars, editors, and board members bring decades of expertise in philosophy, cultural theory, and public scholarship to everything we publish."
-# Data team (jika ada) tetap dari collection, tidak ada hardcode
+# change sort to put Carl Raschke first
 
 # News section
 newsSection:
@@ -130,12 +131,12 @@ aboutSection:
   paragraph1: "The Whitestone Foundation stands as a cornerstone for intellectual engagement, bridging the gap between academic rigor and public discourse. Our work spans continents and disciplines, uniting scholars in the shared pursuit of understanding."
   paragraph2: "We are engaged collaboratively with colleges, universities, collaborative research centers, and organizations around the world. Our commitment to open access ensures that knowledge remains a public good: free, accessible, and transformative."
   badges:
-    - number: "501(c)(3)"
-      label: "Non-Profit"
-    - number: "Colorado"
-      label: "Registered"
-    - number: "Open"
-      label: "Copyright Policy"
+    - number: "Democratizing Knowledge"
+      label: "Community Focused"
+    - number: "Educational Transformation"
+      label: "Critical Thinking in the age of AI"
+    - number: "Since 1999"
+      label: "Electronic Publishing"  
 
 # Support section
 supportSection:
@@ -148,12 +149,12 @@ supportSection:
   buttonText: "Make Your Contribution"
   footnote: "The Whitestone Foundation is a 501(c)(3). Your donation may be tax-deductible."
 impactAreas:
+  - icon: brain
+    label: "Knowledge Futures"
+    description: "Sponsor public discourse"
   - icon: book
     label: "Open Access Journals"
     description: "Fund free scholarly publishing"
-  - icon: users
-    label: "Critical Conversations"
-    description: "Sponsor public discourse"
   - icon: graduation
     label: "Scholar Network"
     description: "Expand our global community"
@@ -167,9 +168,9 @@ tiers:
     impact: "sponsors a webinar session"
   - amount: 100
     impact: "funds a semester of open access"
-  - amount: 250
+  - amount: 2500
     impact: "underwrites a symposium speaker"
-  - amount: 500
+  - amount: 5000
     impact: "establishes a research grant"
 ---
 
