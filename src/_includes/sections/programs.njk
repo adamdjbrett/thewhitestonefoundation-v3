@@ -22,6 +22,12 @@
           </div>
           <h3>{{ program.title }}</h3>
           <p>{{ program.description | safe }}</p>
+          {% if program.link_url %}
+            <a href="{{ program.link_url }}" class="button button--outline program-card__button">
+              {{ program.link_title or metadata.labels.read_more }}
+              <span aria-hidden="true">{{ metadata.symbols.external }}</span>
+            </a>
+          {% endif %}
         </div>
       {% endfor %}
     </div>

@@ -18,6 +18,20 @@ eleventyComputed:
     <p>{{ description }} Page {{ pagination.pageNumber + 1 }} of {{ pagination.pages.length }}.</p>
   </header>
 
+  {% if collections.postCategories and collections.postCategories.length %}
+    <section class="taxonomy-panel" aria-labelledby="news-categories-heading">
+      <h2 id="news-categories-heading">Categories</h2>
+      <div class="tag-cloud">
+        {% for category in collections.postCategories %}
+          <span class="tag-pill">
+            {{ category.name | titleCaseTerm }}
+            <span>{{ category.count }}</span>
+          </span>
+        {% endfor %}
+      </div>
+    </section>
+  {% endif %}
+
   <div class="listing-grid">
     {% for p in news %}
       {{ cards.article(p, metadata) }}

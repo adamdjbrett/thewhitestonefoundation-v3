@@ -77,16 +77,21 @@ publications:
     description: "A leading peer-reviewed open access journal exploring the intersections of culture, philosophy, and religious theory."
     url: "https://jcrt.org/"
     image: "/images/green/journal.webp"
-  - title: "The New Polis"
-    abbr: "TNP"
-    description: "An interdisciplinary platform for critical analysis of contemporary cultural and political thought."
-    url: "https://thenewpolis.com/"
-    image: "/images/green/scholars.webp"
   - title: "The New Polis Journal"
     abbr: "TNPJ"
     description: "A scholarly journal featuring rigorous academic articles on emerging trends in social theory and public discourse."
     url: "https://journal.thenewpolis.com/"
     image: "/images/green/journal.webp"
+  - title: "The New Polis"
+    abbr: "TNP"
+    description: "An interdisciplinary platform for critical analysis of contemporary cultural and political thought."
+    url: "https://thenewpolis.com/"
+    image: "/images/green/scholars.webp"
+  - title: "Esthesis"
+    abbr: "art"
+    description: "An interdisciplinary platform for thoughtful, innovative, sometimes provocative, and even quirky articles on the arts and contemporary ideas and culture."
+    url: "https://esthesis.org/"
+    image: "/images/green/scholars.webp"
 
 # Programs section
 programsSection:
@@ -97,16 +102,24 @@ programsSection:
 programs:
   - icon: globe
     title: "Wild Globalization"
-    description: "A pan-historical exploration of the six wild forces - Ecology, Culture, Technology, Economy, and Governance - that drive and produce our hyper-globalizing civilization. It's wild." #make hyperlinked to a page w/ the data
+    description: "A pan-historical exploration of the six wild forces - Ecology, Culture, Technology, Economy, and Governance - that drive and produce our hyper-globalizing civilization. It's wild."
+    link_title: "Explore Wild Globalization"
+    link_url: "https://wildglobalization.com/"
   - icon: brain
     title: "Critical Thinking in the Age of AI"
     description: "Webinar series bringing together leading thinkers for structured dialogue on the most pressing questions of our time."
+    link_title: /ai/
+    link_url:
   - icon: message
     title: "Thought Leader Symposia"
     description: "Global convenings that address existential challenges in education, knowledge economies and cultural evolution."
+    link_title: Explore Symposia
+    link_url: /symposia/
   - icon: books
     title: "Peer Reveiwed Publications"
     description: "Since 1999 the Whitestone Foundation dba Whitestone Publications has been a trailblazer in the development of online open access academic publishing."
+    link_title: 
+    link_url: /publications/
 
 # Team section
 teamSection:
@@ -181,7 +194,7 @@ Whitestone Publications does not retain copyright to its publications. It automa
 
 {% logoContainer %}
   {% logoItem "https://jcrt.org", "/images/wp-content/uploads/2021/08/JCRT-Logo.webp", "JCRT" %}
-  {% logoItem "https://thenewpolis.com/", "/images/wp-content/uploads/2021/08/New-Polis-logo.webp", "The New Polis" %}
   {% logoItem "https://journal.thenewpolis.com/", "/images/the-new-polis2.webp", "The New Polis Journal" %}
-  
+  {% logoItem "https://thenewpolis.com/", "/images/wp-content/uploads/2021/08/New-Polis-logo.webp", "The New Polis" %}
+  {% logoItem "https://esthesis.org/", "/images/esthesis-logo-393x320-clean.png", "esthesis" %}
 {% endlogoContainer %}

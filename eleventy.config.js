@@ -26,6 +26,33 @@ const stripHtml = (value) =>
 const containsAny = (value, needles = []) =>
   needles.some((needle) => String(value || '').includes(String(needle || '')));
 
+const titleCaseTerm = (value) =>
+  String(value || '')
+    .replace(/[-_]+/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim()
+    .replace(/\b\w/g, (char) => char.toUpperCase());
+
+const countTerms = (items, field) => {
+  const counts = new Map();
+
+  for (const item of items) {
+    const value = item.data?.[field];
+    const terms = Array.isArray(value) ? value : value ? [value] : [];
+
+    for (const term of terms) {
+      const name = String(term || '').trim();
+      if (!name) continue;
+      const slug = slugify(name);
+      const current = counts.get(slug) || { name, slug, count: 0 };
+      current.count += 1;
+      counts.set(slug, current);
+    }
+  }
+
+  return [...counts.values()].sort((a, b) => a.name.localeCompare(b.name));
+};
+
 const activeTeamOrder = ['Victor Taylor', 'Carl Raschke', 'Gary Bedford', 'Adam DJ Brett', 'Kev Grane'];
 const alumniOrder = ['Dianna Able', 'Alyssa Putzer', 'Olesia Stockhold'];
 const byConfiguredOrder = (order) => (a, b) => {
@@ -50,6 +77,12 @@ export default async function (eleventyConfig) {
       .getFilteredByGlob('src/content/posts/**/*.md')
       .sort((a, b) => (a.date || 0) - (b.date || 0))
   );
+  eleventyConfig.addCollection('postCategories', (collectionApi) =>
+    countTerms(collectionApi.getFilteredByGlob('src/content/posts/**/*.md'), 'categories')
+  );
+  eleventyConfig.addCollection('postAuthors', (collectionApi) =>
+    countTerms(collectionApi.getFilteredByGlob('src/content/posts/**/*.md'), 'author')
+  );
   eleventyConfig.addCollection('teamActive', (collectionApi) =>
     collectionApi.getFilteredByGlob('src/content/team/*.md').sort(byConfiguredOrder(activeTeamOrder))
   );
@@ -65,6 +98,7 @@ export default async function (eleventyConfig) {
   eleventyConfig.addFilter('slugify', slugify);
   eleventyConfig.addFilter('md', (value) => md.render(String(value || '')));
   eleventyConfig.addFilter('markdownify', (value) => md.render(String(value || '')));
+  eleventyConfig.addFilter('titleCaseTerm', titleCaseTerm);
   eleventyConfig.addFilter('lineBreaks', (value) =>
     String(value || '')
       .trim()
