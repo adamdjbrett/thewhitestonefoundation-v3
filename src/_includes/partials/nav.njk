@@ -19,7 +19,7 @@
         <a href="{{ metadata.routes.support }}" class="button button--small button--pill">{{ metadata.labels.support }}</a>
       </div>
 
-      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav" aria-label="{{ metadata.labels.nav_toggle }}" data-nav-toggle>
+      <button class="nav-toggle" type="button" popovertarget="nav-menu" aria-label="{{ metadata.labels.nav_toggle }}" data-nav-toggle>
         <span class="nav-toggle__open">{{ icons.icon("menu") }}</span>
         <span class="nav-toggle__close" hidden>{{ icons.icon("x") }}</span>
       </button>
@@ -27,15 +27,18 @@
   </div>
 </nav>
 
-<div id="mobile-nav" class="mobile-nav" data-mobile-nav>
-  <div class="mobile-nav__inner">
+<div id="nav-menu" class="nav-popover" popover data-nav-popover>
+  <nav class="nav-popover__links" aria-label="{{ metadata.brand.short_name }}">
     {% for link in home.nav %}
       <a href="/{{ link.href }}">{{ link.label }}</a>
     {% endfor %}
-    <pagefind-modal-trigger class="search-icon-button search-icon-button--mobile" aria-label="Open search" placeholder="Open search" compact hide-shortcut>
-      <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#000000" viewBox="0 0 256 256" aria-hidden="true"><path d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"></path></svg>
+  </nav>
+  <div class="nav-popover__actions">
+    <pagefind-modal-trigger class="search-launcher" aria-label="Open search" placeholder="Search this site" compact hide-shortcut>
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 256 256" aria-hidden="true"><path d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"></path></svg>
+      <span>Search</span>
     </pagefind-modal-trigger>
-    <a href="{{ metadata.routes.support }}" class="button button--pill">{{ metadata.labels.support_mission }}</a>
+    <a href="{{ metadata.routes.support }}" class="button button--pill nav-popover__support">{{ metadata.labels.support_mission }}</a>
   </div>
 </div>
 

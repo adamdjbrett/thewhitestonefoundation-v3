@@ -1,7 +1,7 @@
 ---
 name: "JC Smith"
 role: "Assistant Editor"
-photo: ""
+photo: "/images/jcsmith.webp"
 #orcid:
 description: "Assistant Editor for Whitestone Publications and a MA student at the University of Denver."
 ---

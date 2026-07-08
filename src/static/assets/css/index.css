@@ -168,8 +168,8 @@ button {
   align-items: center;
   justify-content: center;
   gap: 0.6rem;
-  width: 2.4rem;
-  height: 2.4rem;
+  width: 2.75rem;
+  height: 2.75rem;
   border: 0;
   background: transparent;
   color: var(--ink);
@@ -177,8 +177,8 @@ button {
 }
 
 .search-icon-button .pf-trigger-btn {
-  width: 2.4rem !important;
-  height: 2.4rem !important;
+  width: 2.75rem !important;
+  height: 2.75rem !important;
   border: 0 !important;
   background: transparent !important;
   padding: 0 !important;
@@ -194,45 +194,106 @@ button {
   color: var(--earth);
 }
 
-.search-icon-button--mobile {
-  width: 2.4rem;
-  height: 2.4rem;
-  padding: 0;
-  font-family: var(--font-heading);
-  font-size: 1.15rem;
-}
-
 .nav-toggle {
   display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  min-height: 44px;
   color: var(--ink);
   background: transparent;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
 }
 
-.mobile-nav {
+/* Popover menu (native HTML popover) — used below the nav breakpoint */
+.nav-popover {
   position: fixed;
-  inset: 0;
-  z-index: 40;
-  display: none;
-  background: var(--canvas);
-  padding: 6rem 2rem 2rem;
+  inset: auto;
+  top: 4.75rem;
+  right: max(1rem, calc((100vw - min(1280px, 100vw - 2rem)) / 2));
+  width: min(20rem, calc(100vw - 2rem));
+  margin: 0;
+  padding: 0.75rem;
+  border: 1px solid var(--line);
+  border-radius: 1rem;
+  background: rgb(202 240 248 / 0.98);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 18px 48px rgb(3 4 94 / 0.22);
+  color: var(--ink);
 }
 
-.mobile-nav.is-open {
-  display: block;
-}
-
-.mobile-nav__inner {
+.nav-popover:popover-open {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 0.35rem;
 }
 
-.mobile-nav a:not(.button) {
+.nav-popover__links {
+  display: flex;
+  flex-direction: column;
+}
+
+.nav-popover__links a {
+  padding: 0.85rem 0.85rem;
+  border-radius: 0.6rem;
+  color: var(--ink);
   font-family: var(--font-heading);
-  font-size: clamp(2rem, 10vw, 3rem);
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.nav-popover__links a:hover,
+.nav-popover__links a:focus-visible {
+  background: var(--muted);
+  color: var(--earth);
+}
+
+.nav-popover__actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  margin-top: 0.35rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--line);
+}
+
+.search-launcher {
+  display: block;
+  width: 100%;
+}
+
+.search-launcher .pf-trigger-btn {
+  all: unset;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  width: 100%;
+  min-height: 44px;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.search-launcher .pf-trigger-btn:hover,
+.search-launcher .pf-trigger-btn:focus-visible {
+  border-color: var(--earth);
+  color: var(--earth);
+}
+
+.search-launcher svg {
+  width: 1.15rem;
+  height: 1.15rem;
+  flex: 0 0 auto;
+}
+
+.nav-popover__support {
+  width: 100%;
 }
 
 .button {
@@ -328,14 +389,14 @@ button {
 
 .hero-section h1 {
   color: var(--canvas);
-  font-size: clamp(4rem, 12vw, 8rem);
+  font-size: clamp(2.5rem, 11vw, 8rem);
   line-height: 0.95;
   font-weight: 800;
 }
 
 .hero-section h2 {
   color: rgb(202 240 248 / 0.82);
-  font-size: clamp(3rem, 9vw, 7rem);
+  font-size: clamp(2rem, 9vw, 7rem);
   font-style: italic;
   font-weight: 400;
   line-height: 0.95;
@@ -716,6 +777,44 @@ button {
 .media-card__body p,
 .media-card__copy {
   color: rgb(3 4 94 / 0.78);
+}
+
+/* Panelist / video cards */
+.media-card__portrait {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  background: var(--muted);
+}
+
+.media-card__portrait img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.media-card--panelist .media-card__copy {
+  margin-top: 0.75rem;
+  font-size: 0.98rem;
+  line-height: 1.6;
+}
+
+.page-shell--wide {
+  width: min(1320px, calc(100% - 3rem));
+}
+
+.page-intro-callout {
+  max-width: 62ch;
+  margin-top: 1rem;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: rgb(3 4 94 / 0.82);
+}
+
+.page-intro-callout a {
+  color: var(--earth);
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
 }
 
 .program-card,
@@ -1293,6 +1392,17 @@ button {
   text-underline-offset: 0.25em;
 }
 
+/* Keep wide markdown content from overflowing on small screens */
+.prose-green pre {
+  overflow-x: auto;
+}
+
+.prose-green table {
+  display: block;
+  max-width: 100%;
+  overflow-x: auto;
+}
+
 .team-profile {
   max-width: 72rem;
 }
@@ -1540,7 +1650,8 @@ button {
 
   .program-grid,
   .listing-grid,
-  .grid-list {
+  .grid-list,
+  .people-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 

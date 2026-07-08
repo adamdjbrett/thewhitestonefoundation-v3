@@ -16,7 +16,7 @@
     }
 
     const toggle = document.querySelector('[data-nav-toggle]');
-    const mobileNav = document.querySelector('[data-mobile-nav]');
+    const navPopover = document.getElementById('nav-menu');
     const searchTrigger = document.querySelector('pagefind-modal-trigger.search-icon-button');
 
     const hydrateEmailLinks = () => {
@@ -74,21 +74,16 @@
       searchTrigger?.click();
     });
 
-    if (toggle && mobileNav) {
+    // Native popover handles open/close/Escape/light-dismiss; JS only swaps the icon.
+    if (toggle && navPopover) {
       const openLabel = toggle.querySelector('.nav-toggle__open');
       const closeLabel = toggle.querySelector('.nav-toggle__close');
-      const setOpen = (isOpen) => {
-        toggle.setAttribute('aria-expanded', String(isOpen));
-        mobileNav.classList.toggle('is-open', isOpen);
+      navPopover.addEventListener('toggle', (event) => {
+        const isOpen = event.newState === 'open';
         if (openLabel && closeLabel) {
           openLabel.hidden = isOpen;
           closeLabel.hidden = !isOpen;
         }
-      };
-
-      toggle.addEventListener('click', () => setOpen(toggle.getAttribute('aria-expanded') !== 'true'));
-      mobileNav.addEventListener('click', (event) => {
-        if (event.target.closest('a')) setOpen(false);
       });
     }
 
