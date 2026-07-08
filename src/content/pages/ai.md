@@ -1,7 +1,7 @@
 ---
 layout: post.njk
 title: "Research Symposia on AI & the Future of Knowledge"
-description: "Whitestone Foundation symposia convening philosophers, scientists, and educators on artificial intelligence, learning, and what it means to think well."
+description: "Whitestone convenes bold research symposia on AI, education, and the future of knowledge: how humans think, teach, and lead in an intelligent age."
 author: "Whitestone Foundation"
 date: 2026-07-08
 tags:

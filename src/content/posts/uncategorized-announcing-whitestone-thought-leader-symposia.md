@@ -1,5 +1,6 @@
 ---
 title: "Announcing Whitestone Thought Leader Symposia"
+description: "the Existential Crisis of Learning and the Future of the Knowledge Economy"
 date: 2025-08-02T05:55:46+00:00
 author: admin
 categories:
