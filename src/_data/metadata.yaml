@@ -1,20 +1,21 @@
-title: "The Whitestone Foundation"
+site_title: "The Whitestone Foundation"
 tagline: "Fostering critical thought for the public interest."
 description: "Whitestone Publications and programs in critical theory, public scholarship, and higher education."
 url: "https://thewhitestonefoundation.org"
 #url: "http://localhost:8080"
 contact: "hello@thewhitestonefoundation.org"
 support: "https://givebutter.com/whitestone"
-image: "/images/whitestone-logo.webp"
+image: "/images/w.png"
+image_alt: "A white and green diamond with a white 'green' in the center, representing The Whitestone Foundation."
 language: "en"
 defaultLanguage: "en"
 locale: en_US
-favicon: "/images/whitestone-logo.webp"
+favicon: "/images/w.png"
 noindex: false
 
 brand:
   full_name: "The Whitestone Foundation"
-  short_name: "Whitestone"
+  short_name: "The Whitestone Foundation"
   mark: "/images/w.png"
   home_url: "/"
 
@@ -151,7 +152,7 @@ widget:
 footer:
   year_start: 2018
   brand: "The Whitestone Foundation"
-  about: "A Colorado-registered 501(c)(3) non-profit corporation fostering critical thought for the public interest through independent research and open access publishing."
+  about: "The Whitestone Foundation, dba Whitestone Publications, is a Boulder, Colorado-registered 501(c)(3) non-profit corporation dedicated to fostering critical thought for the public interest through independent research and open access publishing."
   navigation_heading: "Navigation"
   journals_heading: "Journals"
   copyright_name: "The Whitestone Foundation"
@@ -169,9 +170,11 @@ footer:
       url: "https://thenewpolis.com"
     - title: "Esthesis"
       url: "https://esthesis.org"
+    - title: "Wild Globalization"
+      url: "https://wildglobalization.org"  
   manager:
     name: "Adam DJ Brett"
     url: "https://adamdjbrett.com"
   built_with:
-    label: "built with"
+    label: "built with 11ty"
     url: "https://11ty.dev"

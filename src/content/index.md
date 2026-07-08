@@ -65,34 +65,6 @@ nav:
   - label: About
     href: "#about"
 
-# Publications section
-publicationsSection:
-  eyebrow: Publications
-  title: Open Access
-  titleSpan: Scholarship
-  description: ~
-publications:
-  - title: "The Journal for Cultural and Religious Theory"
-    abbr: "JCRT"
-    description: "A leading peer-reviewed open access journal exploring the intersections of culture, philosophy, and religious theory."
-    url: "https://jcrt.org/"
-    image: "/images/green/journal.webp"
-  - title: "The New Polis Journal"
-    abbr: "TNPJ"
-    description: "A scholarly journal featuring rigorous academic articles on emerging trends in social theory and public discourse."
-    url: "https://journal.thenewpolis.com/"
-    image: "/images/green/journal.webp"
-  - title: "The New Polis"
-    abbr: "TNP"
-    description: "An interdisciplinary platform for critical analysis of contemporary cultural and political thought."
-    url: "https://thenewpolis.com/"
-    image: "/images/green/scholars.webp"
-  - title: "Esthesis"
-    abbr: "art"
-    description: "An interdisciplinary platform for thoughtful, innovative, sometimes provocative, and even quirky articles on the arts and contemporary ideas and culture."
-    url: "https://esthesis.org/"
-    image: "/images/green/scholars.webp"
-
 # Programs section
 programsSection:
   eyebrow: Programs & Initiatives
@@ -108,8 +80,8 @@ programs:
   - icon: brain
     title: "Critical Thinking in the Age of AI"
     description: "Webinar series bringing together leading thinkers for structured dialogue on the most pressing questions of our time."
-    link_title: /ai/
-    link_url:
+    link_title: "Explore AI & Critical Thinking"
+    link_url: /ai/
   - icon: message
     title: "Thought Leader Symposia"
     description: "Global convenings that address existential challenges in education, knowledge economies and cultural evolution."

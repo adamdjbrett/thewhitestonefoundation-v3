@@ -4,7 +4,7 @@ permalink: /feed/feed.json
 
 {
   "version": "https://jsonfeed.org/version/1",
-  "title": "{{ metadata.title }}",
+  "title": "{{ metadata.site_title }}",
   {% set baseUrl = metadata.url | baseUrl %}
   "home_page_url": "{{ '/' | absUrl(baseUrl) }}",
   "feed_url": "{{ '/feed/feed.json' | absUrl(baseUrl) }}",
@@ -22,7 +22,7 @@ permalink: /feed/feed.json
   "_schema": {
     "@context": "https://schema.org",
     "@type": "DataFeed",
-    "name": "{{ metadata.title }} Feed",
+    "name": "{{ metadata.site_title }} Feed",
     "url": "{{ '/feed/feed.json' | absUrl(baseUrl) }}"
   }
 }

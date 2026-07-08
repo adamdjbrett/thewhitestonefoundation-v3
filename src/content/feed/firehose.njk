@@ -8,14 +8,14 @@ layout: false
 {% set baseUrl = metadata.url | baseUrl %}
 {% set items = collections.all | reverse %}
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>{{ metadata.title }} Firehose</title>
+  <title>{{ metadata.site_title }} Firehose</title>
   <subtitle>{{ metadata.description }}</subtitle>
   <link href="{{ '/feed/firehose.xml' | absUrl(baseUrl) }}" rel="self"/>
   <link href="{{ '/' | absUrl(baseUrl) }}"/>
   <updated>{{ ((items[0] and items[0].date) or page.date) | isoDate }}</updated>
   <id>{{ '/' | absUrl(baseUrl) }}</id>
   <author>
-    <name>{{ metadata.title }}</name>
+    <name>{{ metadata.site_title }}</name>
   </author>
 
   {%- for post in items %}

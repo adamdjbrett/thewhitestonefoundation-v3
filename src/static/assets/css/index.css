@@ -87,18 +87,24 @@ button {
   margin-inline: auto;
 }
 
+#publications .site-container {
+  width: min(1400px, calc(100% - 1.25rem));
+}
+
 .site-nav {
   position: fixed;
   inset: 0 0 auto;
   z-index: 50;
-  background: transparent;
+  background: rgb(202 240 248 / 0.9);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 1px 12px rgb(3 4 94 / 0.1);
   transition: background 0.35s ease, box-shadow 0.35s ease, backdrop-filter 0.35s ease;
 }
 
 .site-nav.is-scrolled {
-  background: rgb(202 240 248 / 0.95);
+  background: rgb(202 240 248 / 0.96);
   backdrop-filter: blur(12px);
-  box-shadow: 0 1px 8px rgb(3 4 94 / 0.08);
+  box-shadow: 0 2px 14px rgb(3 4 94 / 0.14);
 }
 
 .nav-row {
@@ -122,8 +128,8 @@ button {
 }
 
 .brand-diamond {
-  width: 2rem;
-  height: 2rem;
+  width: 4rem;
+  height: 4rem;
   display: grid;
   place-items: center;
   flex: 0 0 auto;
@@ -155,6 +161,38 @@ button {
 
 .desktop-nav a:hover {
   color: var(--earth);
+}
+
+.search-icon-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  width: 2.4rem;
+  height: 2.4rem;
+  border: 1px solid rgb(2 62 138 / 0.24);
+  background: rgb(202 240 248 / 0.92);
+  color: var(--ink);
+  padding: 0;
+}
+
+.search-icon-button svg {
+  width: 1.2rem;
+  height: 1.2rem;
+  fill: currentColor;
+}
+
+.search-icon-button:hover {
+  color: var(--earth);
+  border-color: rgb(0 119 182 / 0.55);
+}
+
+.search-icon-button--mobile {
+  width: fit-content;
+  height: auto;
+  padding: 0.8rem 1rem;
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
 }
 
 .nav-toggle {
@@ -531,6 +569,10 @@ button {
 .listing-grid {
   display: grid;
   gap: 1.5rem;
+}
+
+.publication-grid {
+  grid-template-columns: 1fr;
 }
 
 .publication-card {
@@ -1048,6 +1090,24 @@ button {
   font-size: 0.8rem;
 }
 
+.footer-feed-link {
+  display: inline-flex;
+  align-items: center;
+  margin-inline-end: 0.4rem;
+  color: rgb(202 240 248 / 0.75);
+  vertical-align: text-bottom;
+}
+
+.footer-feed-link svg {
+  width: 1rem;
+  height: 1rem;
+  fill: currentColor;
+}
+
+.footer-feed-link:hover {
+  color: var(--tiger);
+}
+
 .page-shell {
   width: min(1120px, calc(100% - 2rem));
   margin-inline: auto;
@@ -1345,6 +1405,11 @@ button {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  .publication-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 2rem;
+  }
+
   .choice-grid--areas {
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }
@@ -1368,10 +1433,13 @@ button {
 }
 
 @media (min-width: 1024px) {
-  .publication-grid,
   .people-grid,
   .listing-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .publication-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 

@@ -17,6 +17,37 @@
 
     const toggle = document.querySelector('[data-nav-toggle]');
     const mobileNav = document.querySelector('[data-mobile-nav]');
+    const searchTrigger = document.querySelector('pagefind-modal-trigger.search-icon-button');
+
+    const isEditableTarget = (target) => {
+      if (!target || !(target instanceof HTMLElement)) {
+        return false;
+      }
+
+      const tag = target.tagName;
+      return (
+        target.isContentEditable ||
+        tag === 'INPUT' ||
+        tag === 'TEXTAREA' ||
+        tag === 'SELECT'
+      );
+    };
+
+    document.addEventListener('keydown', (event) => {
+      const isSearchShortcut =
+        (event.metaKey || event.ctrlKey) &&
+        !event.shiftKey &&
+        !event.altKey &&
+        event.key.toLowerCase() === 'k';
+
+      if (!isSearchShortcut || isEditableTarget(event.target)) {
+        return;
+      }
+
+      event.preventDefault();
+      searchTrigger?.click();
+    });
+
     if (toggle && mobileNav) {
       const openLabel = toggle.querySelector('.nav-toggle__open');
       const closeLabel = toggle.querySelector('.nav-toggle__close');

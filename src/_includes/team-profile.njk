@@ -9,12 +9,13 @@
     <div>
       <p class="eyebrow">{{ role }}</p>
       <h1>{{ name }}</h1>
+      {% if email %}<p class="team-profile__email"><a href="mailto:{{ email }}">{{ email }}</a></p>{% endif %}
       <a href="{{ metadata.routes.people }}" class="text-link">{{ metadata.labels.back_to_people }} <span aria-hidden="true">{{ metadata.symbols.forward }}</span></a>
     </div>
   </header>
 
   <div class="prose-green">
-    {{ description | md | safe }}
+    {{ content | safe }}
   </div>
 </article>
 {% endblock %}
