@@ -1,5 +1,0 @@
----
-title:
-description:
-permalink: /publications/
----

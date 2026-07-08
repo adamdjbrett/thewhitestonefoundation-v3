@@ -170,10 +170,18 @@ button {
   gap: 0.6rem;
   width: 2.4rem;
   height: 2.4rem;
-  border: 1px solid rgb(2 62 138 / 0.24);
-  background: rgb(202 240 248 / 0.92);
+  border: 0;
+  background: transparent;
   color: var(--ink);
   padding: 0;
+}
+
+.search-icon-button .pf-trigger-btn {
+  width: 2.4rem !important;
+  height: 2.4rem !important;
+  border: 0 !important;
+  background: transparent !important;
+  padding: 0 !important;
 }
 
 .search-icon-button svg {
@@ -184,13 +192,12 @@ button {
 
 .search-icon-button:hover {
   color: var(--earth);
-  border-color: rgb(0 119 182 / 0.55);
 }
 
 .search-icon-button--mobile {
-  width: fit-content;
-  height: auto;
-  padding: 0.8rem 1rem;
+  width: 2.4rem;
+  height: 2.4rem;
+  padding: 0;
   font-family: var(--font-heading);
   font-size: 1.15rem;
 }
@@ -621,6 +628,7 @@ button {
   text-transform: uppercase;
 }
 
+.publication-card__body h2,
 .publication-card__body h3,
 .program-card h3,
 .team-card h3,
@@ -1109,9 +1117,9 @@ button {
 }
 
 .page-shell {
-  width: min(1120px, calc(100% - 2rem));
+  width: min(1200px, calc(100% - 3rem));
   margin-inline: auto;
-  padding-block: 8rem 5rem;
+  padding-block: 6rem 5rem;
 }
 
 .page-header {
@@ -1128,7 +1136,7 @@ button {
 }
 
 .page-header h1 {
-  max-width: 12ch;
+  max-width: 24ch;
   color: var(--ink);
   font-size: clamp(3rem, 7vw, 5.75rem);
   line-height: 0.98;
@@ -1151,7 +1159,7 @@ button {
 }
 
 .prose-green {
-  max-width: 72ch;
+  max-width: 80ch;
   color: rgb(3 4 94 / 0.88);
   font-size: 1.12rem;
   line-height: 1.85;

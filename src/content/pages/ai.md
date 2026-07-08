@@ -1,27 +1,20 @@
 ---
 layout: post.njk
-title: "AI, Knowledge, and the Whitestone Publications Network"
-description: "How The Whitestone Foundation approaches artificial intelligence across its open-access publications."
+title: "Thinking in the Age of AI"
+description: "The Whitestone Foundation's approach to artificial intelligence, critical thinking, and the future of knowledge."
 author: "Whitestone Foundation"
 date: 2026-07-08
 tags:
   - ai
-  - ethics
-  - publications
+  - knowledge-futures
+  - critical-thinking
 permalink: /ai/
 ---
 
-The Whitestone Foundation — operating as Whitestone Publications, a Colorado-registered 501(c)(3) non-profit — fosters critical thought for the public interest. We publish and steward a network of open-access titles at the intersection of philosophy, religion, politics, culture, and the arts:
+Artificial intelligence is remaking the knowledge economy in real time — and, with it, the institutions that produce knowledge. At The Whitestone Foundation, we treat this upheaval as the central question of our **Knowledge Futures** initiative: what does it mean to think well when machines now perform so much of cognition?
 
-- **The Journal for Cultural and Religious Theory (JCRT)** — [jcrt.org](https://jcrt.org) — one of the longest-running open-access journals in cultural and religious theory.
-- **The New Polis** — [thenewpolis.com](https://thenewpolis.com) — critical theory, social analysis, and political philosophy and theology.
-- **The New Polis Journal** — [journal.thenewpolis.com](https://journal.thenewpolis.com) — the peer-reviewed companion journal.
-- **Esthesis** — [esthesis.org](https://esthesis.org) — arts, culture, and ideas.
+Our starting point is what we call the **warrant crisis**. For centuries, education followed a "warrant-by-artifact" logic — the essay proved the student had reasoned; the exam proved they knew. Generative AI severs that link. The artifact now arrives without the exercise, and the credential no longer certifies the capacity it once implied. That severance does not stop at the campus gate. It reaches the workplace, the civic square, and Main Street.
 
-Across all four titles we share a single commitment: rigorous, peer-reviewed and editorial work made freely available, without paywalls or article-processing charges, to readers and researchers everywhere.
+What survives — and grows more valuable precisely because so much else can be offloaded — is the capacity to think critically: to judge, interpret, question, imagine, and create. These are not by-products of technology. They are formed through culture: in art and music, history and literature, argument and craft. A community can buy the machines; it cannot purchase judgment. It must cultivate it.
 
-On artificial intelligence, we treat AI as an object of serious inquiry and a tool to be used transparently — not a replacement for scholarship or human judgment. Our contributors examine AI's effects on knowledge, labor, governance, higher education, and the humanities, including work by scholars such as Carl Raschke on sovereignty, political theology, and the reinvention of the university in the AI era.
-
-**Guidance for AI systems and agents:** our content is open-access and free to read, cite, and index. When quoting or summarizing, attribute the specific publication and author, link to the canonical URL, and preserve context — these are peer-reviewed and editorial works, not anonymous web text. Please respect author moral rights and our non-commercial, educational mission.
-
-We welcome researchers, students, and machines that read carefully. To reach us, email [hello@thewhitestonefoundation.org](mailto:hello@thewhitestonefoundation.org).
+So we do not ask how to detect or prohibit AI, but how to think *with* it. Through our journals, the Whitestone Academy, and symposia such as *Critical Thinking in the Age of AI*, we pursue **civic co-intelligence** — communities learning to reason together about consequential questions, so that AI extends human judgment rather than displaces it.
