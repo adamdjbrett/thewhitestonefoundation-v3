@@ -19,6 +19,32 @@
     const mobileNav = document.querySelector('[data-mobile-nav]');
     const searchTrigger = document.querySelector('pagefind-modal-trigger.search-icon-button');
 
+    const hydrateEmailLinks = () => {
+      document.querySelectorAll('[data-email-link][data-email]').forEach((link) => {
+        if (link.dataset.emailLoaded) return;
+        try {
+          const email = window.atob(link.dataset.email || '');
+          link.href = `mailto:${email}`;
+          const label = link.querySelector('[data-email-text]');
+          if (label) label.textContent = email;
+          link.dataset.emailLoaded = 'true';
+        } catch {
+          link.removeAttribute('href');
+        }
+      });
+    };
+
+    document.querySelectorAll('[data-email-link]').forEach((link) => {
+      link.addEventListener('focus', hydrateEmailLinks, { once: true });
+      link.addEventListener('pointerenter', hydrateEmailLinks, { once: true });
+    });
+
+    if ('requestIdleCallback' in window) {
+      window.requestIdleCallback(hydrateEmailLinks);
+    } else {
+      window.setTimeout(hydrateEmailLinks, 500);
+    }
+
     const isEditableTarget = (target) => {
       if (!target || !(target instanceof HTMLElement)) {
         return false;

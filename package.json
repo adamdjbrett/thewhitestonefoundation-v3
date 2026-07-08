@@ -2,6 +2,7 @@
   "name": "thewhitestonefoundation-v3",
   "version": "1.0.0",
   "private": true,
+  "license": "MIT",
   "type": "module",
   "packageManager": "npm@11.9.0",
   "scripts": {

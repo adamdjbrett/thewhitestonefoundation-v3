@@ -41,6 +41,17 @@ The build output is static and remains centered on `dist/`, which keeps the proj
 
 Generated output goes to `dist/`, which is ignored locally and rebuilt by CI.
 
+## Credits
+
+### Images
+
+- Homepage hero image: Getty Images, licensed under the Unsplash+ License.
+- Unused Unsplash asset: photo by Mehdi Benkaci, `/images/mehdi-benkaci-BQ2b3LmEogA-unsplash.webp`.
+
+### Icons
+
+[Phosphor](https://phosphoricons.com/) is a passion project by [Helena Zhang](https://helenazhang.com/) and [Tobias Fried](https://tobiasfried.com/).
+
 ## Ocean Blue Serenity Color Palette
 - #03045e
 - #023e8a

@@ -25,7 +25,7 @@ body {
   background: var(--canvas);
   color: var(--ink);
   font-family: var(--font-body);
-  font-size: 18px;
+  font-size: 16px;
   line-height: 1.65;
   letter-spacing: 0;
 }
@@ -1175,13 +1175,27 @@ button {
   vertical-align: text-bottom;
 }
 
+.footer-license-link {
+  display: inline-flex;
+  align-items: center;
+  margin-inline-end: 0.5rem;
+  color: rgb(202 240 248 / 0.75);
+  vertical-align: middle;
+}
+
 .footer-feed-link svg {
   width: 1rem;
   height: 1rem;
   fill: currentColor;
 }
 
-.footer-feed-link:hover {
+.footer-license-link svg {
+  width: 4rem;
+  height: auto;
+}
+
+.footer-feed-link:hover,
+.footer-license-link:hover {
   color: var(--tiger);
 }
 
@@ -1207,7 +1221,7 @@ button {
 .page-header h1 {
   max-width: 24ch;
   color: var(--ink);
-  font-size: clamp(3rem, 7vw, 5.75rem);
+  font-size: clamp(2.5rem, 7vw, 4rem);
   line-height: 0.98;
 }
 
@@ -1230,13 +1244,15 @@ button {
 .prose-green {
   max-width: 80ch;
   color: rgb(3 4 94 / 0.88);
-  font-size: 1.12rem;
+  font-size: 1rem;
   line-height: 1.85;
 }
 
 .prose-green h2,
 .prose-green h3,
-.prose-green h4 {
+.prose-green h4,
+.prose-green h5,
+.prose-green h6 {
   color: var(--ink);
   font-family: var(--font-heading);
   line-height: 1.15;
@@ -1244,11 +1260,23 @@ button {
 }
 
 .prose-green h2 {
-  font-size: clamp(2rem, 4vw, 3rem);
+  font-size: clamp(2rem, 4vw, 2.5rem);
 }
 
 .prose-green h3 {
-  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-size: clamp(1.5rem, 3vw, 1.75rem);
+}
+
+.prose-green h4 {
+  font-size: clamp(1.25rem, 2.5vw, 1.35rem);
+}
+
+.prose-green h5 {
+  font-size: 1.125rem;
+}
+
+.prose-green h6 {
+  font-size: 1rem;
 }
 
 .prose-green p,
@@ -1296,6 +1324,40 @@ button {
 
 .team-profile__header h1 {
   margin-block: 0.4rem 1rem;
+}
+
+.team-profile__contacts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: center;
+  margin-block: 0 1.25rem;
+}
+
+.team-profile__contact-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  min-width: 1rem;
+  min-height: 1rem;
+  color: var(--earth);
+  font-size: 0.9rem;
+}
+
+.team-profile__contact-link svg {
+  width: 1rem;
+  height: 1rem;
+}
+
+.team-profile__contact-link--text {
+  min-width: 0;
+  min-height: 0;
+  letter-spacing: 0.05em;
+}
+
+.team-profile__contact-link:hover {
+  color: var(--ink);
 }
 
 .grid-list {

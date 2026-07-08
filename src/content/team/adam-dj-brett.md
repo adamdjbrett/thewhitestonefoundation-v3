@@ -3,7 +3,7 @@ name: "Adam DJ Brett"
 role: "Special Projects Editor"
 photo: "/images/adamdjbrett-sm.webp"
 email: adam@thewhitestonefoundation.org
-orcid:
+orcid: https://orcid.org/0009-0004-6725-8425
 description: "Special Projects Editor for Whitestone Publications; a Syracuse Ph.D. exploring how Christianity, colonialism, and culture intertwine in North America."
 ---
 

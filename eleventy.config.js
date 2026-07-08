@@ -1,5 +1,6 @@
 import markdownIt from 'markdown-it';
 import yaml from 'js-yaml';
+import { Buffer } from 'node:buffer';
 import { readFileSync } from 'node:fs';
 
 const md = markdownIt({ html: true, breaks: true, linkify: true, typographer: true });
@@ -32,6 +33,38 @@ const titleCaseTerm = (value) =>
     .replace(/\s+/g, ' ')
     .trim()
     .replace(/\b\w/g, (char) => char.toUpperCase());
+
+const sortByLabel = (items = []) =>
+  [...items].sort((a, b) => String(a?.label || '').localeCompare(String(b?.label || '')));
+
+const firstName = (value) => String(value || '').trim().split(/\s+/)[0] || '';
+
+const base64 = (value) => Buffer.from(String(value || ''), 'utf8').toString('base64');
+
+const orcidUrl = (value) => {
+  const orcid = String(value || '').trim();
+  if (!orcid) return '';
+  return /^https?:\/\//i.test(orcid) ? orcid : `https://orcid.org/${orcid}`;
+};
+
+const orcidId = (value) => String(value || '').trim().replace(/^https?:\/\/orcid\.org\//i, '');
+
+const markExternalLinks = (value, base = metadata.url) =>
+  String(value || '').replace(/<a\b([^>]*)href=(["'])([^"']+)\2([^>]*)>([\s\S]*?)<\/a>/gi, (match, before, quote, href, after, label) => {
+    if (/^(#|\/|mailto:|tel:)/i.test(href)) return match;
+
+    try {
+      if (new URL(href, base).origin === new URL(base).origin) return match;
+    } catch {
+      return match;
+    }
+
+    const attrs = `${before}href=${quote}${href}${quote}${after}`;
+    const withTarget = /\btarget=/i.test(attrs) ? attrs : `${attrs} target="_blank"`;
+    const withRel = /\brel=/i.test(withTarget) ? withTarget : `${withTarget} rel="noopener noreferrer"`;
+    const arrow = metadata.symbols?.external || '↗';
+    return `<a${withRel}>${label} <span aria-hidden="true">${arrow}</span></a>`;
+  });
 
 const countTerms = (items, field) => {
   const counts = new Map();
@@ -99,6 +132,11 @@ export default async function (eleventyConfig) {
   eleventyConfig.addFilter('md', (value) => md.render(String(value || '')));
   eleventyConfig.addFilter('markdownify', (value) => md.render(String(value || '')));
   eleventyConfig.addFilter('titleCaseTerm', titleCaseTerm);
+  eleventyConfig.addFilter('sortByLabel', sortByLabel);
+  eleventyConfig.addFilter('firstName', firstName);
+  eleventyConfig.addFilter('base64', base64);
+  eleventyConfig.addFilter('orcidUrl', orcidUrl);
+  eleventyConfig.addFilter('orcidId', orcidId);
   eleventyConfig.addFilter('lineBreaks', (value) =>
     String(value || '')
       .trim()
@@ -106,6 +144,10 @@ export default async function (eleventyConfig) {
   );
   eleventyConfig.addFilter('stripHtml', stripHtml);
   eleventyConfig.addFilter('containsAny', containsAny);
+  eleventyConfig.addFilter('markExternalLinks', markExternalLinks);
+  eleventyConfig.addFilter('jsonLd', (value) =>
+    JSON.stringify(value).replace(/</g, '\\u003c')
+  );
   eleventyConfig.addFilter('truncate', (value, count = 150) => {
     const text = stripHtml(value);
     return text.length > count ? `${text.slice(0, count).trim()}...` : text;

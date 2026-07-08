@@ -10,40 +10,22 @@ image: /images/wp-content/uploads/2021/08/whitestone-logo.webp
 permalink: /academia/announcing-whitestone-thought-leader-symposia/
 ---
 
-## #1 The Existential Crisis of Learning and the Future of the Knowledge Economy
-
-### 
-
+## The Existential Crisis of Learning and the Future of the Knowledge Economy
 ### When?
-
-Wednesday, Nov. 12
-
-7-9 Eastern Standard Time
-
-## Where?
-
-Online
-
-The symposium is free, but you need to register to participate.
+- Wednesday, Nov. 12 2025
+- 7-9 Eastern Standard Time
+- Online
+- The symposium is free, but you need to register to participate.
 
 ## Who?
+- Educators and Administrators, Political and Civic Leaders, 
+- Professionals, Policy-Makers
 
-Educators and Administrators, Political and Civic Leaders, 
+## Details
+### Global Thought Leader Symposia
+[The Existential Crisis of Learning and the Future of the Knowledge Economy Videos](https://www.youtube.com/embed/lroJtmhT3d8)
 
-Professionals, Policy-Makers
-
-### Details
-Global Thought Leader Symposia
-==============================
-
-[](https://thewhitestonefoundation.org/events/#)
-------------------------------------------------
-
-[The Existential Crisis of Learning and the Future of the Knowledge Economy](https://www.youtube.com/embed/lroJtmhT3d8)
-
-The Existential Crisis of Learning and the Future of the Knowledge Economy
-
-The Whitestone Foundation held its inaugural online thought leader symposium entitled "The Existential Crisis of Learning and the Future of the Knowledge Economy" on Nov. 12, 2025. [Watch the video.](https://www.youtube.com/watch?v=lroJtmhT3d8)
+[The Whitestone Foundation](/) held its inaugural online thought leader symposium entitled "The Existential Crisis of Learning and the Future of the Knowledge Economy" on Nov. 12, 2025. [Watch the video.](https://www.youtube.com/watch?v=lroJtmhT3d8)
 
 The global economy, with which the US economy is inextricably intertwined, within the last few decades has morphed without question into a *[knowledge economy](https://www.investopedia.com/terms/k/knowledge-economy.asp)*. Artificial intelligence, or AI, has accelerated and deeply augmented this transformation.
 
@@ -57,7 +39,7 @@ K-12 education, which feeds students to colleges and universities, is in dire tr
 
 [According to the World Economic Forum](https://www.weforum.org/stories/2025/01/time-we-transform-education/), globally over 250 million children remain out of school, especially in low-income countries facing conflict, displacement, or chronic underfunding. There is a critical international teacher shortage and persistent digital inequity, which altogether impedes educational and social progress
 
-What is to be done?
+#### What is to be done?
 
 The usual, tired, lazy-minded response is "more funding". However, even a [US Department of Education study](https://nces.ed.gov/pubs97/web/97536-2.asp) concludes that, after decades of substantial increases in education funding, student outcomes have not improved "substantially, if at all." It underscores that observers and policymakers frequently note the lack of significant return in student achievement despite greater investments.
 
@@ -65,20 +47,18 @@ Our educational systems from kindergarten to graduate school are for the most pa
 
 Education as a whole, including higher education, needs to undergo a total makeover, or large-scale "rethink", and we need to begin now. At the same time, we are compelled to ask the question, "if we know what needs to be done, how can we really do it, and how do we deal with the seemingly insuperable obstacles we face"?
 
-Panelists
+### Panelists
 
-*[Photos and full bios](https://thewhitestonefoundation.org/panelists/)*
+*[Photos and full bios](/panelists/)*
 
-Dani Chesson (University of Denver
-Darryl Meekins (Lightbox Consultants)\
-Erik Raschke (Goudsewaarden School, Netherlands)\
-Erec Smith (Cato Institute, Free Black Thought)\
-Justin Taylor (Sewanee School of Letters)\
-Victor Taylor (The Whitestone Foundation)\
-Paul Wolfe (The Cambridge School, Dallas)
+- Dani Chesson (University of Denver
+- Darryl Meekins (Lightbox Consultants)
+- Erik Raschke (Goudsewaarden School, Netherlands)
+- Erec Smith (Cato Institute, Free Black Thought)
+- Justin Taylor (Sewanee School of Letters)
+- Victor Taylor (The Whitestone Foundation)
+- Paul Wolfe (The Cambridge School, Dallas)
 
-ModeratorsCarl Raschke (University of Denver)
-
-Gary Bedford (Wild Globalization Project)
-
-[Whitestone Publications](https://thewhitestonefoundation.org/) The Whitestone Foundation
+### Moderators
+- Carl Raschke (University of Denver)
+- Gary Bedford (Wild Globalization Project)

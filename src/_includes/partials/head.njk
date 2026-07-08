@@ -31,6 +31,9 @@
   {% for script in metadata.head.script %}
   <script src="{{ script.src }}"{% if script.defer %} defer{% endif %}></script>
   {% endfor %}
+  {% if schema %}
+  <script type="application/ld+json">{{ schema | jsonLd | safe }}</script>
+  {% endif %}
   <link href="/pagefind/pagefind-component-ui.css" rel="stylesheet">
   <script src="/pagefind/pagefind-component-ui.js" type="module"></script>
 </head>

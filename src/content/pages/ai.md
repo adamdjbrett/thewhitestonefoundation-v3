@@ -1,5 +1,5 @@
 ---
-layout: post.njk
+layout: page.njk
 title: "Research Symposia on AI & the Future of Knowledge"
 description: "Whitestone convenes bold research symposia on AI, education, and the future of knowledge: how humans think, teach, and lead in an intelligent age."
 author: "Whitestone Foundation"
