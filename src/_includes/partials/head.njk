@@ -10,7 +10,12 @@
   <meta name="description" content="{{ pageDescription }}">
   <meta name="robots" content="{% if noindex or metadata.noindex %}noindex, nofollow{% else %}index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1{% endif %}">
   <link rel="canonical" href="{{ canonical }}">
-  <link rel="icon" href="{{ metadata.favicon or metadata.seo.ogImage.url }}">
+  {% for item in favicons.links %}
+  <link rel="{{ item.rel }}"{% if item.type %} type="{{ item.type }}"{% endif %}{% if item.sizes %} sizes="{{ item.sizes }}"{% endif %} href="{{ item.href }}" />
+  {% endfor %}
+  {% for item in favicons.meta %}
+  <meta name="{{ item.name }}" content="{{ item.content }}" />
+  {% endfor %}
   {% for item in metadata.head.link %}
   {% if item.rel != "icon" %}
   <link rel="{{ item.rel }}" href="{{ item.href }}">
