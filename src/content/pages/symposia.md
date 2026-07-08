@@ -5,6 +5,6 @@ permalink: /symposia/
 ---
 
 ## Past  Symposia
-
-### Rethinking Higher Education Totally
-### The Existential Crisis of Learning and the Future of the Knowledge Economy**
+### [The Existential Crisis of Learning and the Future of the Knowledge Economy](/videos/)
+    * [The Participants](/participants/)
+    * [The Videos](/videos/)

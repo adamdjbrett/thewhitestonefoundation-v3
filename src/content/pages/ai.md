@@ -1,20 +1,20 @@
 ---
 layout: post.njk
-title: "Thinking in the Age of AI"
-description: "The Whitestone Foundation's approach to artificial intelligence, critical thinking, and the future of knowledge."
+title: "Research Symposia on AI & the Future of Knowledge"
+description: "Whitestone Foundation symposia convening philosophers, scientists, and educators on artificial intelligence, learning, and what it means to think well."
 author: "Whitestone Foundation"
 date: 2026-07-08
 tags:
   - ai
   - knowledge-futures
-  - critical-thinking
+  - symposia
 permalink: /ai/
 ---
 
-Artificial intelligence is remaking the knowledge economy in real time — and, with it, the institutions that produce knowledge. At The Whitestone Foundation, we treat this upheaval as the central question of our **Knowledge Futures** initiative: what does it mean to think well when machines now perform so much of cognition?
+When a take-home exam can be aced by a chatbot and a term paper writes itself overnight, a quiet question turns urgent: what is education actually *for*? The Whitestone Foundation convenes research symposia to work it out — gatherings where philosophers, cognitive scientists, educators, and practitioners think hard, together, about AI and the future of knowledge.
 
-Our starting point is what we call the **warrant crisis**. For centuries, education followed a "warrant-by-artifact" logic — the essay proved the student had reasoned; the exam proved they knew. Generative AI severs that link. The artifact now arrives without the exercise, and the credential no longer certifies the capacity it once implied. That severance does not stop at the campus gate. It reaches the workplace, the civic square, and Main Street.
+We have been building these conversations for twenty-five years. Our early "Critical Conversations" pioneered online scholarly video and podcasting nearly two decades before it was fashionable; today our conclaves draw international participation on everything from democracy to the future of the university.
 
-What survives — and grows more valuable precisely because so much else can be offloaded — is the capacity to think critically: to judge, interpret, question, imagine, and create. These are not by-products of technology. They are formed through culture: in art and music, history and literature, argument and craft. A community can buy the machines; it cannot purchase judgment. It must cultivate it.
+Our flagship symposium, **Critical Thinking in the Age of AI**, launches in the fall of 2026. It gathers philosophers of mind and technology, cognitive scientists, pedagogical theorists, and post-secondary practitioners around a single question: *what does critical thinking require — and how must it be taught — when artificial intelligence now mediates so much of how we know?* This September we also open an international conference on **cognitive warfare**, at the seam of political science and security studies.
 
-So we do not ask how to detect or prohibit AI, but how to think *with* it. Through our journals, the Whitestone Academy, and symposia such as *Critical Thinking in the Age of AI*, we pursue **civic co-intelligence** — communities learning to reason together about consequential questions, so that AI extends human judgment rather than displaces it.
+These are not panels with polite applause. They are structured working sessions — charitable disagreement, judgment deferred during ideation, every voice on the board. The wager behind them is simple: as machines absorb routine thinking, the human capacities that remain — judgment, interpretation, imagination — grow more valuable, not less. Our symposia exist to cultivate them, so that communities learn to think *with* the machine rather than be replaced by it.

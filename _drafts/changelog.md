@@ -10,11 +10,9 @@ https://github.com/adamdjbrett/thewhitestonefoundation-v3
 - The major changes are:
 - fix the contrast so that everything is more visible and easier to read keep the color palette in the blues but upgrade - the contrast
 - make the theme work on mobile
-- make a publications.md into publications.txt a template that displays a 2x2 grid of all the publications with cards each card should have a hero image, title, description, and button. it should create a /publications/ page. pull from 
-
-
 
 - Fix the post theme to use more of the full width of the screen and size responsively for headers, body, and images. its too cramped presently.
+- make The New Polis Journal not Journal, New Polis on its site and on TWF
 
 ## done
 - ~~The name in the header should be The Whitestone Foundation~~
@@ -24,3 +22,4 @@ https://github.com/adamdjbrett/thewhitestonefoundation-v3
 ~~- on index.md programs make the link: section work and have a button open the link. add link_title: link_url:~~
 - ~~in /Users/abrett76/github/thewhitestonefoundation-v3 show categories on /news/ and show categories, posts, authors on posts.~~
 - ~~Create and stylize in the theme a page for /ai/ and /symposia/; these should look a lot like a post theme.~~
+- ~~make a publications.md into publications.txt a template that displays a 2x2 grid of all the publications with cards each card should have a hero image, title, description, and button. it should create a /publications/ page. pull from ~~
