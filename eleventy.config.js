@@ -100,6 +100,9 @@ const byConfiguredOrder = (order) => (a, b) => {
 export default async function (eleventyConfig) {
   eleventyConfig.setLibrary('md', md);
   eleventyConfig.addPassthroughCopy({ 'src/static': '/' });
+  // Copy the Atom feed stylesheet to the path the feeds reference (/feed/…),
+  // rather than letting it template-build to /content/feed/… (404 → blank feed).
+  eleventyConfig.addPassthroughCopy({ 'src/content/feed/pretty-atom-feed.xsl': 'feed/pretty-atom-feed.xsl' });
 
   eleventyConfig.addPreprocessor('drafts', '*', (data) => {
     if (data.draft && process.env.ELEVENTY_RUN_MODE === 'build') return false;
@@ -206,6 +209,6 @@ export default async function (eleventyConfig) {
     },
     htmlTemplateEngine: 'njk',
     markdownTemplateEngine: 'njk',
-    templateFormats: ['html', 'njk', 'md', 'txt', 'xml', 'xsl']
+    templateFormats: ['html', 'njk', 'md', 'txt', 'xml']
   };
 }
