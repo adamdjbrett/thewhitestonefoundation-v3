@@ -324,7 +324,7 @@ button {
 
 .button--outline {
   background: transparent;
-  color: var(--earth);
+  color: #00618f; /* ponytail: WCAG AA fix, earth #0077b6 was 4.02:1 on canvas; 00618f hits >=5:1 on all light section bgs */
 }
 
 .button:hover,
