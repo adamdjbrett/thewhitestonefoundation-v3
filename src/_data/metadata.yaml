@@ -152,7 +152,7 @@ widget:
 footer:
   year_start: 2018
   brand: "The Whitestone Foundation"
-  about: "The Whitestone Foundation, dba Whitestone Publications, is a Boulder, Colorado-registered 501(c)(3) non-profit corporation dedicated to fostering critical thought for the public interest through independent research and open access publishing."
+  about: "The Whitestone Foundation, dba Whitestone Publications], is a Boulder, Colorado-registered 501(c)(3) non-profit corporation dedicated to fostering critical thought for the public interest."
   navigation_heading: "Navigation"
   journals_heading: "Journals"
   copyright_name: "The Whitestone Foundation"
@@ -163,6 +163,7 @@ footer:
   text: "Copyright The Whitestone Foundation dba Whitestone Publications. All Rights Reserved."
   info: "A WHITESTONE FOUNDATION PUBLICATION"
   url: "https://thewhitestonefoundation.org/"
+  rss: "/feed/firehose.xml"
   navigation:
     - label: "About"
       url: "/about/"

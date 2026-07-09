@@ -1,10 +1,17 @@
 {% extends "base.njk" %}
 
 {% block content %}
-<article class="page-shell h-entry">
-  <header class="page-header">
+<article class="page-shell page-shell--wide">
+  <header class="page-header page-header--wide">
     <p class="eyebrow">
-      {% if categories and categories.length %}<span class="p-category">{{ categories[0] }}</span>{% else %}{{ metadata.labels.news }}{% endif %}
+      {% if categories and categories.length %}
+        {% for category in categories %}
+          <a href="/categories/{{ category | slugify }}/" class="category-link">{{ category | titleCaseTerm }}</a>
+          {% if not loop.last %}, {% endif %}
+        {% endfor %}
+      {% else %}
+        <span>{{ metadata.labels.news }}</span>
+      {% endif %}
       {% if date %} {{ metadata.symbols.separator }} <time class="dt-published" datetime="{{ date | htmlDateString }}">{{ date | readableDate }}</time>{% endif %}
     </p>
     <h1 class="p-name">{{ title }}</h1>
@@ -15,33 +22,38 @@
         <span>By <span class="p-author h-card">{{ author | titleCaseTerm }}</span></span>
       {% endif %}
       {% if categories and categories.length %}
-        {% for category in categories %}
-          <span class="p-category">{{ category | titleCaseTerm }}</span>
-        {% endfor %}
+        <span>Categories: 
+          {% for category in categories %}
+            <a href="/categories/{{ category | slugify }}/" class="p-category category-link">{{ category | titleCaseTerm }}</a>
+            {% if not loop.last %}, {% endif %}
+          {% endfor %}
+        </span>
       {% endif %}
     </div>
   </header>
+
   {% if image %}
-    <img class="feature-image u-photo" src="{{ image }}" alt="{{ title }}" loading="lazy">
+    <img class="feature-image feature-image--wide" src="{{ image }}" alt="{{ title }}" loading="lazy">
   {% endif %}
-  <div class="prose-green e-content">
+
+  <div class="prose-green prose-green--wide">
     {{ content | markExternalLinks | safe }}
   </div>
 
-  <footer class="post-taxonomy">
+  <footer class="post-taxonomy post-taxonomy--wide">
     {% if categories and categories.length %}
       <section class="taxonomy-panel">
         <h2>Categories</h2>
         <div class="tag-cloud">
           {% for category in categories %}
-            <span class="tag-pill">{{ category | titleCaseTerm }}</span>
+            <a href="/categories/{{ category | slugify }}/" class="tag-pill category-link">{{ category | titleCaseTerm }}</a>
           {% endfor %}
         </div>
       </section>
     {% endif %}
 
     <section class="taxonomy-panel">
-      <h2>Posts</h2>
+      <h2>Recent Posts</h2>
       <div class="link-stack">
         {% if collections.posts.length > 1 %}
           {% set recentPosts = collections.posts | reverse %}
@@ -49,7 +61,12 @@
             {% if post.url != page.url %}
               <a href="{{ post.url }}">
                 <span>{{ post.data.title }}</span>
-                <small>{{ post.date | readableDate }}</small>
+                <small>
+                  {{ post.date | readableDate }}
+                  {% if post.data.categories and post.data.categories.length %}
+                    | {{ post.data.categories | join(', ') }}
+                  {% endif %}
+                </small>
               </a>
             {% endif %}
           {% endfor %}
@@ -59,19 +76,41 @@
       </div>
     </section>
 
-    {% if collections.postAuthors and collections.postAuthors.length %}
-      <section class="taxonomy-panel">
-        <h2>Authors</h2>
-        <div class="tag-cloud">
-          {% for postAuthor in collections.postAuthors %}
+    <section class="taxonomy-panel">
+      <h2>Authors</h2>
+      <div class="tag-cloud">
+        {% set authorNames = [] %}
+        {% for post in collections.posts %}
+          {% if post.data.author %}
+            {% set authorNames = authorNames.concat([post.data.author]) %}
+          {% endif %}
+        {% endfor %}
+        
+        {% set uniqueAuthors = [] %}
+        {% for author in authorNames %}
+          {% if not (author in uniqueAuthors) %}
+            {% set uniqueAuthors = uniqueAuthors.concat([author]) %}
+          {% endif %}
+        {% endfor %}
+        
+        {% if uniqueAuthors.length %}
+          {% for authorName in uniqueAuthors %}
+            {% set postCount = 0 %}
+            {% for post in collections.posts %}
+              {% if post.data.author == authorName %}
+                {% set postCount = postCount + 1 %}
+              {% endif %}
+            {% endfor %}
             <span class="tag-pill">
-              {{ postAuthor.name | titleCaseTerm }}
-              <span>{{ postAuthor.count }}</span>
+              {{ authorName | titleCaseTerm }}
+              <span>{{ postCount }}</span>
             </span>
           {% endfor %}
-        </div>
-      </section>
-    {% endif %}
+        {% else %}
+          <p>No authors found.</p>
+        {% endif %}
+      </div>
+    </section>
   </footer>
 </article>
 {% endblock %}

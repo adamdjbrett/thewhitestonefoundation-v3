@@ -1,0 +1,37 @@
+---
+layout: base.njk
+title: Publications
+description: Open access journals and scholarly publications from The Whitestone Foundation
+permalink: /publications/index.html
+---
+
+{% extends "base.njk" %}
+
+{% block content %}
+<div class="page-shell page-shell--wide">
+  <header class="page-header">
+    <p class="eyebrow">{{ publications.section.eyebrow }}</p>
+    <h1>{{ publications.section.title }} <span style="color: var(--olive); font-style: italic;">{{ publications.section.titleSpan }}</span></h1>
+    {% if publications.section.description != '~' %}
+      <p>{{ publications.section.description }}</p>
+    {% endif %}
+  </header>
+
+  <div class="publication-grid">
+    {% for pub in publications.list %}
+      <a href="{{ pub.url }}" class="publication-card reveal" target="_blank" rel="noopener noreferrer">
+        <div class="publication-card__image">
+          <img src="{{ pub.image }}" alt="{{ pub.title }}">
+          <div></div>
+        </div>
+        <div class="publication-card__body">
+          <p>{{ pub.abbr }}</p>
+          <h3>{{ pub.title }}</h3>
+          <span>{{ pub.description | safe }}</span>
+          <span class="text-link" style="margin-top: 1rem; display: inline-block;">Visit Journal <span aria-hidden="true">{{ metadata.symbols.external }}</span></span>
+        </div>
+      </a>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}
