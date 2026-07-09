@@ -1,4 +1,5 @@
 ---
+layout: post.njk
 title: Symposia
 description: The Whitestone Thought Leader Symposia bring together scholars, practitioners, and thought leaders for critical conversations.
 permalink: /symposia/

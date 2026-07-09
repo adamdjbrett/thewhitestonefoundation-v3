@@ -13,14 +13,18 @@
     <div class="news-grid">
       {% set latestPosts = collections.posts | reverse %}
       {% for item in latestPosts %}
-        {% if loop.index <= 2 %}
+        {% if loop.index <= 3 %}
         <article class="news-card reveal">
           <a href="{{ item.url }}">
             <div class="news-card__image">
               <img src="{% if loop.index0 == 0 %}{{ images.symposium }}{% else %}{{ images.campus }}{% endif %}" alt="{{ item.data.title }}" loading="lazy">
             </div>
             <div class="post-meta">
-              <span>{% if item.data.categories and item.data.categories.length %}{{ item.data.categories[0] }}{% else %}{{ metadata.labels.news }}{% endif %}</span>
+              {% if item.data.categories and item.data.categories.length %}
+                <span>{{ item.data.categories | join(', ') }}</span>
+              {% else %}
+                <span>{{ metadata.labels.news }}</span>
+              {% endif %}
               <time>{{ item.date | readableDate }}</time>
             </div>
             <h3>{{ item.data.title }}</h3>

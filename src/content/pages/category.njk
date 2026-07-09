@@ -1,0 +1,59 @@
+---
+layout: base.njk
+pagination:
+  data: collections.postCategories
+  size: 1
+  alias: category
+  addAllPagesToCollections: true
+permalink: "/categories/{{ category.slug }}/index.html"
+eleventyComputed:
+  title: "{{ category.name }} | Categories"
+  description: "Posts categorized under {{ category.name }}"
+---
+<div class="page-shell">
+  <header class="page-header">
+    <p class="eyebrow">Category</p>
+    <h1>{{ category.name | titleCaseTerm }}</h1>
+    <p>{{ category.count }} post{% if category.count > 1 %}s{% endif %} in this category</p>
+  </header>
+
+  <div class="grid-list listing-grid">
+    {% for post in collections.posts %}
+      {% if post.data.categories and category.name in post.data.categories %}
+        <article class="article-card reveal">
+          <a href="{{ post.url }}">
+            {% if post.data.image %}
+              <div class="article-card__image">
+                <img src="{{ post.data.image }}" alt="{{ post.data.title }}" loading="lazy">
+              </div>
+            {% endif %}
+            <div>
+              <div class="post-meta">
+                <time>{{ post.date | readableDate }}</time>
+                {% if post.data.categories %}
+                  <span>{{ post.data.categories | join(', ') }}</span>
+                {% endif %}
+              </div>
+              <h2>{{ post.data.title }}</h2>
+              <p>{{ post.data.description or post.content | stripHtml | truncate(170) }}</p>
+              <span class="text-link">{{ metadata.labels.read_more }} <span aria-hidden="true">{{ metadata.symbols.forward }}</span></span>
+            </div>
+          </a>
+        </article>
+      {% endif %}
+    {% endfor %}
+  </div>
+
+  <nav class="pagination-nav">
+    <div>
+      {% if pagination.href.previous %}
+        <a href="{{ pagination.href.previous }}">← Previous</a>
+      {% endif %}
+    </div>
+    <div>
+      {% if pagination.href.next %}
+        <a href="{{ pagination.href.next }}">Next →</a>
+      {% endif %}
+    </div>
+  </nav>
+</div>

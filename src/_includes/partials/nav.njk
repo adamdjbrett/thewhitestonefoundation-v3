@@ -4,7 +4,9 @@
     <div class="nav-row">
       <a href="{{ metadata.brand.home_url }}" class="brand-mark">
         <span class="brand-diamond">
-          <img src="{{ metadata.brand.mark }}" alt="{{ metadata.image_alt }}">
+          <img src="{{ metadata.brand.mark }}" 
+          alt="{{ metadata.image_alt }}"
+          height="32" width="32" loading="eager" />
         </span>
         <span class="brand-name">{{ metadata.brand.short_name }}</span>
       </a>

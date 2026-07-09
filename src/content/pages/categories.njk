@@ -1,0 +1,24 @@
+---
+layout: base.njk
+permalink: "/categories/index.html"
+title: "Categories"
+description: "Browse all categories on The Whitestone Foundation"
+---
+
+<div class="page-shell">
+  <header class="page-header page-header--center">
+    <p class="eyebrow">Browse</p>
+    <h1>Categories</h1>
+    <p>All post categories on The Whitestone Foundation</p>
+  </header>
+
+  <div class="tag-cloud" style="justify-content: center; gap: 1rem;">
+    {% set categories = collections.postCategories %}
+    {% for category in categories %}
+      <a href="/categories/{{ category.slug }}/" class="tag-pill" style="font-size: 1rem; padding: 0.75rem 1.25rem;">
+        {{ category.name | titleCaseTerm }}
+        <span>{{ category.count }}</span>
+      </a>
+    {% endfor %}
+  </div>
+</div>

@@ -189,6 +189,10 @@ export default async function (eleventyConfig) {
     const base = process.env.URL || data.metadata?.url || metadata.url;
     return new URL(data.page?.url || '/', base).toString();
   });
+  eleventyConfig.addFilter('categoryUrl', (category) => {
+  const slug = slugify(category);
+  return `/categories/${slug}/`;
+});
 
   eleventyConfig.addShortcode('year', () => new Date().getFullYear());
   eleventyConfig.addPairedShortcode('logoContainer', (content) => `<div class="logo-container">${content}</div>`);
