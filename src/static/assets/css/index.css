@@ -303,7 +303,7 @@ button {
   gap: 0.65rem;
   border: 1px solid var(--earth);
   background: var(--earth);
-  color: var(--canvas);
+  color: #ffffff;
   padding: 0.95rem 1.35rem;
   font-family: var(--font-heading);
   font-weight: 700;
@@ -331,7 +331,7 @@ button {
 .button--outline:hover {
   background: #005f92;
   border-color: #005f92;
-  color: var(--canvas);
+  color: #ffffff;
 }
 
 .home-main {

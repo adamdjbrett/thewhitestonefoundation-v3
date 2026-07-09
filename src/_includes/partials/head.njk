@@ -39,6 +39,5 @@
   {% if schema %}
   <script type="application/ld+json">{{ schema | jsonLd | safe }}</script>
   {% endif %}
-  <link href="/pagefind/pagefind-component-ui.css" rel="stylesheet">
-  <script src="/pagefind/pagefind-component-ui.js" type="module"></script>
+  {# Pagefind search UI is lazy-loaded off the critical path in assets/js/index.js #}
 </head>

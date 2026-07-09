@@ -1,22 +1,23 @@
 site_title: "The Whitestone Foundation"
+title: "The Whitestone Foundation"
 tagline: "Fostering critical thought for the public interest."
 description: "Whitestone Publications and programs in critical theory, public scholarship, and higher education."
 url: "https://thewhitestonefoundation.org"
 #url: "http://localhost:8080"
 contact: "hello@thewhitestonefoundation.org"
 support: "https://givebutter.com/whitestone"
-image: "/images/w.png"
+image: "/images/w.webp"
 image_alt: "A white and green diamond with a white 'green' in the center, representing The Whitestone Foundation."
 language: "en"
 defaultLanguage: "en"
 locale: en_US
-favicon: "/images/w.png"
+favicon: "/images/w.webp"
 noindex: false
 
 brand:
   full_name: "The Whitestone Foundation"
   short_name: "The Whitestone Foundation"
-  mark: "/images/w.png"
+  mark: "/images/w.webp"
   home_url: "/"
 
 routes:
@@ -181,9 +182,9 @@ footer:
     - label: "Videos"
       url: "/videos/"
   publications:
-    - title: "JCRT"
+    - title: "Journal for Cultural and Religious Theory (JCRT)"
       url: "https://jcrt.org"
-    - title: "The New Polis Journal"
+    - title: "The New Polis Journal (TNPJ)"
       url: "https://journal.thenewpolis.com"
     - title: "The New Polis"
       url: "https://thenewpolis.com"

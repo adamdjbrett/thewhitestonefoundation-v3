@@ -19,6 +19,31 @@
     const navPopover = document.getElementById('nav-menu');
     const searchTrigger = document.querySelector('pagefind-modal-trigger.search-icon-button');
 
+    // Lazy-load the Pagefind search UI off the critical render path.
+    let pagefindRequested = false;
+    const loadPagefind = () => {
+      if (pagefindRequested) return;
+      pagefindRequested = true;
+      const css = document.createElement('link');
+      css.rel = 'stylesheet';
+      css.href = '/pagefind/pagefind-component-ui.css';
+      document.head.appendChild(css);
+      const js = document.createElement('script');
+      js.type = 'module';
+      js.src = '/pagefind/pagefind-component-ui.js';
+      document.head.appendChild(js);
+    };
+    // Load when the browser is idle, and eagerly on first search intent (whichever comes first).
+    if ('requestIdleCallback' in window) {
+      window.requestIdleCallback(loadPagefind, { timeout: 4000 });
+    } else {
+      window.setTimeout(loadPagefind, 1500);
+    }
+    document.querySelectorAll('pagefind-modal-trigger').forEach((el) => {
+      el.addEventListener('pointerenter', loadPagefind, { once: true });
+      el.addEventListener('focusin', loadPagefind, { once: true });
+    });
+
     const hydrateEmailLinks = () => {
       document.querySelectorAll('[data-email-link][data-email]').forEach((link) => {
         if (link.dataset.emailLoaded) return;
@@ -71,6 +96,7 @@
       }
 
       event.preventDefault();
+      loadPagefind();
       searchTrigger?.click();
     });
 

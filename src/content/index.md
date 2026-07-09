@@ -6,7 +6,7 @@ permalink: /
 
 # Hero section
 hero:
-  image: /images/getty-images-ZBuxbdFzh2c-unsplash.jpg
+  image: /images/getty-images-ZBuxbdFzh2c-unsplash.webp
   alt: Photo by Licensed under the Unsplash+ License. Image by Getty.
   info: The Whitestone Foundation
   title: |
@@ -43,7 +43,7 @@ mission:
 
 # Global images
 images:
-  hero: /images/getty-images-ZBuxbdFzh2c-unsplash.jpg
+  hero: /images/getty-images-ZBuxbdFzh2c-unsplash.webp
   stone: /images/green/stone.webp
   journal: /images/green/journal.webp
   scholars: /images/green/scholars.webp
@@ -168,5 +168,5 @@ Whitestone Publications does not retain copyright to its publications. It automa
   {% logoItem "https://jcrt.org", "/images/wp-content/uploads/2021/08/JCRT-Logo.webp", "JCRT" %}
   {% logoItem "https://journal.thenewpolis.com/", "/images/the-new-polis2.webp", "The New Polis Journal" %}
   {% logoItem "https://thenewpolis.com/", "/images/wp-content/uploads/2021/08/New-Polis-logo.webp", "The New Polis" %}
-  {% logoItem "https://esthesis.org/", "/images/esthesis-logo-393x320-clean.png", "esthesis" %}
+  {% logoItem "https://esthesis.org/", "/images/esthesis-logo-393x320-clean.webp", "esthesis" %}
 {% endlogoContainer %}

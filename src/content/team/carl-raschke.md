@@ -1,7 +1,7 @@
 ---
 name: "Carl Raschke"
 role: "Co-Founder, Secretary-Treasurer"
-photo: "/images/carl-raschke-sm2.jpg"
+photo: "/images/carl-raschke-sm2.webp"
 email: carl@thewhitestonefoundation.org
 #orcid:
 description: "Co-Founder and Secretary-Treasurer; Professor of Philosophy of Religion at the University of Denver and author of twenty-plus books on theology and society."
