@@ -5,7 +5,9 @@ description: "Meet the dedicated team and scholars behind The Whitestone Foundat
 permalink: /people/
 ---
 {% import "partials/card.njk" as cards %}
+{% import "partials/breadcrumb.njk" as bc %}
 <section class="page-shell">
+  {{ bc.render(page, title, metadata, none) }}
   <header class="page-header">
     <p class="eyebrow">Directory</p>
     <h1>{{ title }}</h1>

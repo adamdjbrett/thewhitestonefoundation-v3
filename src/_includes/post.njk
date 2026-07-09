@@ -1,7 +1,9 @@
 {% extends "base.njk" %}
+{% import "partials/breadcrumb.njk" as bc %}
 
 {% block content %}
 <article class="page-shell h-entry">
+  {{ bc.render(page, title, metadata, { "name": metadata.labels.news, "url": metadata.routes.news }) }}
   <header class="page-header">
     <p class="eyebrow">
       {% if categories and categories.length %}<span class="p-category">{{ categories[0] }}</span>{% else %}{{ metadata.labels.news }}{% endif %}

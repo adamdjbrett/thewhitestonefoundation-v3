@@ -12,4 +12,7 @@ eleventyExcludeFromCollections: true
   </url>
 {% endif %}
 {% endfor %}
+  <url>
+    <loc>{{ "/llms.txt" | absUrl(metadata.url) }}</loc>
+  </url>
 </urlset>

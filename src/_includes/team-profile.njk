@@ -1,7 +1,9 @@
 {% extends "base.njk" %}
+{% import "partials/breadcrumb.njk" as bc %}
 
 {% block content %}
 <article class="page-shell team-profile h-card">
+  {{ bc.render(page, name, metadata, { "name": "People", "url": metadata.routes.people }) }}
   <header class="team-profile__header">
     <div class="team-profile__image">
       <img class="u-photo" src="{{ photo or metadata.image }}" alt="{{ name }}" loading="lazy">

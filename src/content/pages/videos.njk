@@ -5,7 +5,9 @@ description: "Watch our collection of critical conversations and educational vid
 image: /images/wp-content/uploads/2021/08/whitestone-logo.webp
 permalink: /videos/
 ---
+{% import "partials/breadcrumb.njk" as bc %}
 <article class="page-shell page-shell--wide media-library">
+  {{ bc.render(page, title, metadata, none) }}
   <header class="page-header">
     <p class="eyebrow">Whitestone Screenings</p>
     <h1>{{ title }}</h1>

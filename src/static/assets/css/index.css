@@ -1304,6 +1304,46 @@ button {
   padding-block: 6rem 5rem;
 }
 
+/* Breadcrumb navigation */
+.breadcrumb {
+  margin-block-end: 1.75rem;
+  font-size: 0.85rem;
+}
+
+.breadcrumb__list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.45rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.breadcrumb__item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.breadcrumb__item + .breadcrumb__item::before {
+  content: "/";
+  color: rgb(3 4 94 / 0.4);
+}
+
+.breadcrumb__item a {
+  color: #00618f;
+  border-radius: 0.2rem;
+}
+
+.breadcrumb__item a:hover {
+  text-decoration: underline;
+}
+
+.breadcrumb__item [aria-current="page"] {
+  color: rgb(3 4 94 / 0.72);
+}
+
 .page-header {
   display: grid;
   gap: 1rem;
