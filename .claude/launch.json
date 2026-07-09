@@ -22,6 +22,12 @@
         "--port=8080"
       ],
       "port": 8080
+    },
+    {
+      "name": "whitestone-org",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["--prefix", "/Users/abrett76/github/thewhitestonefoundation.org", "run", "dev"],
+      "port": 8080
     }
   ]
 }
